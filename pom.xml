@@ -82,7 +82,7 @@
               <scmBranch>gh-pages</scmBranch>
               <dryRun>true</dryRun>
               <skipDeletedFiles>true</skipDeletedFiles>
-              <content>${project.build.directory}/docs/</content>
+              <content>${project.build.directory}/site/</content>
             </configuration>
           </execution>
         </executions>
