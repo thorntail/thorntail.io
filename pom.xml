@@ -80,7 +80,7 @@
             <configuration>
               <pubScmUrl>scm:git:git@github.com:thorntail/thorntail.io.git</pubScmUrl>
               <scmBranch>gh-pages</scmBranch>
-              <dryRun>true</dryRun>
+              <dryRun>false</dryRun>
               <skipDeletedFiles>true</skipDeletedFiles>
               <content>${project.build.directory}/site/</content>
             </configuration>
