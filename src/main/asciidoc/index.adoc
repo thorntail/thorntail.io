@@ -1,3 +1,5 @@
+= Thorntail
+:noheader:
 :nofooter:
 
 image::thorntail-logo.png[]
