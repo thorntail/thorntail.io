@@ -1,1 +1,5 @@
+:nofooter:
+
 image::thorntail-logo.png[]
+
+Coming soon!
