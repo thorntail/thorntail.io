@@ -1,3 +1,1 @@
-= Thorntail
-
-Coming soon.
+image::thorntail-logo.png[]
