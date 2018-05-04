@@ -4,4 +4,33 @@
 
 image::thorntail-logo.png[]
 
-Coming soon!
+[subs="+macros"]
+----
+Hi Community,
+
+We've now reached the end of the rename choosing process!
+
+As a quick recap, we're renaming because "Swarm" is used already for other unrelated projects, causing confusion, and we want to grow beyond our roots in WildFly.
+
+We know everyone is excited to shout the new name from the rooftops, so we've decided to announce it before we have a logo.
+
+To that end, the new name of WildFly Swarm is Thorntail! Enjoy the freedom of flying high like a Thorntail bird!
+
+Welcome Thorntailers!
+
+Thanks for the votes, but once Legal went through the list, all candidates were terrible, so we dropped down into some of the awesome suggestions from the community, and Thorntail came up roses.
+
+Over the coming weeks several thing will begin to happen, such as working on a logo for the project, and moving the existing code to a new GitHub repository with updated groupIds, etc.
+
+As part of the rename shenanigans, we'd also like to take the opportunity to adjust our versioning.
+
+Though YYYY.MM.NN has been fun, we understand that it doesn't really convey a true sense of stability. For that reason we'd like to switch the current code to be versioned as 2.0.0.Final in the first release under the Thorntail name.
+
+We appreciate the work the community has put into WildFly Swarm over the last few years, and we look forward to the continued work with Thorntail!
+
+The Google Group is now https://groups.google.com/forum/#!forum/thorntail. You can also find us soon at https://thorntail.io/, and we will be changing the Twitter handle in the near future.
+ 
+Thanks
+
+Ken
+----
