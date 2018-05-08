@@ -4,6 +4,13 @@
 
 image::thorntail-logo.png[]
 
+== Wayfinding
+
+* http://wildfly-swarm.io/[Thorntail v2.x (née WildFly Swarm 2018.x)]
+* https://docs.thorntail.io/4.0.0-SNAPSHOT/[Thorntail v4.x (Proof of Concept)]
+
+== Message to the Community
+
 [subs="+macros"]
 ----
 Hi Community,
