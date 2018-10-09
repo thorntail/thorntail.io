@@ -1,0 +1,35 @@
+{
+  "name": "thorntail.io",
+  "version": "1.0.0",
+  "description": "Website for Thorntail",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lance Ball <lanceball@gmail.com> (http://lanceball.com)",
+  "license": "Apache 2",
+  "dependencies": {
+    "gh-pages": "^0.5.0",
+    "jade": "^1.11.0",
+    "metalsmith": "^2.1.0",
+    "metalsmith-asciidoc": "git://github.com/projectodd/metalsmith-asciidoc.git",
+    "metalsmith-branch": "0.0.4",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-pagination": "1.4.0",
+    "metalsmith-drafts": "0.0.1",
+    "metalsmith-better-excerpts": "0.1.7",
+    "metalsmith-feed": "^0.2.0",
+    "metalsmith-gist": "^0.3.0",
+    "metalsmith-if": "^0.1.1",
+    "metalsmith-jade": "^2.0.2",
+    "metalsmith-layouts": "^1.4.2",
+    "metalsmith-less": "^2.0.0",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.4.0",
+    "metalsmith-redirect": "^1.1.0",
+    "metalsmith-serve": "0.0.4",
+    "metalsmith-watcher": "^0.1.2",
+    "moment": "^2.10.6",
+    "then-jade": "^2.4.1"
+  }
+}

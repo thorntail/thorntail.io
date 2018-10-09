@@ -1,0 +1,88 @@
+---
+title: Downloads
+lastUpdate: 2016-09-06
+layout: page.jade
+---
+
+=== Generally Speaking
+
+For the most part, Thorntail is consumed through
+Maven artifacts, resembling `pom.xml` entries such as
+
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>jaxrs</artifactId>
+</dependency>
+----
+
+We highly recommend using one of our BOMs so that you don't
+need to specify versions of each component you bring in:
+
+[source,xml]
+----
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>io.thorntail</groupId>
+      <artifactId>bom<artifactId>
+      <version>${version.thorntail}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+----
+
+For more information, please see _How to use a BOM_ in the link:http://docs.thorntail.io/[documentation].
+
+=== Directly Downloadable
+
+We do provide a few directly downloadable and usable items:
+
+==== SwarmTool
+
+SwarmTool can be used to take an existing `.war` and "swarmify" it.
+
+link:/download/swarmtool[swarmtool-standalone.jar]
+
+==== MicroProfile Server
+
+Our MicroProfile server can be used to run an existing MicroProfile-compliant
+`.war` file.
+
+link:/download/microprofile-hollow-thorntail[microprofile-hollow-thorntail.jar]
+
+==== MicroProfile + JPA Server
+
+Our MicroProfile with JPA server can be used to run MicroProfile microservices that require JPA that
+are present in a `war` file.
+
+link:/download/microprofile-jpa-hollow-thorntail[microprofile-jpa-hollow-thorntail.jar]
+
+==== Web Server
+
+Similar to the MicroProfile server,
+Web provides a hollow JAR that's equivalent to the Web Profile from Java EE.
+
+link:/download/web-hollow-thorntail[web-hollow-thorntail.jar]
+
+==== Keycloak Server
+
+Our Keycloak standalone server may be used to run your own Keycloak easily.
+
+link:/download/keycloak-thorntail[keycloak-thorntail.jar]
+
+==== Management Console Server
+
+Our runnable WildFly Management Console may be used to manage your
+Thorntail application (if it includes the `management` fraction).
+
+link:/download/management-console-thorntail[management-console-thorntail.jar]
+
+==== Swagger UI
+
+Our runnable Swagger UI server makes it easy to launch the Swagger UI.
+
+link:/download/swagger-ui-thorntail[swagger-ui-thorntail.jar]

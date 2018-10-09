@@ -1,0 +1,235 @@
+---
+title: Rightsize your Java EE Applications
+layout: index.jade
+---
+
+++++
+<div class="purchase">
+  <div class="container overflow-h">
+    <div class="row">
+      <span>
+      Thorntail offers an innovative approach to packaging and running Java EE applications by packaging them with just enough of the
+      server runtime to "java -jar" your application. It's MicroProfile compatible, too. And, it's all much, much cooler than that ...
+      </span>
+    </div>
+  </div>
+</div>
+++++
+
+[pass]
+++++
+<div class="container content-sm">
+
+  <section class="section">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="headline">
+          <h2>Getting Started</h2>
+        </div>
+      </div>
+     </div>
+
+      <div class="row service-box-1">
+
+        <div class="col-md-4">
+          <h3><i class="fa fa-cogs" aria-hidden="true" style="font-size:24px"></i> Generate Project</h3>
+          <p>The simplest way to get started is by using the project generator.
+            Simply choose the capabilities you need and we'll generate a maven project for you, ready to download and use.
+          </p>
+          <p><a href="/generator" class="btn btn-primary">Create a Project</a></p>
+        </div>
+
+        <div class="col-md-4">
+          <h3><i class="fa fa-book" aria-hidden="true" style="font-size:24px"></i> Documentation</h3>
+          <p>The user guide contains much information to get started and to answer more advanced questions.</p>
+          <p><a href="/documentation" class="btn btn-primary">View Documentation</a></p>
+        </div>
+
+        <div class="col-md-4">
+          <h3><i class="fa fa-code" aria-hidden="true" style="font-size:24px"></i> Code Examples</h3>
+          <p>We provide plenty of examples on how to use existing Java EE API's and components to support microservice architectures.</p>
+          <p><a href="https://github.com/thorntail/thorntail-examples" class="btn btn-primary">View Examples</a></p>
+        </div>
+
+      </div>
+
+  </section>
+++++
+
+[pass]
+++++
+<section class="section alt">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="headline">
+        <h2>Simple Project Setup</h2>
+      </div>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="col-md-6">
+
+++++
+
+Add dependencies for just the parts that you need in your Maven build
+(or don't add anything at all and the plugin will auto-detect for you).
+
+The following example assumes a simple JAX-RS RESTful application.
+
+Import the BOM (_Bill of Materials_) dependency
+
+[source,xml]
+----
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>io.thorntail</groupId>
+      <artifactId>bom</artifactId>
+      <version>${version.thorntail}</version>
+      <scope>import</scope>
+      <type>pom</type>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+----
+
+Declare the fractions you need (or not, we'll do our best to auto-detect them for you):
+
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>jaxrs</artifactId>
+</dependency>
+----
+
+[pass]
+++++
+
+  </div>
+
+  <div class="col-md-6">
+
+++++
+
+Add the Thorntail Maven plugin:
+
+[source,xml]
+----
+<plugin>
+  <groupId>io.thorntail</groupId>
+  <artifactId>thorntail-maven-plugin</artifactId>
+  <version>${version.thorntail}</version>
+  <executions>
+    <execution>
+      <goals>
+        <goal>package</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+----
+
+Generate the uberjar and run it:
+
+[source,bash]
+----
+mvn package
+java -jar <myapp>-thorntail.jar
+----
+
+
+[pass]
+++++
+
+  </div>
+  </div>
+</section>
+++++
+
+[pass]
+++++
+<section class="section">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="headline">
+        <h2>Features and Benefits</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+  <div class="col-md-4">
+    <div class="service">
+    <i class="fa fa-industry service-icon"></i>
+    <div class="desc">
+      <h3>Mature</h3>
+      Develop services using the feature richness and maturity of the enterprise Java industry standard - Java EE
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="service">
+    <i class="fa fa-cubes service-icon"></i>
+    <div class="desc">
+      <h3>Flexible</h3>
+      Simply specify Thorntail Maven dependencies to bundle just the parts of the Java EE 7 WildFly application server
+      that you need. Don't use EJBs or JPA? Great, nothing is bundled unless you specify it!
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="service">
+      <i class="fa fa-check service-icon"></i>
+      <div class="desc">
+      <h3>Straightforward</h3>
+        Generate uberjar (Ex: java -jar MyApp.jar), or generate a .war and deploy to any Java EE compatible application server.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="service">
+    <i class="fa fa-sitemap service-icon"></i>
+    <div class="desc">
+      <h3>Service Oriented</h3>
+      Use built-in service discovery, or use external service registries. You choose.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="service">
+    <i class="fa fa-wrench service-icon"></i>
+    <div class="desc">
+      <h3>Practical</h3>
+      Built-in support for third party apps and frameworks like Logstash and NetFlix OSS projects like Hystrix and Ribbon.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="service">
+    <i class="fa fa-puzzle-piece service-icon"></i>
+    <div class="desc">
+      <h3>Integrated</h3>
+      Integrates with upstream Red Hat projects for single sign-on <a href="http://keycloak.jboss.org/">KeyCloak</a>,
+      monitoring <a href="http://www.hawkular.org/">Hawkular</a>, data grid <a href="http://www.infinispan.org">InfiniSpan</a>, and more
+      broadly, Platform as a Service <a href="https://www.openshift.com/">OpenShift</a>.
+    </div>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+</div>
+++++

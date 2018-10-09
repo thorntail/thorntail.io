@@ -1,0 +1,167 @@
+var metalsmith = require('metalsmith'),
+    branch = require('metalsmith-branch'),
+    collections = require('metalsmith-collections'),
+    excerpts = require('metalsmith-better-excerpts'),
+    layouts = require('metalsmith-layouts'),
+    pagination = require('metalsmith-pagination'),
+    asciidoc = require('metalsmith-asciidoc'),
+    markdown = require('metalsmith-markdown'),
+    jade = require('metalsmith-jade'),
+    less = require('metalsmith-less'),
+    permalinks = require('metalsmith-permalinks'),
+    serve = require('metalsmith-serve'),
+    watch = require('metalsmith-watcher'),
+    redirect = require('metalsmith-redirect'),
+    msIf = require('metalsmith-if'),
+    feed = require('metalsmith-feed'),
+    drafts = require('metalsmith-drafts'),
+    gist = require('metalsmith-gist'),
+    moment = require('moment'),
+    fs = require('fs');
+
+var versions = require('./versions.js')
+
+moment.updateLocale('en', {
+  calendar : {
+    lastDay : '[Yesterday, ] MMM Do',
+    sameDay : '[Today, ] MMM Do',
+    lastWeek : '[last] dddd[, ] MMM Do',
+    sameElse : 'll'
+  }
+});
+
+build();
+
+function build() {
+  var serveAndWatch = process.argv.length > 2 && process.argv[2] === 'serve',
+      metadata = JSON.parse(fs.readFileSync('./site.json', 'utf8'));
+
+  metadata.devMode = serveAndWatch;
+
+  metadata.CURRENT_RELEASE = versions.CURRENT_RELEASE;
+
+  metalsmith(__dirname)
+    .metadata(metadata)
+    .source('./src')
+    .destination('./build')
+
+    // Write pages in asciidoc or markdown
+    .use(asciidoc())
+    .use(markdown())
+    .use(jade())
+
+    // use less for css
+    .use(less())
+
+    // Hide draft posts
+    .use(drafts())
+
+    // Make it easy to insert gists into your posts
+    .use(gist())
+
+    // For the blog index page
+    .use(excerpts({
+      pruneLength: 500,
+       stripTags: false,
+    }))
+    .use(collections({
+      posts: {
+        pattern: 'posts/**.html',
+        sortBy: 'publishDate',
+        reverse: true
+      }
+    }))
+
+    .use(
+      pagination({
+        'collections.posts': {
+          perPage: 3,
+          layout: 'archive.jade',
+          first: 'archive.html',
+          path: 'archive/:num/index.html',
+          filter: function (page) {
+            return !page.private
+          },
+          pageMetadata: {
+            title: 'Archive'
+          }
+        }
+      })
+    )
+
+    // URL rewriting for permalinks
+    .use(branch('posts/**.html')
+         .use(permalinks({
+           pattern: 'posts/:title',
+           relative: false
+         })))
+    .use(branch('!posts/**.html')
+         .use(branch('!index.md').use(permalinks({
+           relative: false
+         }))))
+
+    // Jade templates
+    .use(layouts({
+      engine: 'jade',
+      moment: moment
+    }))
+
+    // RSS Feed
+    .use(feed(
+          {
+            collection: 'posts',
+            pubDate: new Date(),
+            postDescription: function(file) {
+              // Ugly hack to set publish date on RSS feed.
+              // See https://issues.jboss.org/browse/THORN-441 and https://github.com/hurrymaplelad/metalsmith-feed/issues/13
+              file.date = file.publishDate;
+              return file.less || file.excerpt || file.contents;
+            }
+          }
+    ))
+
+    // when we run as `node build serve` we'll serve the site and watch
+    // the files for changes. Note: This does not reload when templates
+    // change, only when the content changes
+    .use(msIf(
+      serveAndWatch,
+      serve({
+        port: 8080,
+        verbose: true
+    })))
+    .use(msIf(
+      serveAndWatch,
+      watch()
+    ))
+
+    .use(redirect({
+      '/download/swarmtool': 'http://repo2.maven.org/maven2/io/thorntail/swarmtool/'+ versions.CURRENT_RELEASE + '/swarmtool-' + versions.CURRENT_RELEASE + '-standalone.jar',
+      '/download/microprofile-hollow-thorntail': 'http://repo2.maven.org/maven2/io/thorntail/servers/microprofile/' + versions.CURRENT_RELEASE + '/microprofile-' + versions.CURRENT_RELEASE + '-hollow-thorntail.jar',
+      '/download/microprofile-jpa-hollow-thorntail': 'http://repo2.maven.org/maven2/io/thorntail/servers/microprofile-jpa/' + versions.CURRENT_RELEASE + '/microprofile-jpa-' + versions.CURRENT_RELEASE + '-hollow-thorntail.jar',
+      '/download/web-hollow-thorntail': 'http://repo2.maven.org/maven2/io/thorntail/servers/web/' + versions.CURRENT_RELEASE + '/web-' + versions.CURRENT_RELEASE + '-hollow-thorntail.jar',
+      '/download/keycloak-thorntail': 'http://repo2.maven.org/maven2/io/thorntail/servers/keycloak/' + versions.CURRENT_RELEASE + '/keycloak-' + versions.CURRENT_RELEASE + '-thorntail.jar',
+      '/download/management-console-thorntail': 'http://repo2.maven.org/maven2/io/thorntail/servers/management-console/' + versions.CURRENT_RELEASE + '/management-console-' + versions.CURRENT_RELEASE + '-thorntail.jar',
+      '/download/swagger-ui-thorntail': 'http://repo2.maven.org/maven2/io/thorntail/servers/swagger-ui/' + versions.CURRENT_RELEASE + '/swagger-ui-' + versions.CURRENT_RELEASE + '-thorntail.jar',
+
+      '/docs/2018-5-0': 'http://docs.thorntail.io/2018.5.0',
+      '/docs/2-0-0-Final': 'http://docs.thorntail.io/2.0.0.Final',
+      '/docs/2-1-0-Final': 'http://docs.thorntail.io/2.1.0.Final',
+      '/docs/2-2-0-Final': 'http://docs.thorntail.io/2.2.0.Final',
+      '/docs/4-x': 'http://docs.thorntail.io/4.0.0-SNAPSHOT',
+      '/docs/HEAD': 'http://docs.thorntail.io/2.3.0.Final-SNAPSHOT',
+}))
+
+
+    .build(function (err) {
+      if (err) {
+        console.log(err);
+        throw err;
+      }
+      else {
+        console.log('Site build complete.');
+        if (process.argv.length > 2 && process.argv[2] === 'publish') {
+          publish();
+        }
+      }
+    });
+}

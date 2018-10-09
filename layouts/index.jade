@@ -1,0 +1,43 @@
+//- Layout for the home page
+
+extends layout
+
+block main
+  .slider-inner
+    #da-slider.da-slider
+      .da-slide.da-slider-current
+        h2
+          i Evolution
+          br
+          i of
+          br
+          i Enterprise Java
+        p
+          i Optimised for
+          br
+          i microservice architectures
+        .da-img
+          img(src='/images/microprofile.png').img-responsive
+      .da-slide
+        h2
+          i Rightsize
+          br
+          i your
+          br
+          i services
+        p
+          i Build on mature technologies
+          br
+          i and leverage existing expertise
+
+        .da-img
+          img(src='/images/thorntail_horizontal_rgb_600px_reverse.png' alt='Thorntail Logo').img-responsive
+      .da-arrows
+        span.da-arrows-prev
+        span.da-arrows-next
+      .da-dots
+        span.da-dots-current
+        span
+
+
+  != contents

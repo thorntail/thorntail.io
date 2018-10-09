@@ -1,0 +1,122 @@
+---
+title: Documentation
+lastUpdate: 2017-08-16
+layout: plain-page.jade
+---
+
+++++
+<div class="breadcrumbs">
+  <div class="container">
+      <h1>Documentation</h1>
+  </div>
+</div>
+
+<section>
+<div class="container">
+<div class="row margin-top-20">
+  <div class="col-md-12">
+++++
+
+== User Guide
+
+If you are new to Thorntail, this is the best place to start. Learn
+what Thorntail is and how to use it to build your first Java EE or MicroProfile
+microservice.
+
+[pass]
+++++
+  </div>
+</div>
+
+  <div class="row tab-v3 margin-bottom-30">
+    <div class="col-sm-4">
+    		<ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="#released" data-toggle="tab"><i class="fa fa-tags" aria-hidden="true"></i> Latest Release</a></li>
+    			<li><a href="#snapshot" data-toggle="tab"><i class="fa fa-book" aria-hidden="true"></i> Snapshot</a></li>
+    			<li><a href="#older" data-toggle="tab"><i class="fa fa-archive" aria-hidden="true"></i> Older</a></li>
+    		</ul>
+    </div>
+
+    <div class="col-sm-8">
+      <div class="tab-content">
+    	  <div class="tab-pane fade in active" id="released">
+          <p>The documentation of the latest stable release, <strong>2.2.0.Final</strong>:<p>
+          <ul>
+            <li><a href="/docs/2-2-0-Final">Documentation</a></li>
+            <li><a href="https://thorntail.github.io/javadocs/2.2.0.Final/apidocs/index.html">Javadocs</a></li>
+          </ul>
+        </div>
+        <div class="tab-pane fade in" id="snapshot">
+          <p>The documentation of the current development, <strong>2.x</strong>, on master:<p>
+          <ul>
+            <li><a href="/docs/HEAD">Documentation Snapshot</a></li>
+            <li><a href="https://thorntail.github.io/javadocs/2.3.0.Final-SNAPSHOT/apidocs/index.html">Javadocs</a></li>
+          </ul>
+          <p>The documentation of <strong>4.x</strong> branch:<p>
+          <ul>
+            <li><a href="/docs/4-x">Documentation Snapshot</a></li>
+          </ul>
+        </div>
+        <div class="tab-pane fade in" id="older">
+          <p>The documentation for previous releases:<p>
+          <p><strong>2.1.0.Final</strong></p>
+          <ul>
+            <li><a href="/docs/2-1-0-Final">Documentation</a></li>
+            <li><a href="https://thorntail.github.io/javadocs/2.1.0.Final/apidocs/index.html">Javadocs</a></li>
+          </ul>
+          <p><strong>2.0.0.Final</strong></p>
+          <ul>
+            <li><a href="/docs/2-0-0-Final">Documentation</a></li>
+            <li><a href="https://thorntail.github.io/javadocs/2.0.0.Final/apidocs/index.html">Javadocs</a></li>
+          </ul>
+          <p><strong>2018.5.0</strong></p>
+          <ul>
+            <li><a href="/docs/2018-5-0">Documentation</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+++++
+
+[pass]
+++++
+
+<div class="row">
+
+  <div class="col-md-12">
+    <h2>Related Information</h2>
+</div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-4">
+  <div class="service">
+  <div class="desc">
+    <h3>Source Code</h3>
+    <i class="fa fa-github" aria-hidden="true"></i> All the source is available on <a href="https://github.com/thorntail/thorntail">Github</a>
+    </div>
+  </div>
+</div>
+
+  <div class="col-md-4">
+    <div class="service">
+      <div class="desc">
+        <h3>Examples</h3>
+        Technology specific <a href="https://github.com/thorntail/thorntail-examples">examples</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+++++
+
+[pass]
+++++
+</div>
+</div>
+</div>
+++++
