@@ -19,7 +19,7 @@ angular.module('thorntail-generator-app',[])
     $scope.stabilities.unshift("All");
 
     $scope.model = {
-        thorntailVersion: thorntailVersion,
+        swarmVersion: swarmVersion,
         groupId: "com.example",
         artifactId: "demo",
         fractions : function(fractions) {
@@ -34,7 +34,7 @@ angular.module('thorntail-generator-app',[])
     }
 
     $scope.generate = function(model) {
-      var downloadPath = 'http:///generator.thorntail.io/generator?g='+model.groupId+'&a='+model.artifactId+'&sv='+model.thorntailVersion+'&d='+model.fractions().map(function(i){return i.artifactId;}).join('&d=');
+      var downloadPath = 'http:///generator.thorntail.io/generator?g='+model.groupId+'&a='+model.artifactId+'&sv='+model.swarmVersion+'&d='+model.fractions().map(function(i){return i.artifactId;}).join('&d=');
       window.location = downloadPath;
     }
 
