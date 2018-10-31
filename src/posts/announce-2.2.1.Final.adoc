@@ -1,0 +1,130 @@
+---
+title: Announcing Thorntail 2.2.1.Final
+publishDate: 2018-10-30
+modifyDate: 2018-10-31
+author: The Thorntail Team
+layout: post.jade
+---
+
+== Thorntail 2.2.1.Final
+
+Winter is coming, at least in the Northern Hemisphere, but we can stay warm with another Thorntail release! Say "hello" to Thorntail 2.2.1.Final!
+
+=== What's New?
+
+For those of you who like to start your app from the IDE, this release brings a brand new Thorntail Runner.
+To use it, just add the `io.thorntail:thorntail-runner:2.2.1.Final` dependency to your `pom.xml` and run the `Runner` class from your IDE.
+Please note that only `war` packaging is supported. The `Runner` class javadoc describes the available system properties to configure the execution.
+
+This release also contains several bugfixes from different areas of the product, such as MicroProfile Config, MicroProfile RestClient or the `topology-openshift` fraction.
+
+Two new HowTos have been added: how to expose application metrics using MicroProfile Metrics and Prometheus, and how to do distributed tracing with MicroProfile OpenTracing and Jaeger.
+
+There were other improvements around dependencies in some fractions.
+
+++++
+<!-- more -->
+++++
+
+== @CreateSwarm is deprecated
+
+*WARNING: Breaking changes!*
+
+`@CreateSwarm` annotation is now deprecated and shouldn't be used anymore.
+
+== Config keys breaking changes
+
+*WARNING: Breaking changes!*
+
+As an additional task on renaming from WildFly Swarm to Thorntail, all configuration keys had been renamed from `swarm.x.y` to `thorntail.x.y`. 
+The configuration system will still accept the old `swarm` names.
+However, the old `swarm` prefix no longer works for certain system properties.
+See https://issues.jboss.org/browse/THORN-2205[THORN-2205] for more details.
+It is recommended to change all occurences of `-Dswarm.*` in all Thorntail invocations, including the Thorntail Maven plugin, to `-Dthorntail.*`
+
+
+== Changelog
+Release notes for 2.2.1.Final are available https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12317020&version=12339188[here].
+
+=== Bug
+* [https://issues.jboss.org/browse/THORN-1753[THORN-1753]] At least one example README is out of date - may be others (Done)
+* [https://issues.jboss.org/browse/THORN-1830[THORN-1830]] arquillian ignores swarm.http.port setting in project-defaults.yml  (Done)
+* [https://issues.jboss.org/browse/THORN-1890[THORN-1890]] Unable to Launch With OpenAPI Fraction using Swarm.run() from IDE (Done)
+* [https://issues.jboss.org/browse/THORN-1982[THORN-1982]] microprofile-restclient Start Exception with ConfigProviderResolver (Done)
+* [https://issues.jboss.org/browse/THORN-2025[THORN-2025]] Swagger fraction does not respect pretty_print setting (Done)
+* [https://issues.jboss.org/browse/THORN-2125[THORN-2125]] MP Config TCK keeps failing (Done)
+* [https://issues.jboss.org/browse/THORN-2160[THORN-2160]] JOSE encrypt does not produce JWE Header with 'kid' (Done)
+* [https://issues.jboss.org/browse/THORN-2165[THORN-2165]] topology-openshift doesn't work since THORN-1647 (Done)
+* [https://issues.jboss.org/browse/THORN-2166[THORN-2166]] topology-openshift doesn't work in OpenShift 3.10 (Done)
+* [https://issues.jboss.org/browse/THORN-2168[THORN-2168]] the "uberjar" profile in Examples no longer works (Done)
+* [https://issues.jboss.org/browse/THORN-2171[THORN-2171]] microprofile-health fraction has a dependency on health-api (Done)
+* [https://issues.jboss.org/browse/THORN-2172[THORN-2172]] Thorntail product build tests failing (Done)
+* [https://issues.jboss.org/browse/THORN-2175[THORN-2175]] Jaeger fraction throws RuntimeException for SamplingStrategyResponse (Done)
+* [https://issues.jboss.org/browse/THORN-2178[THORN-2178]] FileSystemLayout will always use Maven layout if both pom.xml and build.gradle are present (Done)
+* [https://issues.jboss.org/browse/THORN-2180[THORN-2180]] useless dependency on microprofile-metrics-api in testsuite/microprofile-tcks/metrics (Done)
+* [https://issues.jboss.org/browse/THORN-2182[THORN-2182]] MP RestClient doesn't close response on failure to parse entity (Done)
+* [https://issues.jboss.org/browse/THORN-2192[THORN-2192]] ConfigMap booster uses @CreateSwarm (Done)
+* [https://issues.jboss.org/browse/THORN-2195[THORN-2195]] Injection of RestClient into @Health bean fails with java.lang.IllegalStateException (Done)
+* [https://issues.jboss.org/browse/THORN-2198[THORN-2198]] JSF: Global error page from shared lib is not found in the IDE (IntelliJ) (Duplicate Issue)
+* [https://issues.jboss.org/browse/THORN-2204[THORN-2204]] non-deterministic module.xml lookup in product with certified fractions (Done)
+ 
+=== Task
+* [https://issues.jboss.org/browse/THORN-2111[THORN-2111]] remove the wildfly-swarm-enforcer-pattern-size configurations from Thorntail build (Done)
+* [https://issues.jboss.org/browse/THORN-2129[THORN-2129]] Thorntail website (Done)
+* [https://issues.jboss.org/browse/THORN-2149[THORN-2149]] Minor updates to the bom pom (Done)
+* [https://issues.jboss.org/browse/THORN-2157[THORN-2157]] make sure we document breaking changes in release announcements (Done)
+* [https://issues.jboss.org/browse/THORN-2162[THORN-2162]] Module and dependency updates to improve the PME alignment process (Done)
+* [https://issues.jboss.org/browse/THORN-2174[THORN-2174]] Bump jaeger client version to 0.30.6 (Done)
+* [https://issues.jboss.org/browse/THORN-2181[THORN-2181]] formally deprecate @CreateSwarm and remove its usage from the tests (Done)
+* [https://issues.jboss.org/browse/THORN-2183[THORN-2183]] remove usage of @CreateSwarm in MP JWT tests (Done)
+* [https://issues.jboss.org/browse/THORN-2185[THORN-2185]] Changing configuration keys from `swarm` to `thorntail` (Done)
+ 
+=== Documentation
+* [https://issues.jboss.org/browse/THORN-2121[THORN-2121]] HowTo for using MP OpenTracing and Jaeger (Done)
+* [https://issues.jboss.org/browse/THORN-2122[THORN-2122]] HowTo for using MP Metrics to provide data to Prometheus (Done)
+ 
+=== Enhancement
+* [https://issues.jboss.org/browse/THORN-2163[THORN-2163]] don't use fraction-list.txt to generate bom-certified (Done)
+* [https://issues.jboss.org/browse/THORN-2169[THORN-2169]] unify wildfly-swarm.useUberJar with the rest of the project (Done)
+ 
+=== Library Upgrade
+* [https://issues.jboss.org/browse/THORN-2177[THORN-2177]] Update MVC-Fraction to 1.0-PFD (Done)
+ 
+=== Component Upgrade
+* [https://issues.jboss.org/browse/THORN-2193[THORN-2193]] Upgrade smallrye-fault-tolerance to 1.0.4 (Done)
+ 
+== Breaking changes
+* [https://issues.jboss.org/browse/THORN-2181[THORN-2181]] formally deprecate @CreateSwarm and remove its usage from the tests
+* [https://issues.jboss.org/browse/THORN-2185[THORN-2185]] Changing configuration keys from `swarm` to `thorntail`
+
+== Resources
+
+Per usual, we tend to hang out on `irc.freenode.net` in `#thorntail`.
+
+All bug and feature-tracking is kept in http://issues.jboss.org/browse/THORN[JIRA].
+
+Examples are available in https://github.com/thorntail/thorntail-examples/tree/2.2.1.Final
+
+Documentation for this release is available:
+
+* link:http://docs.wildfly-swarm.io/2.2.1.Final/[Documentation]
+
+== Thank you, Contributors!
+
+We appreciate all of our contributors since the last release:
+
+=== Core
+* John Alström
+* Sergey Beryozkin
+* Ken Finnigan
+* Juan Gonzalez
+* Martin Kouba
+* Pavol Loffay
+* Matej Novotny
+* Harsha R
+* Tomas Radej
+* Harsha Ramesh
+* Ruben Romero Montes
+* Michał Szynkiewicz
+* Ladislav Thon
+* Gregor Tudan
