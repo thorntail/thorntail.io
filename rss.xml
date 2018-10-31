@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thorntail]]></title><description><![CDATA[Thorntail]]></description><link>https://thorntail.io</link><generator>metalsmith-feed</generator><lastBuildDate>Tue, 30 Oct 2018 16:11:48 GMT</lastBuildDate><atom:link href="https://thorntail.io/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 30 Oct 2018 16:11:45 GMT</pubDate><item><title><![CDATA[Announcing Thorntail 2.2.0.Final]]></title><description><![CDATA[<div class="sect1">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thorntail]]></title><description><![CDATA[Thorntail]]></description><link>https://thorntail.io</link><generator>metalsmith-feed</generator><lastBuildDate>Wed, 31 Oct 2018 15:26:10 GMT</lastBuildDate><atom:link href="https://thorntail.io/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 31 Oct 2018 15:26:06 GMT</pubDate><item><title><![CDATA[Announcing Thorntail 2.2.1.Final]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_thorntail_2_2_1_final">Thorntail 2.2.1.Final</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Winter is coming, at least in the Northern Hemisphere, but we can stay warm with another Thorntail release! Say "hello" to Thorntail 2.2.1.Final!</p>
+</div>
+<div class="sect2">
+<h3 id="_what_s_new">What’s New?</h3>
+<div class="paragraph">
+<p>For those of you who like to start your app from the IDE, this release brings a brand new Thorntail Runner.
+To use it, just add the <code>io.thorntail:thorntail-runner:2.2.1.Final</code> dependency to your <code>pom.xml</code> and run the <code>Runner</code> class from your IDE.
+Please note that only <code>war</code> packaging is supported. The <code>Runner</code> class javadoc describes the available system properties to configure the execution.</p>
+</div>
+<div class="paragraph">
+<p>This release also contains several bugfixes from different areas of the product, such as MicroProfile Config, MicroProfile RestClient or the <code>topology-openshift</code> fraction.</p>
+</div>
+<div class="paragraph">
+<p>Two new HowTos have been added: how to expose application metrics using MicroProfile Metrics and Prometheus, and how to do distributed tracing with MicroProfile OpenTracing and Jaeger.</p>
+</div>
+<div class="paragraph">
+<p>There were other improvements around dependencies in some fractions.</p>
+</div>]]></description><link>https://thorntail.io/posts/announcing-thorntail-2-2-1-final</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-thorntail-2-2-1-final</guid><dc:creator><![CDATA[The Thorntail Team]]></dc:creator><pubDate>Tue, 30 Oct 2018 05:00:00 GMT</pubDate></item><item><title><![CDATA[Announcing Thorntail 2.2.0.Final]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_thorntail_2_2_0_final">Thorntail 2.2.0.Final</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -491,35 +512,4 @@ for microservice type applications.</p>
 <p>Each portion of the appserver is referred to as a <em>fraction</em>, which many times
 maps to a <code>subsystem</code> from WildFly, but also may include other discrete chunks
 of non-Java EE or WildFly functionality, such as <em>Swagger</em>, or <em>Jolokia</em>.</p>
-</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-4-0</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-4-0</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Fri, 07 Apr 2017 05:00:00 GMT</pubDate></item><item><title><![CDATA[Announcing WildFly Swarm 2017.3.3]]></title><description><![CDATA[<div class="sect1">
-<h2 id="_wildfly_swarm_2017_3_3">WildFly Swarm 2017.3.3</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Since it’s good to beware the ides of March, we’re releasing 2017.3.3 a few days
-prior to it. Et tu, Brute?</p>
-</div>
-<div class="sect2">
-<h3 id="_what_s_new">What’s New?</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Health API Changes (breaking)</p>
-</li>
-<li>
-<p>Fixing logging bugs introduced in 2017.3.2</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_what_is_wildfly_swarm">What is WildFly Swarm?</h3>
-<div class="paragraph">
-<p>WildFly Swarm is the decomposition and reconstitution of the popular
-<a href="http://www.wildfly.org">WildFly Java Application Server</a> in order to support <em>just enough appserver</em>
-for microservice type applications.</p>
-</div>
-<div class="paragraph">
-<p>Each portion of the appserver is referred to as a <em>fraction</em>, which many times
-maps to a <code>subsystem</code> from WildFly, but also may include other discrete chunks
-of non-Java EE or WildFly functionality, such as <em>Swagger</em>, or <em>Jolokia</em>.</p>
-</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-3-3</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-3-3</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Thu, 09 Mar 2017 05:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-4-0</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-4-0</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Fri, 07 Apr 2017 05:00:00 GMT</pubDate></item></channel></rss>
