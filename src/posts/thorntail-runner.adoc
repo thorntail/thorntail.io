@@ -34,7 +34,6 @@ Don't worry, neither the thorntail-runner itself nor its dependencies will leak 
   <artifactId>thorntail-runner</artifactId>
   <version>${version.thorntail}</version>
 </dependency>
-
 ----
 
 ==== Run it
