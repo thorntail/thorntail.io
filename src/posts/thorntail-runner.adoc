@@ -24,7 +24,7 @@ Please note that it works only with `war` packaging.
 In order to use Thorntail Runner, you have add `io.thorntail:thorntail-runner` to your application.
 If you use Maven, you can simply make your project depend on it.
 Just add the following to your dependencies.
-Don't worry, neither the thorntail-runner itself nor its dependencies will leak to the uberjar that thorntail maven plugin generates for your project.
+Don't worry, neither the `thorntail-runner` itself nor its dependencies will leak to the uberjar that Thorntail Maven plugin generates for your project.
 
 .pom.xml
 [source,xml]
