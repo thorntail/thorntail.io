@@ -1,0 +1,48 @@
+---
+title: Thorntail Runner
+publishDate: 2018-11-06
+modifyDate: 2018-11-06
+author: The Thorntail Team
+layout: post.jade
+---
+
+== Thorntail Runner
+
+Since 2.2.1.Final, there is a new way of running Thorntail apps in the IDE.
+
+Previously, the only way was running the `main` method of the `Swarm` class. It caused problems with classpath.
+Flat classpath that was used in this case didn't mimic the JBoss Modules classpath that is used in the `java -jar ...` execution well enough.
+
+Thorntail Runner uses JBoss Modules approach.
+It was tested with all the issues users reported in the old way of running apps in the IDE and it solved all of them.
+
+Please note that it works only with `war` packaging.
+
+=== How to use Runner
+
+==== Make it visible for your IDE
+In order to use Thorntail Runner, you have add `io.thorntail:thorntail-runner` to your application.
+If you use Maven, you can simply make your project depend on it.
+Just add the following to your dependencies.
+Don't worry, neither the `thorntail-runner` itself nor its dependencies will leak to the uberjar that Thorntail Maven plugin generates for your project.
+
+.pom.xml
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>thorntail-runner</artifactId>
+  <version>${version.thorntail}</version>
+</dependency>
+----
+
+==== Run it
+If you use IntelliJ IDEA, use Ctrl/Cmd+N to find the `Runner` class. In Eclipse you can use Ctrl/Cmd+Shift+T.
+When you find it, it's just a matter of running its `main` method.
+
+You can customize Runner's behavior by using specific system properties.
+They are listed in the javadoc of the class (or https://github.com/thorntail/thorntail/blob/master/thorntail-runner/src/main/java/org/wildfly/swarm/runner/Runner.java[here])
+
+=== Call for feedback
+It would be great to get your feedback on the Thorntail Runner, preferably through our
+https://groups.google.com/forum/#!forum/thorntail[Google group].
