@@ -1,0 +1,185 @@
+---
+title: Announcing Thorntail 2.3.0.Final
+publishDate: 2019-1-17
+modifyDate: 2019-1-17
+author: The Thorntail Team
+layout: post.jade
+---
+
+== Thorntail 2.3.0.Final
+
+TODO
+
+=== What's New?
+
+* Upgrade to WildFly 15.0.1
+* New JSONB fraction
+* New EE Security fraction
+* MicroProfile related improvements
+* Documentation improvements
+* Gradle improvements  
+
+++++
+<!-- more -->
+++++
+
+== Upgrade to WildFly 15.0.1
+
+2.3.0.Final has been upgraded to the very latest WildFly 15.0.1. Many dependencies were updated to the newer versions, with RestEasy 3.6.2 and Keycloak 4.8.1 being the two significant updates. Two new fractions were introduced, 'jsonb' and 'ee-security'.  
+
+== New JSONB fraction
+
+New 'jsonb' fraction has been introduced as part of the Wildfly upgrade. This fraction supports JSON Binding API according to https://jcp.org/en/jsr/detail?id=367[JSR-367].
+
+== New EE security fraction
+
+New 'ee-security' fraction has been introduced as part of the Wildfly upgrade. This fraction supports securing HTTP endpoints according to https://jcp.org/en/jsr/detail?id=375[JSR-375].
+
+== MicroProfile related improvements
+
+Many Microprofile related improvements have been done by upgrading to the newer https://www.smallrye.io/[SmallRye] artifacts. 
+
+== Documentation improvements
+
+Documention has been further improved in 2.3.0.Final.
+
+== Gradle improvements
+
+Thorntail Gradle plugin is being continuously enhanced by Harsha Ramesh with it seeing more improvements in 2.3.0.Final. 
+
+== Teid and Camel fractions have been removed
+
+*WARNING: Breaking changes!*
+
+All Teid and Camel fractions have been removed
+
+== Changelog
+Release notes for 2.3.0.Final are available https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12317020&version=12338835[here].
+
+=== Enhancement
+* [https://issues.jboss.org/browse/THORN-747[THORN-747]] Avoid serializing fractionDependencies in fraction-list.js  (Done)
+* [https://issues.jboss.org/browse/THORN-1772[THORN-1772]] Update SmallRye FT to 1.1 (Done)
+* [https://issues.jboss.org/browse/THORN-2156[THORN-2156]] Decrypt JWE based on content in header (Done)
+* [https://issues.jboss.org/browse/THORN-2202[THORN-2202]] Proposal for JOSE fraction to read inline JWK string configuration (Done)
+
+=== Epic
+* [https://issues.jboss.org/browse/THORN-786[THORN-786]] Documentation Review/Revamp (Done)
+* [https://issues.jboss.org/browse/THORN-2126[THORN-2126]] Update to WildFly 14 (Done)
+
+=== Feature Request
+* [https://issues.jboss.org/browse/THORN-914[THORN-914]] Setting location for the flyway migration (Done)
+* [https://issues.jboss.org/browse/THORN-2194[THORN-2194]] Upgrade to Keycloak v4.5.0 (Done)
+* [https://issues.jboss.org/browse/THORN-2211[THORN-2211]] setting schema name for Flyway migration (Done)
+
+=== Bug
+* [https://issues.jboss.org/browse/THORN-1342[THORN-1342]] How to use swarm with Infinispan 9? (Done)
+* [https://issues.jboss.org/browse/THORN-1781[THORN-1781]] JBoss Modules classes contained twice in Swarm uber JARs (Done)
+* [https://issues.jboss.org/browse/THORN-1839[THORN-1839]] Update Microprofile Fault tolerance impl to follow change in MP FT 1.1 TCK (Done)
+* [https://issues.jboss.org/browse/THORN-1936[THORN-1936]] Max Thread Not Honoured  (Done)
+* [https://issues.jboss.org/browse/THORN-1996[THORN-1996]] 'swarm.deployment.KEY.web.login-config.realm-name' always set to 'ignored' (Done)
+* [https://issues.jboss.org/browse/THORN-2090[THORN-2090]] Arquillian: @Deployment fails when using arquillian 1.3.0.Final+ (Done)
+* [https://issues.jboss.org/browse/THORN-2176[THORN-2176]] bootstrap module shades dependencies (Done)
+* [https://issues.jboss.org/browse/THORN-2184[THORN-2184]] Switching from Thorntail microservice 2.0.0 to 2.2.0 breaks the application (Done)
+* [https://issues.jboss.org/browse/THORN-2190[THORN-2190]] MP OpenApi exposes info based on interfaces that are not used to expose endpoints (Done)
+* [https://issues.jboss.org/browse/THORN-2191[THORN-2191]] Thorntail app on Heroku with JVM metrics enabled (Done)
+* [https://issues.jboss.org/browse/THORN-2196[THORN-2196]] MicroProfile Fault Tolerance @Retry with timeout and @Fallback throws TimeoutException when retryTime is no longer than @Timeout (Done)
+* [https://issues.jboss.org/browse/THORN-2205[THORN-2205]] the "swarm.classpath" system property no longer works (Done)
+* [https://issues.jboss.org/browse/THORN-2209[THORN-2209]] MP-REST Client used in Fallback handler class is not CDI context aware. (Done)
+* [https://issues.jboss.org/browse/THORN-2214[THORN-2214]] Istio Circuit Breaker Booster - Multiple Workers Bug (Done)
+* [https://issues.jboss.org/browse/THORN-2229[THORN-2229]] AbstractMethodError when building using Maven 3.6.0 (Done)
+* [https://issues.jboss.org/browse/THORN-2262[THORN-2262]] Runner cannot access `resolution-cache` file for writing (Done)
+* [https://issues.jboss.org/browse/THORN-2276[THORN-2276]] Thorntail looking for file.ejb when it should be file.jar for type ejb  (Done)
+* [https://issues.jboss.org/browse/THORN-2281[THORN-2281]] duplicate mappings for /hystrix.stream (Done)
+* [https://issues.jboss.org/browse/THORN-2285[THORN-2285]] Thorntail jpa fraction seems to be causing ClassNotFoundException: org.wildfly.swarm.Swarm (Done)
+* [https://issues.jboss.org/browse/THORN-2302[THORN-2302]] MP Metrics: wrong unit scaling in Prometheus output (Done)
+
+=== Task
+* [https://issues.jboss.org/browse/THORN-1709[THORN-1709]] remove main()-using tests from testsuite-maven-plugin (Done)
+* [https://issues.jboss.org/browse/THORN-2128[THORN-2128]] Propose moving fractions and testsuites to a "contrib" repository (Done)
+* [https://issues.jboss.org/browse/THORN-2188[THORN-2188]] Blog on Migration from Spring Boot to MicroProfile/Thorntail (Done)
+* [https://issues.jboss.org/browse/THORN-2199[THORN-2199]] Minor improvements to the JOSE demo (Done)
+* [https://issues.jboss.org/browse/THORN-2203[THORN-2203]] update WildFly Config API to WildFly 14 (Done)
+* [https://issues.jboss.org/browse/THORN-2207[THORN-2207]] bump WildFly and related dependencies from 11.0.0.Final to 14.0.1.Final (Done)
+* [https://issues.jboss.org/browse/THORN-2210[THORN-2210]] Finalize the core/container WF14 upgrade (Done)
+* [https://issues.jboss.org/browse/THORN-2215[THORN-2215]] update default configuration of fractions to match WildFly 14 (Done)
+* [https://issues.jboss.org/browse/THORN-2217[THORN-2217]] investigate whether new fractions need to be created for new subsystems in WildFly 14 (Done)
+* [https://issues.jboss.org/browse/THORN-2218[THORN-2218]] InfinispanFraction does not work after upgrade to WF14 (Done)
+* [https://issues.jboss.org/browse/THORN-2219[THORN-2219]] update JBoss Modules and also our overrides (Done)
+* [https://issues.jboss.org/browse/THORN-2220[THORN-2220]] teach the fraction plugin about "special" modules (Done)
+* [https://issues.jboss.org/browse/THORN-2221[THORN-2221]] bump all other Config APIs to use WildFly Config API 1.5.x (Done)
+* [https://issues.jboss.org/browse/THORN-2225[THORN-2225]] create fraction for JSON-B (Done)
+* [https://issues.jboss.org/browse/THORN-2226[THORN-2226]] Review all WF14 comments before finalizing the WF14 upgrade (Done)
+* [https://issues.jboss.org/browse/THORN-2227[THORN-2227]] migrate MP Config from wildfly-extras/wildfly-microprofile-config to the subsystem directly inside WildFly (Done)
+* [https://issues.jboss.org/browse/THORN-2230[THORN-2230]] replace "swarm.arquillian.daemon.port" in all arquillian.xml-s by "thorntail.arquillian.daemon.port" (Done)
+* [https://issues.jboss.org/browse/THORN-2231[THORN-2231]] Create a jsonp fraction test (Done)
+* [https://issues.jboss.org/browse/THORN-2232[THORN-2232]] Remove Teiid and its related Fractions from main code repo of Thorntail (Done)
+* [https://issues.jboss.org/browse/THORN-2233[THORN-2233]] improve formatting of artifact sizes in the fraction plugin output (Done)
+* [https://issues.jboss.org/browse/THORN-2234[THORN-2234]] make sure the fraction plugin doesn't modify the XML namespace in module.xml (Done)
+* [https://issues.jboss.org/browse/THORN-2235[THORN-2235]] make sure the fraction plugin fills in the version attribute of the <module> root element in module.xml (Done)
+* [https://issues.jboss.org/browse/THORN-2236[THORN-2236]] make sure the fraction plugin doesn't fail when computing fraction size and artifacts are missing locally (Done)
+* [https://issues.jboss.org/browse/THORN-2237[THORN-2237]] required updates to the fraction plugin (Done)
+* [https://issues.jboss.org/browse/THORN-2238[THORN-2238]] improve error handling in the fraction plugin (Done)
+* [https://issues.jboss.org/browse/THORN-2239[THORN-2239]] Create a new ee-security fraction (Done)
+* [https://issues.jboss.org/browse/THORN-2240[THORN-2240]] Update Wildfly Config API to generate an ee-security subsystem code (Done)
+* [https://issues.jboss.org/browse/THORN-2241[THORN-2241]] fix build so that all artifacts are properly built and SNAPSHOTs don't have to be downloaded when generating BOMs (Done)
+* [https://issues.jboss.org/browse/THORN-2249[THORN-2249]] make sure `mvn clean install` passes and there are no unexpected errors and warnings (Done)
+* [https://issues.jboss.org/browse/THORN-2250[THORN-2250]] make sure the standalone test suite passes and there are no unexpected errors and warnings (Done)
+* [https://issues.jboss.org/browse/THORN-2265[THORN-2265]] remove all usages of deprecated APIs after migration to WildFly 14 (Done)
+* [https://issues.jboss.org/browse/THORN-2269[THORN-2269]] the fraction plugin should allow sharing one module-rewrite.conf among multiple fractions (Done)
+* [https://issues.jboss.org/browse/THORN-2270[THORN-2270]] the fraction plugin should be able to remove an <artifact> from module.xml (Done)
+* [https://issues.jboss.org/browse/THORN-2271[THORN-2271]] add workaround for WFLY-11373 to our integration of SmallRye Fault Tolerance (Done)
+* [https://issues.jboss.org/browse/THORN-2272[THORN-2272]] fix how Infinispan caches are forced to be active (Done)
+* [https://issues.jboss.org/browse/THORN-2273[THORN-2273]] don't let RESTEasy provide their own MicroProfile RestClient (Done)
+* [https://issues.jboss.org/browse/THORN-2274[THORN-2274]] upgrade Keycloak to 4.6.0.Final (Done)
+* [https://issues.jboss.org/browse/THORN-2275[THORN-2275]] make sure `mvn clean install` in the Examples passes and there are no unexpected errors and warnings (Done)
+* [https://issues.jboss.org/browse/THORN-2282[THORN-2282]] upgrade Keycloak to 4.7.0.Final (Done)
+* [https://issues.jboss.org/browse/THORN-2294[THORN-2294]] upgrade Keycloak to 4.8.1.Final (Done)
+
+=== Library Upgrade
+* [https://issues.jboss.org/browse/THORN-2014[THORN-2014]] Update Hibernate to 5.2.16+ (Done)
+
+=== Component Upgrade
+* [https://issues.jboss.org/browse/THORN-2127[THORN-2127]] Update to SmallRye REST Client 1.1 (Done)
+* [https://issues.jboss.org/browse/THORN-2170[THORN-2170]] MicroProfile 2.1 (Done)
+* [https://issues.jboss.org/browse/THORN-2286[THORN-2286]] Update to SmallRye OpenTracing 1.2 (Done)
+* [https://issues.jboss.org/browse/THORN-2289[THORN-2289]] Update to WildFly 15 (Done)
+* [https://issues.jboss.org/browse/THORN-2298[THORN-2298]] update to WildFly 15.0.1 (Done)
+
+=== Documentation
+* [https://issues.jboss.org/browse/THORN-2290[THORN-2290]] Clarify default datasource (Done)
+* [https://issues.jboss.org/browse/THORN-2292[THORN-2292]] Environment Variable usage doc missing (Done)
+
+== Breaking changes
+* [https://issues.jboss.org/browse/THORN-2232[THORN-2232]] Remove Teiid and its related Fractions from main code repo of Thorntail
+
+== Resources
+
+Per usual, we tend to hang out on `irc.freenode.net` in `#thorntail`.
+
+All bug and feature-tracking is kept in http://issues.jboss.org/browse/THORN[JIRA].
+
+Examples are available in https://github.com/thorntail/thorntail-examples/tree/2.3.0.Final
+
+Documentation for this release is available:
+
+* link:http://docs.wildfly-swarm.io/2.3.0.Final/[Documentation]
+
+== Thank you, Contributors!
+
+We appreciate all of our contributors since the last release:
+
+=== Core
+* Sergey Beryozkin
+* Ken Finnigan
+* Juan Gonzalez
+* Tomas Hofman
+* Michael Kotten
+* Martin Kouba
+* Ireneusz Pastusiak
+* Tomas Radej
+* Harsha Ramesh
+* Ramesh Reddy
+* Antoine Sabot-Durand
+* Stefan Sitani
+* Michał Szynkiewicz
+* Ladislav Thon
