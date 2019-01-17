@@ -1,7 +1,7 @@
 ---
 title: Announcing Thorntail 2.3.0.Final
-publishDate: 2019-1-17
-modifyDate: 2019-1-17
+publishDate: 2019-01-17
+modifyDate: 2019-01-17
 author: The Thorntail Team
 layout: post.jade
 ---
@@ -25,15 +25,20 @@ TODO
 
 == Upgrade to WildFly 15.0.1
 
-2.3.0.Final has been upgraded to the very latest WildFly 15.0.1. Many dependencies were updated to the newer versions, with RestEasy 3.6.2 and Keycloak 4.8.1 being the two significant updates. Two new fractions were introduced, 'jsonb' and 'ee-security'.  
+2.3.0.Final has been upgraded to the very latest WildFly 15.0.1.
+Many dependencies were updated to the newer versions, such as RestEasy 3.6.2, Hibernate 5.3.7, Weld 3.0.5 or Keycloak 4.8.1.
+Two new fractions were introduced, `jsonb` and `ee-security`.
 
 == New JSONB fraction
 
-New 'jsonb' fraction has been introduced as part of the Wildfly upgrade. This fraction supports JSON Binding API according to https://jcp.org/en/jsr/detail?id=367[JSR-367].
+New `jsonb` fraction has been introduced as part of the WildFly upgrade.
+This fraction supports JSON Binding API according to https://jcp.org/en/jsr/detail?id=367[JSR-367].
+A fraction for JSONB support with JAX-RS is also provided: `jaxrs-jsonb`.
 
-== New EE security fraction
+== New EE Security fraction
 
-New 'ee-security' fraction has been introduced as part of the Wildfly upgrade. This fraction supports securing HTTP endpoints according to https://jcp.org/en/jsr/detail?id=375[JSR-375].
+New `ee-security` fraction has been introduced as part of the WildFly upgrade.
+This fraction supports securing HTTP endpoints according to https://jcp.org/en/jsr/detail?id=375[JSR-375].
 
 == MicroProfile related improvements
 
@@ -47,11 +52,12 @@ Documention has been further improved in 2.3.0.Final.
 
 Thorntail Gradle plugin is being continuously enhanced by Harsha Ramesh with it seeing more improvements in 2.3.0.Final. 
 
-== Teid and Camel fractions have been removed
+== Teiid and Camel fractions have been removed
 
 *WARNING: Breaking changes!*
 
-All Teid and Camel fractions have been removed
+All Teiid and Camel fractions have been removed from Thorntail.
+It is expected that the Teiid and WildFly Camel projects will maintain and ship these fractions in the future.
 
 == Changelog
 Release notes for 2.3.0.Final are available https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12317020&version=12338835[here].
@@ -182,4 +188,12 @@ We appreciate all of our contributors since the last release:
 * Antoine Sabot-Durand
 * Stefan Sitani
 * Michał Szynkiewicz
+* Ladislav Thon
+
+=== Examples
+* Sergey Beryozkin
+* Ken Finnigan
+* Juan Gonzalez
+* Tomas Hofman
+* Harsha Ramesh
 * Ladislav Thon
