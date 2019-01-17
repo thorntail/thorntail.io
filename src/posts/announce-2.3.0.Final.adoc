@@ -12,10 +12,9 @@ TODO
 
 === What's New?
 
-* Upgrade to WildFly 15.0.1
-* New JSONB fraction
-* New EE Security fraction
-* MicroProfile related improvements
+* Upgrade to WildFly 15
+* Update to Java EE 8
+* MicroProfile 2.1 compliancy
 * Documentation improvements
 * Gradle improvements  
 
@@ -23,30 +22,27 @@ TODO
 <!-- more -->
 ++++
 
-== Upgrade to WildFly 15.0.1
+== Upgrade to WildFly 15
 
-2.3.0.Final has been upgraded to the very latest WildFly 15.0.1.
-Many dependencies were updated to the newer versions, such as RestEasy 3.6.2, Hibernate 5.3.7, Weld 3.0.5 or Keycloak 4.8.1.
-Two new fractions were introduced, `jsonb` and `ee-security`.
+2.3.0.Final has been upgraded to WildFly 15.
+Many dependencies were updated to the newer versions, such as RestEasy 3.6.2, Hibernate 5.3.7, Weld 3.0.5 and Keycloak 4.8.1.
+Three new fractions were introduced: `jaxrs-jsonb`, `jsonb` and `ee-security`.
 
-== New JSONB fraction
+== Update to Java EE 8
 
-New `jsonb` fraction has been introduced as part of the WildFly upgrade.
-This fraction supports JSON Binding API according to https://jcp.org/en/jsr/detail?id=367[JSR-367].
-A fraction for JSONB support with JAX-RS is also provided: `jaxrs-jsonb`.
+Thorntail 2.3.0.Final supports Java EE 8 as a result of the upgrade to WildFly 15.
 
-== New EE Security fraction
+JSON Binding (JSONB) API support according to https://jcp.org/en/jsr/detail?id=367[JSR-367] is provided by new `jaxrs-jsonb` and `jsonb` fractions. These fractions can be used for JAX-RS and servlet endpoints respectively.
 
-New `ee-security` fraction has been introduced as part of the WildFly upgrade.
-This fraction supports securing HTTP endpoints according to https://jcp.org/en/jsr/detail?id=375[JSR-375].
+EE Security API support according to https://jcp.org/en/jsr/detail?id=375[JSR-375] is provided by a new `ee-security` fraction. This fraction can be used for securing JAX-RS and servlet endpoints.
 
-== MicroProfile related improvements
+== MicroProfile 2.1 Compliancy
 
-Many Microprofile related improvements have been done by upgrading to the newer https://www.smallrye.io/[SmallRye] artifacts. 
+Thorntail 2.3.0.Final is now MicroProfile 2.1 compliant after upgrading to the latest https://www.smallrye.io/[SmallRye] artifacts. 
 
 == Documentation improvements
 
-Documention has been further improved in 2.3.0.Final.
+Documention has been further improved in 2.3.0.Final. A lot of content was mined and migrated from the legacy documentation.
 
 == Gradle improvements
 
@@ -136,9 +132,7 @@ Release notes for 2.3.0.Final are available https://issues.jboss.org/secure/Rele
 * [https://issues.jboss.org/browse/THORN-2271[THORN-2271]] add workaround for WFLY-11373 to our integration of SmallRye Fault Tolerance (Done)
 * [https://issues.jboss.org/browse/THORN-2272[THORN-2272]] fix how Infinispan caches are forced to be active (Done)
 * [https://issues.jboss.org/browse/THORN-2273[THORN-2273]] don't let RESTEasy provide their own MicroProfile RestClient (Done)
-* [https://issues.jboss.org/browse/THORN-2274[THORN-2274]] upgrade Keycloak to 4.6.0.Final (Done)
 * [https://issues.jboss.org/browse/THORN-2275[THORN-2275]] make sure `mvn clean install` in the Examples passes and there are no unexpected errors and warnings (Done)
-* [https://issues.jboss.org/browse/THORN-2282[THORN-2282]] upgrade Keycloak to 4.7.0.Final (Done)
 * [https://issues.jboss.org/browse/THORN-2294[THORN-2294]] upgrade Keycloak to 4.8.1.Final (Done)
 
 === Library Upgrade
@@ -168,7 +162,7 @@ Examples are available in https://github.com/thorntail/thorntail-examples/tree/2
 
 Documentation for this release is available:
 
-* link:http://docs.wildfly-swarm.io/2.3.0.Final/[Documentation]
+* link:http://docs.thorntail.io/2.3.0.Final/[Documentation]
 
 == Thank you, Contributors!
 
