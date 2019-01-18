@@ -8,7 +8,7 @@ layout: post.jade
 
 == Thorntail 2.3.0.Final
 
-TODO
+It's a new year, time for a new Thorntail release packed with features!
 
 === What's New?
 
@@ -42,7 +42,7 @@ Thorntail 2.3.0.Final is now MicroProfile 2.1 compliant after upgrading to the l
 
 == Documentation improvements
 
-Documention has been further improved in 2.3.0.Final. A lot of content was mined and migrated from the legacy documentation.
+Documentation has been further improved in 2.3.0.Final. A lot of content was mined and migrated from the legacy documentation.
 
 == Gradle improvements
 
