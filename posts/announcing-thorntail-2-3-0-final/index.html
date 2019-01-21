@@ -1,0 +1,520 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Thorntail Official Website"><link rel="icon" href="/favicon.ico"><link rel="alternate" type="application/rss+xml" title="RSS Feed for thorntail.io" href="/rss.xml"><title>Announcing Thorntail 2.3.0.Final | Thorntail</title><link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/headers/header-default.css"><link rel="stylesheet" href="/assets/css/footers/footer-v1.css"><link rel="stylesheet" href="/assets/plugins/animate.css"><link rel="stylesheet" href="/assets/plugins/line-icons/line-icons.css"><link rel="stylesheet" href="/assets/plugins/parallax-slider/css/parallax-slider.css"><link rel="stylesheet" href="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css"><link rel="stylesheet" href="/assets/css/theme-colors/default.css" id="style_color"><link rel="stylesheet" href="/assets/css/theme-skins/dark.css"><link rel="stylesheet" href="/assets/css/custom.css"><link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800"><link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css"><link rel="stylesheet" href="/css/site.css"></head><body><div class="header"><div class="container"><a href="/" class="logo"><img src="/images/thorntail_icon_rgb_64px.png" class="icon"><span style="font-size:20px;vertical-align:middle;color:#555;margin-left:10px">Thorntail</span></a><div class="topbar"><ul class="loginbar pull-right"><li class="hoverSelector"><a href="http://jboss.org">JBoss.org</a></li><li class="topbar-devider"></li><li class="hoverSelector"><a href="http://redhat.com">Red Hat</a></li><li class="hoverSelector"><img style="margin-left:10px" src="https://img.shields.io/maven-central/v/io.thorntail/bom.svg?maxAge=604800"></li></ul></div><button type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" class="navbar-toggle"><span class="sr-only">Toggle Navigation</span><span class="fa fa-bars"></span></button></div><div id="navbar" aria-expanded="false" class="navbar-collapse mega-menu navbar-responsive-collapse collapse"><div class="container"><ul class="nav navbar-nav"><li><a href="/generator" class="dropdown-toggle">Generator</a></li><li><a href="/archive">Blog</a></li><li><a href="/documentation">Documentation</a></li><li><a href="/community">Community</a></li><li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Resources</a><ul class="dropdown-menu"><li><a href="/downloads">Downloads</a></li><li><a href="/resources">Presentations</a></li></ul></li></ul></div></div></div><div class="wrapper"><div class="breadcrumbs"><div class="container"><div class="pull-left"><h1>Blog</h1></div><div class="ul pull-right breadcrumb"><li class="active"><a href="/archive">Archive</a></li><li><span>Post</span></li></div></div></div><div class="container"><div class="row margin-top-20"><div class="col-md-10"><article id="article"><h1>Announcing Thorntail 2.3.0.Final</h1><div class="post-meta">By The Thorntail Team | Published last Thursday,  Jan 17th</div><div><div class="sect1">
+<h2 id="_thorntail_2_3_0_final">Thorntail 2.3.0.Final</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It&#8217;s a new year, time for a new Thorntail release packed with features!</p>
+</div>
+<div class="sect2">
+<h3 id="_what_s_new">What&#8217;s New?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to WildFly 15</p>
+</li>
+<li>
+<p>Update to Java EE 8</p>
+</li>
+<li>
+<p>MicroProfile 2.1 compliancy</p>
+</li>
+<li>
+<p>Documentation improvements</p>
+</li>
+<li>
+<p>Gradle improvements</p>
+</li>
+</ul>
+</div>
+<!-- more -->
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_upgrade_to_wildfly_15">Upgrade to WildFly 15</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>2.3.0.Final has been upgraded to WildFly 15.
+Many dependencies were updated to the newer versions, such as RestEasy 3.6.2, Hibernate 5.3.7, Weld 3.0.5 and Keycloak 4.8.1.
+Three new fractions were introduced: <code>jaxrs-jsonb</code>, <code>jsonb</code> and <code>ee-security</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_update_to_java_ee_8">Update to Java EE 8</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thorntail 2.3.0.Final supports Java EE 8 as a result of the upgrade to WildFly 15.</p>
+</div>
+<div class="paragraph">
+<p>JSON Binding (JSONB) API support according to <a href="https://jcp.org/en/jsr/detail?id=367">JSR-367</a> is provided by new <code>jaxrs-jsonb</code> and <code>jsonb</code> fractions. These fractions can be used for JAX-RS and servlet endpoints respectively.</p>
+</div>
+<div class="paragraph">
+<p>EE Security API support according to <a href="https://jcp.org/en/jsr/detail?id=375">JSR-375</a> is provided by a new <code>ee-security</code> fraction. This fraction can be used for securing JAX-RS and servlet endpoints.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_microprofile_2_1_compliancy">MicroProfile 2.1 Compliancy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thorntail 2.3.0.Final is now MicroProfile 2.1 compliant after upgrading to the latest <a href="https://www.smallrye.io/">SmallRye</a> artifacts.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_documentation_improvements">Documentation improvements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Documentation has been further improved in 2.3.0.Final. A lot of content was mined and migrated from the legacy documentation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gradle_improvements">Gradle improvements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thorntail Gradle plugin is being continuously enhanced by Harsha Ramesh with it seeing more improvements in 2.3.0.Final.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_teiid_and_camel_fractions_have_been_removed">Teiid and Camel fractions have been removed</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>WARNING: Breaking changes!</strong></p>
+</div>
+<div class="paragraph">
+<p>All Teiid and Camel fractions have been removed from Thorntail.
+It is expected that the Teiid and WildFly Camel projects will maintain and ship these fractions in the future.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_changelog">Changelog</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Release notes for 2.3.0.Final are available <a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12317020&amp;version=12338835">here</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_enhancement">Enhancement</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-747">THORN-747</a>] Avoid serializing fractionDependencies in fraction-list.js  (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-1772">THORN-1772</a>] Update SmallRye FT to 1.1 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2156">THORN-2156</a>] Decrypt JWE based on content in header (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2202">THORN-2202</a>] Proposal for JOSE fraction to read inline JWK string configuration (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_epic">Epic</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-786">THORN-786</a>] Documentation Review/Revamp (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2126">THORN-2126</a>] Update to WildFly 14 (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_feature_request">Feature Request</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-914">THORN-914</a>] Setting location for the flyway migration (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2194">THORN-2194</a>] Upgrade to Keycloak v4.5.0 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2211">THORN-2211</a>] setting schema name for Flyway migration (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bug">Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-1342">THORN-1342</a>] How to use swarm with Infinispan 9? (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-1781">THORN-1781</a>] JBoss Modules classes contained twice in Swarm uber JARs (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-1839">THORN-1839</a>] Update Microprofile Fault tolerance impl to follow change in MP FT 1.1 TCK (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-1936">THORN-1936</a>] Max Thread Not Honoured  (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-1996">THORN-1996</a>] 'swarm.deployment.KEY.web.login-config.realm-name' always set to 'ignored' (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2090">THORN-2090</a>] Arquillian: @Deployment fails when using arquillian 1.3.0.Final+ (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2176">THORN-2176</a>] bootstrap module shades dependencies (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2184">THORN-2184</a>] Switching from Thorntail microservice 2.0.0 to 2.2.0 breaks the application (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2190">THORN-2190</a>] MP OpenApi exposes info based on interfaces that are not used to expose endpoints (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2191">THORN-2191</a>] Thorntail app on Heroku with JVM metrics enabled (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2196">THORN-2196</a>] MicroProfile Fault Tolerance @Retry with timeout and @Fallback throws TimeoutException when retryTime is no longer than @Timeout (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2205">THORN-2205</a>] the "swarm.classpath" system property no longer works (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2209">THORN-2209</a>] MP-REST Client used in Fallback handler class is not CDI context aware. (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2214">THORN-2214</a>] Istio Circuit Breaker Booster - Multiple Workers Bug (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2229">THORN-2229</a>] AbstractMethodError when building using Maven 3.6.0 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2262">THORN-2262</a>] Runner cannot access <code>resolution-cache</code> file for writing (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2276">THORN-2276</a>] Thorntail looking for file.ejb when it should be file.jar for type ejb  (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2281">THORN-2281</a>] duplicate mappings for /hystrix.stream (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2285">THORN-2285</a>] Thorntail jpa fraction seems to be causing ClassNotFoundException: org.wildfly.swarm.Swarm (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2302">THORN-2302</a>] MP Metrics: wrong unit scaling in Prometheus output (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_task">Task</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-1709">THORN-1709</a>] remove main()-using tests from testsuite-maven-plugin (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2128">THORN-2128</a>] Propose moving fractions and testsuites to a "contrib" repository (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2188">THORN-2188</a>] Blog on Migration from Spring Boot to MicroProfile/Thorntail (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2199">THORN-2199</a>] Minor improvements to the JOSE demo (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2203">THORN-2203</a>] update WildFly Config API to WildFly 14 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2207">THORN-2207</a>] bump WildFly and related dependencies from 11.0.0.Final to 14.0.1.Final (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2210">THORN-2210</a>] Finalize the core/container WF14 upgrade (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2215">THORN-2215</a>] update default configuration of fractions to match WildFly 14 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2217">THORN-2217</a>] investigate whether new fractions need to be created for new subsystems in WildFly 14 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2218">THORN-2218</a>] InfinispanFraction does not work after upgrade to WF14 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2219">THORN-2219</a>] update JBoss Modules and also our overrides (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2220">THORN-2220</a>] teach the fraction plugin about "special" modules (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2221">THORN-2221</a>] bump all other Config APIs to use WildFly Config API 1.5.x (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2225">THORN-2225</a>] create fraction for JSON-B (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2226">THORN-2226</a>] Review all WF14 comments before finalizing the WF14 upgrade (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2227">THORN-2227</a>] migrate MP Config from wildfly-extras/wildfly-microprofile-config to the subsystem directly inside WildFly (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2230">THORN-2230</a>] replace "swarm.arquillian.daemon.port" in all arquillian.xml-s by "thorntail.arquillian.daemon.port" (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2231">THORN-2231</a>] Create a jsonp fraction test (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2232">THORN-2232</a>] Remove Teiid and its related Fractions from main code repo of Thorntail (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2233">THORN-2233</a>] improve formatting of artifact sizes in the fraction plugin output (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2234">THORN-2234</a>] make sure the fraction plugin doesn&#8217;t modify the XML namespace in module.xml (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2235">THORN-2235</a>] make sure the fraction plugin fills in the version attribute of the &lt;module&gt; root element in module.xml (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2236">THORN-2236</a>] make sure the fraction plugin doesn&#8217;t fail when computing fraction size and artifacts are missing locally (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2237">THORN-2237</a>] required updates to the fraction plugin (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2238">THORN-2238</a>] improve error handling in the fraction plugin (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2239">THORN-2239</a>] Create a new ee-security fraction (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2240">THORN-2240</a>] Update Wildfly Config API to generate an ee-security subsystem code (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2241">THORN-2241</a>] fix build so that all artifacts are properly built and SNAPSHOTs don&#8217;t have to be downloaded when generating BOMs (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2249">THORN-2249</a>] make sure <code>mvn clean install</code> passes and there are no unexpected errors and warnings (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2250">THORN-2250</a>] make sure the standalone test suite passes and there are no unexpected errors and warnings (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2265">THORN-2265</a>] remove all usages of deprecated APIs after migration to WildFly 14 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2269">THORN-2269</a>] the fraction plugin should allow sharing one module-rewrite.conf among multiple fractions (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2270">THORN-2270</a>] the fraction plugin should be able to remove an &lt;artifact&gt; from module.xml (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2271">THORN-2271</a>] add workaround for WFLY-11373 to our integration of SmallRye Fault Tolerance (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2272">THORN-2272</a>] fix how Infinispan caches are forced to be active (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2273">THORN-2273</a>] don&#8217;t let RESTEasy provide their own MicroProfile RestClient (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2275">THORN-2275</a>] make sure <code>mvn clean install</code> in the Examples passes and there are no unexpected errors and warnings (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2294">THORN-2294</a>] upgrade Keycloak to 4.8.1.Final (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_library_upgrade">Library Upgrade</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2014">THORN-2014</a>] Update Hibernate to 5.2.16+ (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_component_upgrade">Component Upgrade</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2127">THORN-2127</a>] Update to SmallRye REST Client 1.1 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2170">THORN-2170</a>] MicroProfile 2.1 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2286">THORN-2286</a>] Update to SmallRye OpenTracing 1.2 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2289">THORN-2289</a>] Update to WildFly 15 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2298">THORN-2298</a>] update to WildFly 15.0.1 (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_documentation">Documentation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2290">THORN-2290</a>] Clarify default datasource (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2292">THORN-2292</a>] Environment Variable usage doc missing (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_breaking_changes">Breaking changes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2232">THORN-2232</a>] Remove Teiid and its related Fractions from main code repo of Thorntail</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resources">Resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Per usual, we tend to hang out on <code>irc.freenode.net</code> in <code>#thorntail</code>.</p>
+</div>
+<div class="paragraph">
+<p>All bug and feature-tracking is kept in <a href="http://issues.jboss.org/browse/THORN">JIRA</a>.</p>
+</div>
+<div class="paragraph">
+<p>Examples are available in <a href="https://github.com/thorntail/thorntail-examples/tree/2.3.0.Final" class="bare">https://github.com/thorntail/thorntail-examples/tree/2.3.0.Final</a></p>
+</div>
+<div class="paragraph">
+<p>Documentation for this release is available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://docs.thorntail.io/2.3.0.Final/">Documentation</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_thank_you_contributors">Thank you, Contributors!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We appreciate all of our contributors since the last release:</p>
+</div>
+<div class="sect2">
+<h3 id="_core">Core</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Sergey Beryozkin</p>
+</li>
+<li>
+<p>Ken Finnigan</p>
+</li>
+<li>
+<p>Juan Gonzalez</p>
+</li>
+<li>
+<p>Tomas Hofman</p>
+</li>
+<li>
+<p>Michael Kotten</p>
+</li>
+<li>
+<p>Martin Kouba</p>
+</li>
+<li>
+<p>Ireneusz Pastusiak</p>
+</li>
+<li>
+<p>Tomas Radej</p>
+</li>
+<li>
+<p>Harsha Ramesh</p>
+</li>
+<li>
+<p>Ramesh Reddy</p>
+</li>
+<li>
+<p>Antoine Sabot-Durand</p>
+</li>
+<li>
+<p>Stefan Sitani</p>
+</li>
+<li>
+<p>Michał Szynkiewicz</p>
+</li>
+<li>
+<p>Ladislav Thon</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_examples">Examples</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Sergey Beryozkin</p>
+</li>
+<li>
+<p>Ken Finnigan</p>
+</li>
+<li>
+<p>Juan Gonzalez</p>
+</li>
+<li>
+<p>Tomas Hofman</p>
+</li>
+<li>
+<p>Harsha Ramesh</p>
+</li>
+<li>
+<p>Ladislav Thon</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></article></div></div></div></div><div class="footer-v1"><div class="footer"><div class="container"><div class="row"><div class="col-sm-6 md-margin-bottom-40"><p class="text-center"><Copyright>2016 - 2018 <a href="http://redhat.com">Red Hat, Inc.</a> | Thorntail is Open Source Software</Copyright></p></div></div></div></div></div><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-83419890-2', 'auto');
+ga('send', 'pageview');
+
+ga('create', 'UA-6435340-8', 'auto');
+ga('send', 'pageview');
+</script><script type="text/javascript" src="/assets/js/highlight.pack.js"></script><script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script><script type="text/javascript" src="/assets/plugins/jquery/jquery-migrate.min.js"></script><script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="/assets/plugins/back-to-top.js"></script><script type="text/javascript" src="/assets/plugins/smoothScroll.js"></script><script type="text/javascript" src="/assets/plugins/parallax-slider/js/modernizr.js"></script><script type="text/javascript" src="/assets/plugins/parallax-slider/js/jquery.cslider.js"></script><script type="text/javascript" src="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script><script type="text/javascript" src="/assets/js/custom.js"></script><script type="text/javascript" src="/assets/js/app.js"></script><script type="text/javascript" src="/assets/js/plugins/owl-carousel.js"></script><script type="text/javascript" src="/assets/js/plugins/style-switcher.js"></script><script type="text/javascript" src="/assets/js/plugins/parallax-slider.js"></script><script>(function() {
+
+  jQuery(document).ready(function() {
+    App.init();
+    OwlCarousel.initOwlCarousel();
+    StyleSwitcher.initStyleSwitcher();
+    ParallaxSlider.initParallaxSlider();
+
+    hljs.initHighlightingOnLoad();
+  });
+
+})();
+</script></body></html>
