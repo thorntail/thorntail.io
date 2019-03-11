@@ -1,0 +1,98 @@
+---
+title: Thorntail Community Announcement on Quarkus
+publishDate: 2019-03-11
+modifyDate: 2019-03-11
+author: Ken Finnigan
+layout: post.jade
+---
+
+== Thorntail Community Announcement on Quarkus
+
+It has been approximately one year since we announced the Thorntail 4.x proof-of-concept with the goal of
+improving performance and improved developer experience over what 2.x offered.
+It has been great to see the interest and excitement around Thorntail 4.x from the community.
+Not long after 4.x was announced,
+there was an internal proof-of-concept at Red Hat looking more holistically at Java’s use in Kubernetes along with
+vastly reducing resource requirements and improving performance.
+On the 7th of March 2019,
+https://developers.redhat.com/blog/2019/03/07/quarkus-next-generation-kubernetes-native-java-framework/[Red Hat announced the Quarkus project]
+with impressive resource consumption and performance numbers,
+and a fantastic development experience utilizing https://smallrye.io/[SmallRye] to implement the https://microprofile.io/[Eclipse MicroProfile] specifications.
+
+Naturally, such an announcement will raise questions about what that means for the future of Thorntail.
+In particular,
+both Thorntail and https://quarkus.io/[Quarkus] utilize https://smallrye.io/[SmallRye] to implement the https://microprofile.io/[Eclipse MicroProfile] specifications,
+are great for microservices development, and can generate uber jars.
+
+As there are both 2.x and 4.x development streams for Thorntail, we will address the future of each separately.
+
+=== Thorntail 2.x
+
+For 2.x we have both community and product releases available,
+but this post will focus on the community releases in detail.
+However, Red Hat remains committed to its OpenShift Application Runtimes (RHOAR) customers,
+who will https://access.redhat.com/support/policy/updates/jboss_notes[continue to receive support through November, 2020]
+for Thorntail 2.x within RHOAR.
+For additional information about Thorntail 2.x in RHOAR, please consult your Red Hat Account Manager.
+
+From a community perspective,
+we will continue releases in the 2.x series for the next 18 months as we assist in transitioning
+existing Thorntail 2.x users to either https://quarkus.io/[Quarkus] or http://wildfly.org/[WildFly].
+For Thorntail 2.x use cases that don’t fit into the direction of https://quarkus.io/[Quarkus],
+we will be working with the http://wildfly.org/[WildFly] team to bring these features into http://wildfly.org/[WildFly] for all users.
+That will include https://microprofile.io/[Eclipse MicroProfile] APIs, with implementations from https://smallrye.io/[SmallRye],
+and we are tentatively planning a future version of http://wildfly.org/[WildFly] offering the ability to generate uber jars
+in a similar manner to Thorntail 2.x, or an alternative server runtime reduction approach.
+
+The upcoming community releases will continue to include new features,
+in particular from future versions of https://microprofile.io/[Eclipse MicroProfile],
+as well as continuing to fix and resolve existing issues.
+We’re still working through what that means for the quarterly release cadence,
+and will update the community when we have further information.
+
+=== Thorntail 4.x
+
+There has been a great deal of interest in the Thorntail 4.x proof-of-concept since its introduction early last year.
+Much of this interest was due to the improvements over 2.x with respect to usability and performance.
+
+We, the core team,
+have greatly appreciated all the excitement and contributions we’ve received from the community towards making 4.x even better.
+We provided a lot of input to the design and implementation of https://quarkus.io/[Quarkus] that directly came from the ideas within the Thorntail 4.x stream.
+For us, https://quarkus.io/[Quarkus] is 4.x and much more.
+Thus, with the announcement of https://quarkus.io/[Quarkus] we are ending development of the 4.x stream.
+
+Although we’re sad to see 4.x end,
+we’re very excited about https://quarkus.io/[Quarkus] as it incorporates the usability ideas present in 4.x.
+In addition, it brings fantastic new features like unified imperative and reactive development,
+compile time boot, live reload, and generating a native executable of an application using Substrate VM,
+part of the GraalVM project!
+https://quarkus.io/[Quarkus], with its inherent support of Substrate VM, is also a great fit for serverless environments.
+
+=== SmallRye
+
+If you haven’t looked at the https://quarkus.io/[Quarkus] codebase yet,
+you might be wondering what that means for https://smallrye.io/[SmallRye] being the Red Hat implementation of https://microprofile.io/[Eclipse MicroProfile].
+Have no fear, we’re not dropping https://smallrye.io/[SmallRye].
+Looking at the Quarkus codebase you will see it includes the SmallRye implementations of https://microprofile.io/[Eclipse MicroProfile].
+https://smallrye.io/[SmallRye] will be critical to defining the programming model for https://quarkus.io/[Quarkus].
+
+Also, http://wildfly.org/[WildFly] already includes several https://smallrye.io/[SmallRye] implementations, such as Health Check, Config, and Open Tracing.
+We are also developing plans to include additional https://smallrye.io/[SmallRye] implementations within future WildFly releases.
+
+=== Conclusion
+
+As with many projects in open source,
+as developers we’re always looking to make advancements and improvements that will make the lives of our users easier.
+From the initial beginnings of 2.x utilizing http://wildfly.org/[WildFly] internally,
+we took it as inspiration for the 4.x proof-of-concept.
+4.x offered evolutionary improvements over 2.x in terms of speed, memory usage, and ease of development.
+These ideas and goals were then applied to unified imperative and reactive development,
+compile time boot, live reload, and generating a native executable for a tremendous evolution above 4.x into https://quarkus.io/[Quarkus].
+https://quarkus.io/[Quarkus] is the latest evolution of our efforts in developing a framework for microservices, and serverless, that began back in 2015 with 2.x.
+
+The core team would like to thank the community for all their support, feedback, and contributions to the project over the years!
+During the next 18 months we will ensure existing Thorntail users have a smooth transition over to either https://quarkus.io/[Quarkus] or http://wildfly.org/[WildFly].
+For those switching to https://quarkus.io/[Quarkus], we hope you enjoy using it as much as we have.
+
+The team will continue contributing to https://smallrye.io/[SmallRye] and https://microprofile.io/[Eclipse MicroProfile],
+while also shifting our work towards https://quarkus.io/[Quarkus] in the future.
