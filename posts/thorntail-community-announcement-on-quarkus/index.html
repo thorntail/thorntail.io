@@ -1,0 +1,134 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Thorntail Official Website"><link rel="icon" href="/favicon.ico"><link rel="alternate" type="application/rss+xml" title="RSS Feed for thorntail.io" href="/rss.xml"><title>Thorntail Community Announcement on Quarkus | Thorntail</title><link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/headers/header-default.css"><link rel="stylesheet" href="/assets/css/footers/footer-v1.css"><link rel="stylesheet" href="/assets/plugins/animate.css"><link rel="stylesheet" href="/assets/plugins/line-icons/line-icons.css"><link rel="stylesheet" href="/assets/plugins/parallax-slider/css/parallax-slider.css"><link rel="stylesheet" href="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css"><link rel="stylesheet" href="/assets/css/theme-colors/default.css" id="style_color"><link rel="stylesheet" href="/assets/css/theme-skins/dark.css"><link rel="stylesheet" href="/assets/css/custom.css"><link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800"><link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css"><link rel="stylesheet" href="/css/site.css"></head><body><div class="header"><div class="container"><a href="/" class="logo"><img src="/images/thorntail_icon_rgb_64px.png" class="icon"><span style="font-size:20px;vertical-align:middle;color:#555;margin-left:10px">Thorntail</span></a><div class="topbar"><ul class="loginbar pull-right"><li class="hoverSelector"><a href="http://jboss.org">JBoss.org</a></li><li class="topbar-devider"></li><li class="hoverSelector"><a href="http://redhat.com">Red Hat</a></li><li class="hoverSelector"><img style="margin-left:10px" src="https://img.shields.io/maven-central/v/io.thorntail/bom.svg?maxAge=604800"></li></ul></div><button type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" class="navbar-toggle"><span class="sr-only">Toggle Navigation</span><span class="fa fa-bars"></span></button></div><div id="navbar" aria-expanded="false" class="navbar-collapse mega-menu navbar-responsive-collapse collapse"><div class="container"><ul class="nav navbar-nav"><li><a href="/generator" class="dropdown-toggle">Generator</a></li><li><a href="/archive">Blog</a></li><li><a href="/documentation">Documentation</a></li><li><a href="/community">Community</a></li><li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Resources</a><ul class="dropdown-menu"><li><a href="/downloads">Downloads</a></li><li><a href="/resources">Presentations</a></li></ul></li></ul></div></div></div><div class="wrapper"><div class="breadcrumbs"><div class="container"><div class="pull-left"><h1>Blog</h1></div><div class="ul pull-right breadcrumb"><li class="active"><a href="/archive">Archive</a></li><li><span>Post</span></li></div></div></div><div class="container"><div class="row margin-top-20"><div class="col-md-10"><article id="article"><h1>Thorntail Community Announcement on Quarkus</h1><div class="post-meta">By Ken Finnigan | Published Today,  Mar 11th</div><div><div class="sect1">
+<h2 id="_thorntail_community_announcement_on_quarkus">Thorntail Community Announcement on Quarkus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It has been approximately one year since we announced the Thorntail 4.x proof-of-concept with the goal of
+improving performance and improved developer experience over what 2.x offered.
+It has been great to see the interest and excitement around Thorntail 4.x from the community.
+Not long after 4.x was announced,
+there was an internal proof-of-concept at Red Hat looking more holistically at Java’s use in Kubernetes along with
+vastly reducing resource requirements and improving performance.
+On the 7th of March 2019,
+<a href="https://developers.redhat.com/blog/2019/03/07/quarkus-next-generation-kubernetes-native-java-framework/">Red Hat announced the Quarkus project</a>
+with impressive resource consumption and performance numbers,
+and a fantastic development experience utilizing <a href="https://smallrye.io/">SmallRye</a> to implement the <a href="https://microprofile.io/">Eclipse MicroProfile</a> specifications.</p>
+</div>
+<div class="paragraph">
+<p>Naturally, such an announcement will raise questions about what that means for the future of Thorntail.
+In particular,
+both Thorntail and <a href="https://quarkus.io/">Quarkus</a> utilize <a href="https://smallrye.io/">SmallRye</a> to implement the <a href="https://microprofile.io/">Eclipse MicroProfile</a> specifications,
+are great for microservices development, and can generate uber jars.</p>
+</div>
+<div class="paragraph">
+<p>As there are both 2.x and 4.x development streams for Thorntail, we will address the future of each separately.</p>
+</div>
+<div class="sect2">
+<h3 id="_thorntail_2_x">Thorntail 2.x</h3>
+<div class="paragraph">
+<p>For 2.x we have both community and product releases available,
+but this post will focus on the community releases in detail.
+However, Red Hat remains committed to its OpenShift Application Runtimes (RHOAR) customers,
+who will <a href="https://access.redhat.com/support/policy/updates/jboss_notes">continue to receive support through November, 2020</a>
+for Thorntail 2.x within RHOAR.
+For additional information about Thorntail 2.x in RHOAR, please consult your Red Hat Account Manager.</p>
+</div>
+<div class="paragraph">
+<p>From a community perspective,
+we will continue releases in the 2.x series for the next 18 months as we assist in transitioning
+existing Thorntail 2.x users to either <a href="https://quarkus.io/">Quarkus</a> or <a href="http://wildfly.org/">WildFly</a>.
+For Thorntail 2.x use cases that don’t fit into the direction of <a href="https://quarkus.io/">Quarkus</a>,
+we will be working with the <a href="http://wildfly.org/">WildFly</a> team to bring these features into <a href="http://wildfly.org/">WildFly</a> for all users.
+That will include <a href="https://microprofile.io/">Eclipse MicroProfile</a> APIs, with implementations from <a href="https://smallrye.io/">SmallRye</a>,
+and we are tentatively planning a future version of <a href="http://wildfly.org/">WildFly</a> offering the ability to generate uber jars
+in a similar manner to Thorntail 2.x, or an alternative server runtime reduction approach.</p>
+</div>
+<div class="paragraph">
+<p>The upcoming community releases will continue to include new features,
+in particular from future versions of <a href="https://microprofile.io/">Eclipse MicroProfile</a>,
+as well as continuing to fix and resolve existing issues.
+We’re still working through what that means for the quarterly release cadence,
+and will update the community when we have further information.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_thorntail_4_x">Thorntail 4.x</h3>
+<div class="paragraph">
+<p>There has been a great deal of interest in the Thorntail 4.x proof-of-concept since its introduction early last year.
+Much of this interest was due to the improvements over 2.x with respect to usability and performance.</p>
+</div>
+<div class="paragraph">
+<p>We, the core team,
+have greatly appreciated all the excitement and contributions we’ve received from the community towards making 4.x even better.
+We provided a lot of input to the design and implementation of <a href="https://quarkus.io/">Quarkus</a> that directly came from the ideas within the Thorntail 4.x stream.
+For us, <a href="https://quarkus.io/">Quarkus</a> is 4.x and much more.
+Thus, with the announcement of <a href="https://quarkus.io/">Quarkus</a> we are ending development of the 4.x stream.</p>
+</div>
+<div class="paragraph">
+<p>Although we’re sad to see 4.x end,
+we’re very excited about <a href="https://quarkus.io/">Quarkus</a> as it incorporates the usability ideas present in 4.x.
+In addition, it brings fantastic new features like unified imperative and reactive development,
+compile time boot, live reload, and generating a native executable of an application using Substrate VM,
+part of the GraalVM project!
+<a href="https://quarkus.io/">Quarkus</a>, with its inherent support of Substrate VM, is also a great fit for serverless environments.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_smallrye">SmallRye</h3>
+<div class="paragraph">
+<p>If you haven’t looked at the <a href="https://quarkus.io/">Quarkus</a> codebase yet,
+you might be wondering what that means for <a href="https://smallrye.io/">SmallRye</a> being the Red Hat implementation of <a href="https://microprofile.io/">Eclipse MicroProfile</a>.
+Have no fear, we’re not dropping <a href="https://smallrye.io/">SmallRye</a>.
+Looking at the Quarkus codebase you will see it includes the SmallRye implementations of <a href="https://microprofile.io/">Eclipse MicroProfile</a>.
+<a href="https://smallrye.io/">SmallRye</a> will be critical to defining the programming model for <a href="https://quarkus.io/">Quarkus</a>.</p>
+</div>
+<div class="paragraph">
+<p>Also, <a href="http://wildfly.org/">WildFly</a> already includes several <a href="https://smallrye.io/">SmallRye</a> implementations, such as Health Check, Config, and Open Tracing.
+We are also developing plans to include additional <a href="https://smallrye.io/">SmallRye</a> implementations within future WildFly releases.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conclusion">Conclusion</h3>
+<div class="paragraph">
+<p>As with many projects in open source,
+as developers we’re always looking to make advancements and improvements that will make the lives of our users easier.
+From the initial beginnings of 2.x utilizing <a href="http://wildfly.org/">WildFly</a> internally,
+we took it as inspiration for the 4.x proof-of-concept.
+4.x offered evolutionary improvements over 2.x in terms of speed, memory usage, and ease of development.
+These ideas and goals were then applied to unified imperative and reactive development,
+compile time boot, live reload, and generating a native executable for a tremendous evolution above 4.x into <a href="https://quarkus.io/">Quarkus</a>.
+<a href="https://quarkus.io/">Quarkus</a> is the latest evolution of our efforts in developing a framework for microservices, and serverless, that began back in 2015 with 2.x.</p>
+</div>
+<div class="paragraph">
+<p>The core team would like to thank the community for all their support, feedback, and contributions to the project over the years!
+During the next 18 months we will ensure existing Thorntail users have a smooth transition over to either <a href="https://quarkus.io/">Quarkus</a> or <a href="http://wildfly.org/">WildFly</a>.
+For those switching to <a href="https://quarkus.io/">Quarkus</a>, we hope you enjoy using it as much as we have.</p>
+</div>
+<div class="paragraph">
+<p>The team will continue contributing to <a href="https://smallrye.io/">SmallRye</a> and <a href="https://microprofile.io/">Eclipse MicroProfile</a>,
+while also shifting our work towards <a href="https://quarkus.io/">Quarkus</a> in the future.</p>
+</div>
+</div>
+</div>
+</div></div></article></div></div></div></div><div class="footer-v1"><div class="footer"><div class="container"><div class="row"><div class="col-sm-6 md-margin-bottom-40"><p class="text-center"><Copyright>2016 - 2018 <a href="http://redhat.com">Red Hat, Inc.</a> | Thorntail is Open Source Software</Copyright></p></div></div></div></div></div><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-83419890-2', 'auto');
+ga('send', 'pageview');
+
+ga('create', 'UA-6435340-8', 'auto');
+ga('send', 'pageview');
+</script><script type="text/javascript" src="/assets/js/highlight.pack.js"></script><script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script><script type="text/javascript" src="/assets/plugins/jquery/jquery-migrate.min.js"></script><script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="/assets/plugins/back-to-top.js"></script><script type="text/javascript" src="/assets/plugins/smoothScroll.js"></script><script type="text/javascript" src="/assets/plugins/parallax-slider/js/modernizr.js"></script><script type="text/javascript" src="/assets/plugins/parallax-slider/js/jquery.cslider.js"></script><script type="text/javascript" src="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script><script type="text/javascript" src="/assets/js/custom.js"></script><script type="text/javascript" src="/assets/js/app.js"></script><script type="text/javascript" src="/assets/js/plugins/owl-carousel.js"></script><script type="text/javascript" src="/assets/js/plugins/style-switcher.js"></script><script type="text/javascript" src="/assets/js/plugins/parallax-slider.js"></script><script>(function() {
+
+  jQuery(document).ready(function() {
+    App.init();
+    OwlCarousel.initOwlCarousel();
+    StyleSwitcher.initStyleSwitcher();
+    ParallaxSlider.initParallaxSlider();
+
+    hljs.initHighlightingOnLoad();
+  });
+
+})();
+</script></body></html>
