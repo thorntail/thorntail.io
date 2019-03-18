@@ -1,0 +1,214 @@
+---
+title: Announcing Thorntail 2.4.0.Final
+publishDate: 2019-03-18
+modifyDate: 2019-03-18
+author: The Thorntail Team
+layout: post.jade
+---
+
+== Thorntail 2.4.0.Final
+
+Just in time for St. Patrick's Day festivities, we bring you a new Thorntail release!
+
+=== What's New?
+
+* Java 11 support
+* MicroProfile 2.2 support
+* MicroProfile JWT improvements
+* Gradle improvements
+* Thorntail Runner improvements
+
+++++
+<!-- more -->
+++++
+
+== Java 11 support
+
+Thorntail now works with Java 11, both for building an uberjar and running it.
+Please note that **modulepath is not supported**; Thorntail only runs on classpath.
+
+=== Known issues
+
+Migrating from Java 8 to 11 can be somewhat difficult, but fortunately, there's many online resources to help you.
+As one example, we can recommend https://blog.codefx.org/java/java-11-migration-guide/[All You Need To Know For Migrating To Java 11].
+
+You might specifically notice that some components that are brought in as transitive dependencies are still not fully ready for Java 11.
+Often, there's a newer version that works much better.
+Here's a few examples that you might notice:
+
+* https://issues.jboss.org/browse/ISPN-9720[ISPN-9720]: _illegal reflective access operation_ in Infinispan
+* https://issues.jboss.org/browse/JBMAR-216[JBMAR-216]: wrong reflection usage in JBoss Marshalling
+
+These new versions will percolate to Thorntail over time, as we update to new WildFly releases.
+
+=== Using new Java modules
+
+By now, you probably already know that Thorntail, being built on top of WildFly, has its own module system: JBoss Modules.
+On Java 8, JBoss Modules imitate the Java module system, and on Java 9+, the two module systems are integrated.
+In particular, this means that if you want to use some new feature from Java 11 that's only available in an extra module, you also need to declare a module dependency.
+
+A prime example is the new Java HTTP Client, which exists in the `java.net.http` module.
+To be able to use it in a Thorntail application, it needs to express a dependency on this module.
+However, Thorntail doesn't support running on modulepath, so expressing a dependency does _not_ mean adding `module-info.java`.
+Instead, you use the same mechanism you've been using in WildFly and Thorntail all the time: `jboss-deployment-structure.xml`:
+
+[source,xml]
+----
+<?xml version="1.0"?>
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="java.net.http"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>
+----
+
+This file must be placed in the `WEB-INF` directory in your WAR (or `META-INF` in case your application is a JAR).
+
+To learn more about `jboss-deployment-structure.xml`, refer to the http://docs.wildfly.org/15/Developer_Guide.html#Class_Loading_in_WildFly[Class Loading chapter] in WildFly documentation.
+
+== MicroProfile 2.2 support
+
+Thorntail now implements MicroProfile 2.2 by including the latest https://www.smallrye.io/[SmallRye] artifacts.
+These specifications have been updated to a new version:
+
+* Fault Tolerance 2.0
+* OpenAPI 1.1
+* OpenTracing 1.3
+* Rest Client 1.2
+
+== MicroProfile JWT improvements
+
+One new fraction was added that improves Keycloak integration with MicroProfile JWT: `keycloak-microprofile-jwt`.
+
+Also it is now much easier to configure MicroProfile JWT itself.
+Previously, you had to use a giant chunk of YAML like this:
+
+[source,yaml]
+----
+thorntail:
+  security:
+    security-domains:
+      test-realm:
+        jaspi-authentication:
+          login-module-stacks:
+            test-login-module-stack:
+              login-modules:
+              - login-module: jwt-login-module
+                code: org.wildfly.swarm.microprofile.jwtauth.deployment.auth.jaas.JWTLoginModule
+                flag: required
+                module-options:
+                  rolesProperties: role-mapping.properties
+          auth-modules:
+            http:
+              code: org.wildfly.extension.undertow.security.jaspi.modules.HTTPSchemeServerAuthModule
+              module: org.wildfly.extension.undertow
+              flag: required
+              login-module-stack-ref: test-login-module-stack
+----
+
+It is now enough to write this:
+
+[source,yaml]
+----
+thorntail:
+  microprofile:
+    jwtauth:
+      realm: test-realm
+      roles:
+        file: role-mapping.properties
+----
+
+Internally, the second configuration is transformed to the first one, so the behavior is identical.
+
+== Gradle improvements
+
+Thorntail Gradle plugin has seen yet another round of improvements in 2.4.0.Final.
+
+== Thorntail Runner improvements
+
+Thorntail Runner has been updated to better support working with multi-module projects in the IDE.
+
+== Changelog
+Release notes for 2.4.0.Final are available https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12317020&version=12339973[here].
+
+=== Feature Request
+* [https://issues.jboss.org/browse/THORN-1594[THORN-1594]] Verify/Fix execution on JDK 11 (Done)
+* [https://issues.jboss.org/browse/THORN-2324[THORN-2324]] provide the ability to toggle filtering of WEB-INF/lib (Done)
+
+=== Enhancement
+* [https://issues.jboss.org/browse/THORN-1852[THORN-1852]] MP JWT Fraction should integrate with the Keycloak client token introspector/verifier (Done)
+* [https://issues.jboss.org/browse/THORN-2313[THORN-2313]] Gradle plugin: provide tasks to run|start|stop the application (Done)
+* [https://issues.jboss.org/browse/THORN-2325[THORN-2325]] update default favicon with thorntail logo (Done)
+
+=== Task
+* [https://issues.jboss.org/browse/THORN-1933[THORN-1933]] MP FT - align CircuitBreaker.failOn() functionality once the spec issue is resolved (Done)
+* [https://issues.jboss.org/browse/THORN-2297[THORN-2297]] upgrade Keycloak to the latest 4.8.x.Final (Done)
+* [https://issues.jboss.org/browse/THORN-2339[THORN-2339]] Infinispan fraction should be added to supported fractions (Done)
+* [https://issues.jboss.org/browse/THORN-2352[THORN-2352]] Simplify microprofile-jwt configuration of the authentication module (Done)
+
+=== Epic
+* [https://issues.jboss.org/browse/THORN-2248[THORN-2248]] SmallRye MP 2.2 Impls (Done)
+
+=== Component Upgrade
+* [https://issues.jboss.org/browse/THORN-2251[THORN-2251]] Fault Tolerance 2.0 (Done)
+* [https://issues.jboss.org/browse/THORN-2256[THORN-2256]] REST Client 1.2 (Done)
+* [https://issues.jboss.org/browse/THORN-2259[THORN-2259]] OpenTracing 1.3 (Done)
+* [https://issues.jboss.org/browse/THORN-2260[THORN-2260]] OpenAPI 1.1 (Done)
+* [https://issues.jboss.org/browse/THORN-2340[THORN-2340]] update OpenShift REST Client Java to 7.0.0 (Done)
+
+=== Bug
+* [https://issues.jboss.org/browse/THORN-2287[THORN-2287]] Multi-module projects with files in the same directories, e.g. META-INF/beans.xml (Done)
+* [https://issues.jboss.org/browse/THORN-2307[THORN-2307]] build fails on JDK 11 (Done)
+* [https://issues.jboss.org/browse/THORN-2311[THORN-2311]] conflicting definitions of the org.eclipse.microprofile.restclient module (Done)
+* [https://issues.jboss.org/browse/THORN-2312[THORN-2312]] Runner fails with ZipException: duplicate entry: /WEB-INF/classes/META-INF/jandex.idx (Duplicate Issue)
+* [https://issues.jboss.org/browse/THORN-2315[THORN-2315]] thorntail-maven-plugin chokes on scanning Java 11 classes (Done)
+* [https://issues.jboss.org/browse/THORN-2319[THORN-2319]] Fraction 'full' does not contain JSON-B and EE Security fractions (Done)
+* [https://issues.jboss.org/browse/THORN-2322[THORN-2322]] Thorntail Maven Plugin Strips Required Dependencies from WEB-INF/lib (Done)
+* [https://issues.jboss.org/browse/THORN-2327[THORN-2327]] JSF fraction doesn't transitively bring in the JSF API (Done)
+* [https://issues.jboss.org/browse/THORN-2332[THORN-2332]] Messaging-Cluster example does not work (Done)
+* [https://issues.jboss.org/browse/THORN-2333[THORN-2333]] io.thorntail:microprofile-restclient (Done)
+* [https://issues.jboss.org/browse/THORN-2335[THORN-2335]] Invalid META-INF/services record in microprofile-restclient fraction (Done)
+* [https://issues.jboss.org/browse/THORN-2338[THORN-2338]] javaee-api:7.0 transitive dependency in 2.3.0.Final (Done)
+* [https://issues.jboss.org/browse/THORN-2349[THORN-2349]] fraction plugin passes old system properties (swarm.*) when building offline Maven repository (Done)
+* [https://issues.jboss.org/browse/THORN-2350[THORN-2350]] upgrade to fraction plugin 94 (Done)
+
+== Resources
+
+Per usual, we tend to hang out on `irc.freenode.net` in `#thorntail`.
+
+All bug and feature-tracking is kept in http://issues.jboss.org/browse/THORN[JIRA].
+
+Examples are available in https://github.com/thorntail/thorntail-examples/tree/2.4.0.Final
+
+Documentation for this release is available:
+
+* link:http://docs.wildfly-swarm.io/2.4.0.Final/[Documentation]
+
+== Thank you, Contributors!
+
+We appreciate all of our contributors since the last release:
+
+=== Core
+* Sergey Beryozkin
+* Ken Finnigan
+* Tomas Hofman
+* Erik Mattheis
+* Harsha Ramesh
+* Antoine Sabot-Durand
+* Michal Szynkiewicz
+* Ladislav Thon
+* Harald Wellmann
+* Eric Wittmann
+
+=== Examples
+* icer33
+* Sergey Beryozkin
+* Ken Finnigan
+* Tomas Hofman
+* Scott M Stark
+* Gunnar Morling
+* Sven Ruppert
+* Ladislav Thon
+* Axel Wathne
