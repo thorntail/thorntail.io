@@ -16,6 +16,7 @@ Just in time for St. Patrick's Day festivities, we bring you a new Thorntail rel
 * MicroProfile 2.2 support
 * MicroProfile JWT improvements
 * Gradle improvements
+* Thorntail Runner improvements
 
 ++++
 <!-- more -->
@@ -124,6 +125,10 @@ Internally, the second configuration is transformed to the first one, so the beh
 == Gradle improvements
 
 Thorntail Gradle plugin has seen yet another round of improvements in 2.4.0.Final.
+
+== Thorntail Runner improvements
+
+Thorntail Runner has been updated to better support working with multi-module projects in the IDE.
 
 == Changelog
 Release notes for 2.4.0.Final are available https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12317020&version=12339973[here].
