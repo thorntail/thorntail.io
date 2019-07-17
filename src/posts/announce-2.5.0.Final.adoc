@@ -1,0 +1,165 @@
+---
+title: Announcing Thorntail 2.5.0.Final
+publishDate: 2019-07-17
+modifyDate: 2019-07-17
+author: The Thorntail Team
+layout: post.jade
+---
+
+== Thorntail 2.5.0.Final
+
+Keep smiling, because we bring you a fresh new Thorntail release right on the World Emoji Day! :-)
+
+=== What's New?
+
+* MicroProfile 3.0 support
+* MicroProfile JWT improvements
+* New `ejb-mdb` fraction
+
+++++
+<!-- more -->
+++++
+
+== MicroProfile 3.0 support
+
+Thorntail now implements MicroProfile 3.0 by including the latest https://www.smallrye.io/[SmallRye] artifacts.
+These specifications have been updated to a new version:
+
+* Health Check 2.0
+* Metrics 2.0
+* Rest Client 1.3
+
+=== Health Check 2.0
+
+*WARNING: Breaking changes!*
+
+The MicroProfile Health Check 2.0 specification includes many changes, some of them breaking.
+Most importantly:
+
+- The `@Liveness` and `@Readiness` annotations were introduced; `@Health` is now deprecated.
+- The `/health/live` and `/health/ready` endpoints were introduced.
+  The `/health` endpoint is now a union of all `@Health`, `@Liveness` and `@Readiness` checks.
+- The `outcome` and `state` fields in the JSON response format were renamed to `status`.
+
+See https://github.com/eclipse/microprofile-health/releases/tag/2.0.1[the specification] for details.
+
+=== Metrics 2.0
+
+*WARNING: Breaking changes!*
+
+The MicroProfile Metrics 2.0 specification includes many changes, some of them breaking.
+Most importantly:
+
+- The `@Counted` annotation no longer includes the `monotonic` parameter.
+  Previously, the default value of the `monotonic` parameter was `false`.
+  Now, the `@Counter` annotation always behaves as if the `monotonic` parameter was set to `true`.
+  If you want the `monotonic = false` behavior, you need to use the `@ConcurrentGauge` annotation.
+- Metrics are no longer identified by their `String` name, but by a `MetricID` class.
+  The `MetricID` is a `String` name and a set of tags.
+- Some of the base metrics (defined by the specification) changed their type from `Counter` to `Gauge`.
+- Some of the base metrics and also vendor metrics (provided by Thorntail) were renamed.
+  Notably, names of all accumulating counters now end with `total`.
+- In the OpenMetrics output format (formerly known as Prometheus format), the metric scope and name are no longer separated by `:`, but by `_`.
+
+See https://github.com/eclipse/microprofile-metrics/releases/tag/2.0.1[the specification] for details.
+
+=== Rest Client 1.3
+
+*WARNING: Breaking changes!*
+
+The implementation of MicroProfile Rest Client that Thorntail includes used to come from the SmallRye project.
+This implementation has been https://developer.jboss.org/en/resteasy/blog/2019/06/19/resteasy-380final-and-microprofile-3[moved to RESTEasy].
+That is actually a breaking change, because all public APIs and SPIs (such as `RestClientProxy`) that were previously part of the `io.smallrye.restclient` package are now in the `org.jboss.resteasy.microprofile.client` package.
+With this package change, logger categories have naturally also changed.
+
+One notable change in the MicroProfile Rest Client specification is that if the client interface doesn't include the `@Produces`/`@Consumes` annotations, `application/json` is now used as a default.
+If you don't use these annotations in the client interfaces, this might be a breaking change for you.
+
+See https://github.com/eclipse/microprofile-rest-client/releases/tag/1.3.3[the specification] for details.
+
+== MicroProfile JWT improvements
+
+Quite a lot of improvements were made in the `microprofile-jwt` fraction.
+All changes should be backwards compatible, but if you spot a bug, please let us know.
+
+- The `@LoginConfig` annotation is no longer required, if the `thorntail.microprofile.jwt.token.realm` configuration property is set.
+  If you use the annotation anyway, then make sure its `realmName` property is set to the same value as the `thorntail.microprofile.jwt.token.realm` configuration property.
+- The `thorntail.microprofile.jwt.enable` configuration property can be set to `false` to disable the MicroProfile JWT authentication mechanism.
+  Default value of this configuration property is `true`.
+- The `thorntail.microprofile.jwt.token.signer-pub-key-location` should be used for specifying the external key assets.
+  Previously, you could add a `file:` or `classpath:` prefix to the `thorntail.microprofile.jwt.token.signer-pub-key` configuration property, or use `thorntail.microprofile.jwt.token.jwks-uri` to refer to an external JWK Set.
+  These two possibilities are now deprecated.
+- The `thorntail.microprofile.jwt.path.groups` configuration property can be used to select an arbitrary claim inside a JWT token to function as the `groups` claim expected by MicroProfile JWT.
+  This is useful if no `groups` claim is present in the JWT token, but some other claim contains the groups information.
+  The custom claim value must be an array of strings, unless it is a standard `scope` claim.
+  Syntax of this option is: `path/to/claim`.
+- The `thorntail.microprofile.jwt.claims.groups` configuration property can be used to provide a default value for the `groups` claim if the JWT token has no groups information at all.
+- The `thorntail.microprofile.jwt.token.roles.map` configuration property can be used to inline the roles configuration in the YAML configuration.
+
+There's also one improvement in the `keycloak-microprofile-jwt` fraction:
+
+- The Keycloak adapter configuration from the Thorntail YAML configuration is now recognized.
+  You no longer have to include a `keycloak.json` file to be able to use this fraction.
+
+And finally, some configuration properties that were only available in the old and deprecated `thorntail.microprofile.jwtauth` namespace are now also available in the `thorntail.microprofile.jwt` namespace.
+The old namespace is still available, but you are encouraged to migrate to the new one.
+
+== New `ejb-mdb` fraction
+
+New fraction `ejb-mdb` was added that supports deploying Message-Driven Beans, but not all of messaging.
+With this fraction, you can't create a messaging server, but you can connect to an existing external messaging server, if you provide the correct resource adapter.
+
+Due to how WildFly works internally, this fraction actually brings in the entire `messaging-activemq` subsystem.
+Therefore, this `ejb-mdb` fraction is mutually exclusive with the `messaging` fraction.
+You can only use one of them, not both.
+
+== Other
+
+*WARNING: Breaking changes!*
+
+If you used the `wildfly-swarm.useUberJar` system property to make sure the Thorntail Maven plugin runs in an uberjar mode, as opposed to classpath mode, you now have to migrate to the `thorntail.useUberJar` system property.
+The old `wildfly-swarm.useUberJar` system property is no longer recognized.
+
+TODO TODO TODO
+..........................................................
+... copy the output of node fetch-notes.js 2.5.0.Final ...
+..........................................................
+
+== Resources
+
+Per usual, we tend to hang out on `irc.freenode.net` in `#thorntail`.
+
+All bug and feature-tracking is kept in https://issues.jboss.org/browse/THORN[JIRA].
+
+Examples are available in https://github.com/thorntail/thorntail-examples/tree/2.5.0.Final
+
+https://docs.thorntail.io/2.5.0.Final/[Documentation] for this release is https://docs.thorntail.io/2.5.0.Final/[also available].
+
+== Thank you, Contributors!
+
+We appreciate all of our contributors since the last release:
+
+TODO TODO TODO need to update this
+
+=== Core
+* Sergey Beryozkin
+* Ken Finnigan
+* Tomas Hofman
+* Erik Mattheis
+* Harsha Ramesh
+* Antoine Sabot-Durand
+* Michal Szynkiewicz
+* Ladislav Thon
+* Harald Wellmann
+* Eric Wittmann
+
+=== Examples
+* icer33
+* Sergey Beryozkin
+* Ken Finnigan
+* Tomas Hofman
+* Scott M Stark
+* Gunnar Morling
+* Sven Ruppert
+* Ladislav Thon
+* Axel Wathne
