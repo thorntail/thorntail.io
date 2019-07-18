@@ -120,16 +120,93 @@ You can only use one of them, not both.
 If you used the `wildfly-swarm.useUberJar` system property to make sure the Thorntail Maven plugin runs in an uberjar mode, as opposed to classpath mode, you now have to migrate to the `thorntail.useUberJar` system property.
 The old `wildfly-swarm.useUberJar` system property is no longer recognized.
 
-TODO TODO TODO
-..........................................................
-... copy the output of node fetch-notes.js 2.5.0.Final ...
-..........................................................
+== Changelog
+Release notes for 2.5.0.Final are available https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12317020&version=12341370[here].
+
+=== Enhancement
+* [https://issues.jboss.org/browse/THORN-1616[THORN-1616]] Split the 'messaging' fragment into two parts: client and server (Done)
+* [https://issues.jboss.org/browse/THORN-2358[THORN-2358]] add microprofile.jwt aliases to configurables that only use microprofile.jwtauth (Done)
+* [https://issues.jboss.org/browse/THORN-2368[THORN-2368]] Introduce the roles.map property for microprofile-jwt (Done)
+* [https://issues.jboss.org/browse/THORN-2376[THORN-2376]] the fraction plugin should be able to force a version number of an <artifact> in module.xml (Done)
+* [https://issues.jboss.org/browse/THORN-2400[THORN-2400]] Make keycloak-microprofile-jwt fraction recognize the Keycloak adapter configuration in YAML (Done)
+* [https://issues.jboss.org/browse/THORN-2408[THORN-2408]] Introduce Thorntail properties for controlling default JWT groups and headers (Done)
+* [https://issues.jboss.org/browse/THORN-2427[THORN-2427]] Verify that Keycloak tokens can be handled directly with microprofile-jwt (Done)
+* [https://issues.jboss.org/browse/THORN-2433[THORN-2433]] Make setting MpJwt LoginConfig realmName optional if the realm is set in YAML (Done)
+* [https://issues.jboss.org/browse/THORN-2434[THORN-2434]] Inconsistent approach for pointing to the key locations between smallrye-jwt and microprofile-jwt   (Done)
+* [https://issues.jboss.org/browse/THORN-2436[THORN-2436]] Introduce the jwt.enabled property and make LoginConfig optional (Done)
+
+=== Component Upgrade
+* [https://issues.jboss.org/browse/THORN-2252[THORN-2252]] Metrics 2.0 (Done)
+* [https://issues.jboss.org/browse/THORN-2359[THORN-2359]] update to latest micro versions of MicroProfile specifications (Done)
+* [https://issues.jboss.org/browse/THORN-2377[THORN-2377]] upgrade to fraction plugin 95 (Done)
+* [https://issues.jboss.org/browse/THORN-2386[THORN-2386]] Update to smallrye-jwt 1.1.3 (Done)
+* [https://issues.jboss.org/browse/THORN-2402[THORN-2402]] update to latest SmallRye Fault Tolerance with OpenTracing propagation (Done)
+* [https://issues.jboss.org/browse/THORN-2405[THORN-2405]] Upgrade to nosql config-api to 1.6.3 and wildfly-nosql 1.0.2.Final (Done)
+* [https://issues.jboss.org/browse/THORN-2407[THORN-2407]] bump all Config APIs to 1.7 (Done)
+* [https://issues.jboss.org/browse/THORN-2409[THORN-2409]] bump SmallRye Fault Tolerance to 2.0.5 (Done)
+* [https://issues.jboss.org/browse/THORN-2410[THORN-2410]] update Jaeger client to 0.34.0 (Done)
+* [https://issues.jboss.org/browse/THORN-2411[THORN-2411]] RestClient 1.3 (Done)
+* [https://issues.jboss.org/browse/THORN-2412[THORN-2412]] Health Check 2.0 (Done)
+* [https://issues.jboss.org/browse/THORN-2424[THORN-2424]] Update to smallrye-jwt-1.1-2.0.0 (Done)
+* [https://issues.jboss.org/browse/THORN-2426[THORN-2426]] update to latest SmallRye releases of other MP specs (Done)
+* [https://issues.jboss.org/browse/THORN-2439[THORN-2439]] update CRUD examples to PostgreSQL 10 (Done)
+* [https://issues.jboss.org/browse/THORN-2440[THORN-2440]] update to MicroProfile Fault Tolerance 2.0.1 (Done)
+* [https://issues.jboss.org/browse/THORN-2442[THORN-2442]] unify Asm version (Done)
+* [https://issues.jboss.org/browse/THORN-2443[THORN-2443]] update to RESTEasy 3.8.1 (Done)
+* [https://issues.jboss.org/browse/THORN-2444[THORN-2444]] Update to smallrye-jwt-1.1-2.0.1 (Done)
+
+=== Epic
+* [https://issues.jboss.org/browse/THORN-2308[THORN-2308]] SmallRye MP 3.0 Impls (Done)
+
+=== Bug
+* [https://issues.jboss.org/browse/THORN-2310[THORN-2310]] Cannot build thorntail-examples/gradle-examples (Done)
+* [https://issues.jboss.org/browse/THORN-2343[THORN-2343]] thorntail-maven-plugin as of version 2.3.0.Final tries to resolve wrong dependencies and fails (Done)
+* [https://issues.jboss.org/browse/THORN-2360[THORN-2360]] Can't add mysql autodetected driver (Done)
+* [https://issues.jboss.org/browse/THORN-2361[THORN-2361]] CircutiBreaker metrics ft.xx.yy.circuitbreaker.callsFailed.total counts even exceptions not included in failOn (Done)
+* [https://issues.jboss.org/browse/THORN-2364[THORN-2364]] wrong `thorntail.batch` prefix in the Batch fraction docs, should be `thorntail.batch-jberet` (Done)
+* [https://issues.jboss.org/browse/THORN-2366[THORN-2366]] documentation still tells users to define "xa-datasource-name" for datasources (Done)
+* [https://issues.jboss.org/browse/THORN-2367[THORN-2367]] some documentation parts still use the `swarm.*` prefix instead of `thorntail.*` (Done)
+* [https://issues.jboss.org/browse/THORN-2373[THORN-2373]] wrong `thorntail.web-services` prefix in the Web Services fraction docs, should be `thorntail.webservices` (Done)
+* [https://issues.jboss.org/browse/THORN-2375[THORN-2375]] IllegalArgumentException when javaVmArguments from arquilian.xml file contains \n or not all parameters are in the form of -par=value (Done)
+* [https://issues.jboss.org/browse/THORN-2385[THORN-2385]] MP OpenTracing: nested spans aren't reported (Done)
+* [https://issues.jboss.org/browse/THORN-2388[THORN-2388]] MP Open-tracing doesn't work with the MP rest client. (Done)
+* [https://issues.jboss.org/browse/THORN-2390[THORN-2390]] MP JWT JsonWebToken is injected only once in ApplicationScoped endpoints (Done)
+* [https://issues.jboss.org/browse/THORN-2391[THORN-2391]] Unable to build thorntail-examples with different value for version.thorntail (Done)
+* [https://issues.jboss.org/browse/THORN-2393[THORN-2393]] Thorntail-runner version 2.4.0.Final JAX-RS application class not found (Done)
+* [https://issues.jboss.org/browse/THORN-2398[THORN-2398]] wrong DB2 JDBC driver autoconfiguration (Done)
+* [https://issues.jboss.org/browse/THORN-2401[THORN-2401]] wrong fraction names in reference documentation of NoSQL fractions (Done)
+* [https://issues.jboss.org/browse/THORN-2413[THORN-2413]] thorntail.https.port default port is 8443 instead 8483 (Done)
+* [https://issues.jboss.org/browse/THORN-2414[THORN-2414]] Thorntail Topology openshift fraction doesn't work on OpenShift 4.1 (Done)
+* [https://issues.jboss.org/browse/THORN-2417[THORN-2417]] the MP RestClient part of MP OpenTracing TCK isn't executed with Thorntail (Done)
+* [https://issues.jboss.org/browse/THORN-2419[THORN-2419]] Thorntail-maven-plugin: using config useUberJar with value false doesn't work (Done)
+* [https://issues.jboss.org/browse/THORN-2423[THORN-2423]] MP JWT module needs a module dependency on Weld for proxying (Done)
+* [https://issues.jboss.org/browse/THORN-2425[THORN-2425]] Null Pointer Exception is thrown with custom claims (Done)
+* [https://issues.jboss.org/browse/THORN-2432[THORN-2432]] the example "thorntail-examples / security / keycloak /" does not work (Done)
+* [https://issues.jboss.org/browse/THORN-2435[THORN-2435]]  OpenAPI: query parameter "format" value (Done)
+* [https://issues.jboss.org/browse/THORN-2437[THORN-2437]] thorntail-maven-plugin multistart ignores jvmArguments (Done)
+
+=== Task
+* [https://issues.jboss.org/browse/THORN-2328[THORN-2328]] AMQ Booster (Done)
+* [https://issues.jboss.org/browse/THORN-2357[THORN-2357]] update Thorntail community boosters to 2.4.0.Final (Done)
+* [https://issues.jboss.org/browse/THORN-2372[THORN-2372]] move Runner to the unsupported profile (Done)
+* [https://issues.jboss.org/browse/THORN-2389[THORN-2389]] Move CDI producers from microprofile-jwt to smallrye-jwt (Done)
+* [https://issues.jboss.org/browse/THORN-2392[THORN-2392]] Add a test for the istio-tracing example (Done)
+* [https://issues.jboss.org/browse/THORN-2396[THORN-2396]] investigate why some fractions don't have module.conf (Done)
+* [https://issues.jboss.org/browse/THORN-2399[THORN-2399]] move all version-related Maven properties to the root POM (Done)
+* [https://issues.jboss.org/browse/THORN-2403[THORN-2403]] Add MP JWT tests to check the default group and the Cookie header (Done)
+* [https://issues.jboss.org/browse/THORN-2416[THORN-2416]] Remove Undertow MpJwtPrincipalHandler (Done)
+
+== Breaking changes
+* [https://issues.jboss.org/browse/THORN-2252[THORN-2252]] Metrics 2.0
+* [https://issues.jboss.org/browse/THORN-2411[THORN-2411]] RestClient 1.3
+* [https://issues.jboss.org/browse/THORN-2412[THORN-2412]] Health Check 2.0
+* [https://issues.jboss.org/browse/THORN-2419[THORN-2419]] Thorntail-maven-plugin: using config useUberJar with value false doesn't work
 
 == Resources
 
 Per usual, we tend to hang out on `irc.freenode.net` in `#thorntail`.
 
-All bug and feature-tracking is kept in https://issues.jboss.org/browse/THORN[JIRA].
+All bug and feature tracking is kept in https://issues.jboss.org/browse/THORN[JIRA].
 
 Examples are available in https://github.com/thorntail/thorntail-examples/tree/2.5.0.Final
 
@@ -139,27 +216,23 @@ https://docs.thorntail.io/2.5.0.Final/[Documentation] for this release is https:
 
 We appreciate all of our contributors since the last release:
 
-TODO TODO TODO need to update this
-
 === Core
 * Sergey Beryozkin
+* Doychin Bondzhev
+* Filipe Castilho
 * Ken Finnigan
-* Tomas Hofman
-* Erik Mattheis
-* Harsha Ramesh
-* Antoine Sabot-Durand
+* Dylan Koby
+* Scott Marlow
+* Stefan Sitani
 * Michal Szynkiewicz
 * Ladislav Thon
-* Harald Wellmann
-* Eric Wittmann
+* Miroslav Zaťko
 
 === Examples
-* icer33
 * Sergey Beryozkin
-* Ken Finnigan
+* Steven Hawkins
 * Tomas Hofman
-* Scott M Stark
-* Gunnar Morling
 * Sven Ruppert
 * Ladislav Thon
-* Axel Wathne
+* Christoph Tornau
+* Dmitry Trifonov
