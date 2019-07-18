@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thorntail]]></title><description><![CDATA[Thorntail]]></description><link>https://thorntail.io</link><generator>metalsmith-feed</generator><lastBuildDate>Mon, 18 Mar 2019 18:38:54 GMT</lastBuildDate><atom:link href="https://thorntail.io/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 18 Mar 2019 18:38:50 GMT</pubDate><item><title><![CDATA[Announcing Thorntail 2.4.0.Final]]></title><description><![CDATA[<div class="sect1">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thorntail]]></title><description><![CDATA[Thorntail]]></description><link>https://thorntail.io</link><generator>metalsmith-feed</generator><lastBuildDate>Thu, 18 Jul 2019 09:51:36 GMT</lastBuildDate><atom:link href="https://thorntail.io/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 18 Jul 2019 09:51:28 GMT</pubDate><item><title><![CDATA[Announcing Thorntail 2.5.0.Final]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_thorntail_2_5_0_final">Thorntail 2.5.0.Final</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Keep smiling, because we bring you a fresh new Thorntail release right on the World Emoji Day! :-)</p>
+</div>
+<div class="sect2">
+<h3 id="_what_s_new">What’s New?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>MicroProfile 3.0 support</p>
+</li>
+<li>
+<p>MicroProfile JWT improvements</p>
+</li>
+<li>
+<p>New <code>ejb-mdb</code> fraction</p>
+</li>
+</ul>
+</div>]]></description><link>https://thorntail.io/posts/announcing-thorntail-2-5-0-final</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-thorntail-2-5-0-final</guid><dc:creator><![CDATA[The Thorntail Team]]></dc:creator><pubDate>Wed, 17 Jul 2019 05:00:00 GMT</pubDate></item><item><title><![CDATA[Announcing Thorntail 2.4.0.Final]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_thorntail_2_4_0_final">Thorntail 2.4.0.Final</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -411,22 +431,4 @@ or explore it anew with fresh eyes!</p>
 <p>Gradle updates</p>
 </li>
 </ul>
-</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-7-0</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-7-0</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Mon, 10 Jul 2017 05:00:00 GMT</pubDate></item><item><title><![CDATA[Announcing WildFly Swarm 2017.6.1]]></title><description><![CDATA[<div class="sect1">
-<h2 id="_wildfly_swarm_2017_6_1">WildFly Swarm 2017.6.1</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>"Anyone who has never made a mistake has never tried anything new." (Albert Einstein)</p>
-</div>
-<div class="paragraph">
-<p>Albert is right. We tried something new. It broke the dependency management, so we changed it again. For the better.
-This is the short story of why we have 2017.6.1.</p>
-</div>
-<div class="sect2">
-<h3 id="_what_s_new">What’s New?</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>SWARM-1369 caused trouble with project dependencies.</p>
-</li>
-</ul>
-</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-6-1</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-6-1</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Mon, 19 Jun 2017 05:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-7-0</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-7-0</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Mon, 10 Jul 2017 05:00:00 GMT</pubDate></item></channel></rss>

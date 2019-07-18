@@ -1,0 +1,574 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Thorntail Official Website"><link rel="icon" href="/favicon.ico"><link rel="alternate" type="application/rss+xml" title="RSS Feed for thorntail.io" href="/rss.xml"><title>Announcing Thorntail 2.5.0.Final | Thorntail</title><link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/headers/header-default.css"><link rel="stylesheet" href="/assets/css/footers/footer-v1.css"><link rel="stylesheet" href="/assets/plugins/animate.css"><link rel="stylesheet" href="/assets/plugins/line-icons/line-icons.css"><link rel="stylesheet" href="/assets/plugins/parallax-slider/css/parallax-slider.css"><link rel="stylesheet" href="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css"><link rel="stylesheet" href="/assets/css/theme-colors/default.css" id="style_color"><link rel="stylesheet" href="/assets/css/theme-skins/dark.css"><link rel="stylesheet" href="/assets/css/custom.css"><link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800"><link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css"><link rel="stylesheet" href="/css/site.css"></head><body><div class="header"><div class="container"><a href="/" class="logo"><img src="/images/thorntail_icon_rgb_64px.png" class="icon"><span style="font-size:20px;vertical-align:middle;color:#555;margin-left:10px">Thorntail</span></a><div class="topbar"><ul class="loginbar pull-right"><li class="hoverSelector"><a href="http://jboss.org">JBoss.org</a></li><li class="topbar-devider"></li><li class="hoverSelector"><a href="http://redhat.com">Red Hat</a></li><li class="hoverSelector"><img style="margin-left:10px" src="https://img.shields.io/maven-central/v/io.thorntail/bom.svg?maxAge=86400"></li></ul></div><button type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" class="navbar-toggle"><span class="sr-only">Toggle Navigation</span><span class="fa fa-bars"></span></button></div><div id="navbar" aria-expanded="false" class="navbar-collapse mega-menu navbar-responsive-collapse collapse"><div class="container"><ul class="nav navbar-nav"><li><a href="/generator" class="dropdown-toggle">Generator</a></li><li><a href="/archive">Blog</a></li><li><a href="/documentation">Documentation</a></li><li><a href="/community">Community</a></li><li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Resources</a><ul class="dropdown-menu"><li><a href="/downloads">Downloads</a></li><li><a href="/resources">Presentations</a></li></ul></li></ul></div></div></div><div class="wrapper"><div class="breadcrumbs"><div class="container"><div class="pull-left"><h1>Blog</h1></div><div class="ul pull-right breadcrumb"><li class="active"><a href="/archive">Archive</a></li><li><span>Post</span></li></div></div></div><div class="container"><div class="row margin-top-20"><div class="col-md-10"><article id="article"><h1>Announcing Thorntail 2.5.0.Final</h1><div class="post-meta">By The Thorntail Team | Published Yesterday,  Jul 17th</div><div><div class="sect1">
+<h2 id="_thorntail_2_5_0_final">Thorntail 2.5.0.Final</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Keep smiling, because we bring you a fresh new Thorntail release right on the World Emoji Day! :-)</p>
+</div>
+<div class="sect2">
+<h3 id="_what_s_new">What&#8217;s New?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>MicroProfile 3.0 support</p>
+</li>
+<li>
+<p>MicroProfile JWT improvements</p>
+</li>
+<li>
+<p>New <code>ejb-mdb</code> fraction</p>
+</li>
+</ul>
+</div>
+<!-- more -->
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_microprofile_3_0_support">MicroProfile 3.0 support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thorntail now implements MicroProfile 3.0 by including the latest <a href="https://www.smallrye.io/">SmallRye</a> artifacts.
+These specifications have been updated to a new version:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Health Check 2.0</p>
+</li>
+<li>
+<p>Metrics 2.0</p>
+</li>
+<li>
+<p>Rest Client 1.3</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_health_check_2_0">Health Check 2.0</h3>
+<div class="paragraph">
+<p><strong>WARNING: Breaking changes!</strong></p>
+</div>
+<div class="paragraph">
+<p>The MicroProfile Health Check 2.0 specification includes many changes, some of them breaking.
+Most importantly:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>@Liveness</code> and <code>@Readiness</code> annotations were introduced; <code>@Health</code> is now deprecated.</p>
+</li>
+<li>
+<p>The <code>/health/live</code> and <code>/health/ready</code> endpoints were introduced.
+The <code>/health</code> endpoint is now a union of all <code>@Health</code>, <code>@Liveness</code> and <code>@Readiness</code> checks.</p>
+</li>
+<li>
+<p>The <code>outcome</code> and <code>state</code> fields in the JSON response format were renamed to <code>status</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="https://github.com/eclipse/microprofile-health/releases/tag/2.0.1">the specification</a> for details.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_metrics_2_0">Metrics 2.0</h3>
+<div class="paragraph">
+<p><strong>WARNING: Breaking changes!</strong></p>
+</div>
+<div class="paragraph">
+<p>The MicroProfile Metrics 2.0 specification includes many changes, some of them breaking.
+Most importantly:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>@Counted</code> annotation no longer includes the <code>monotonic</code> parameter.
+Previously, the default value of the <code>monotonic</code> parameter was <code>false</code>.
+Now, the <code>@Counter</code> annotation always behaves as if the <code>monotonic</code> parameter was set to <code>true</code>.
+If you want the <code>monotonic = false</code> behavior, you need to use the <code>@ConcurrentGauge</code> annotation.</p>
+</li>
+<li>
+<p>Metrics are no longer identified by their <code>String</code> name, but by a <code>MetricID</code> class.
+The <code>MetricID</code> is a <code>String</code> name and a set of tags.</p>
+</li>
+<li>
+<p>Some of the base metrics (defined by the specification) changed their type from <code>Counter</code> to <code>Gauge</code>.</p>
+</li>
+<li>
+<p>Some of the base metrics and also vendor metrics (provided by Thorntail) were renamed.
+Notably, names of all accumulating counters now end with <code>total</code>.</p>
+</li>
+<li>
+<p>In the OpenMetrics output format (formerly known as Prometheus format), the metric scope and name are no longer separated by <code>:</code>, but by <code>_</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="https://github.com/eclipse/microprofile-metrics/releases/tag/2.0.1">the specification</a> for details.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rest_client_1_3">Rest Client 1.3</h3>
+<div class="paragraph">
+<p><strong>WARNING: Breaking changes!</strong></p>
+</div>
+<div class="paragraph">
+<p>The implementation of MicroProfile Rest Client that Thorntail includes used to come from the SmallRye project.
+This implementation has been <a href="https://developer.jboss.org/en/resteasy/blog/2019/06/19/resteasy-380final-and-microprofile-3">moved to RESTEasy</a>.
+That is actually a breaking change, because all public APIs and SPIs (such as <code>RestClientProxy</code>) that were previously part of the <code>io.smallrye.restclient</code> package are now in the <code>org.jboss.resteasy.microprofile.client</code> package.
+With this package change, logger categories have naturally also changed.</p>
+</div>
+<div class="paragraph">
+<p>One notable change in the MicroProfile Rest Client specification is that if the client interface doesn&#8217;t include the <code>@Produces</code>/<code>@Consumes</code> annotations, <code>application/json</code> is now used as a default.
+If you don&#8217;t use these annotations in the client interfaces, this might be a breaking change for you.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://github.com/eclipse/microprofile-rest-client/releases/tag/1.3.3">the specification</a> for details.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_microprofile_jwt_improvements">MicroProfile JWT improvements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quite a lot of improvements were made in the <code>microprofile-jwt</code> fraction.
+All changes should be backwards compatible, but if you spot a bug, please let us know.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>@LoginConfig</code> annotation is no longer required, if the <code>thorntail.microprofile.jwt.token.realm</code> configuration property is set.
+If you use the annotation anyway, then make sure its <code>realmName</code> property is set to the same value as the <code>thorntail.microprofile.jwt.token.realm</code> configuration property.</p>
+</li>
+<li>
+<p>The <code>thorntail.microprofile.jwt.enable</code> configuration property can be set to <code>false</code> to disable the MicroProfile JWT authentication mechanism.
+Default value of this configuration property is <code>true</code>.</p>
+</li>
+<li>
+<p>The <code>thorntail.microprofile.jwt.token.signer-pub-key-location</code> should be used for specifying the external key assets.
+Previously, you could add a <code>file:</code> or <code>classpath:</code> prefix to the <code>thorntail.microprofile.jwt.token.signer-pub-key</code> configuration property, or use <code>thorntail.microprofile.jwt.token.jwks-uri</code> to refer to an external JWK Set.
+These two possibilities are now deprecated.</p>
+</li>
+<li>
+<p>The <code>thorntail.microprofile.jwt.path.groups</code> configuration property can be used to select an arbitrary claim inside a JWT token to function as the <code>groups</code> claim expected by MicroProfile JWT.
+This is useful if no <code>groups</code> claim is present in the JWT token, but some other claim contains the groups information.
+The custom claim value must be an array of strings, unless it is a standard <code>scope</code> claim.
+Syntax of this option is: <code>path/to/claim</code>.</p>
+</li>
+<li>
+<p>The <code>thorntail.microprofile.jwt.claims.groups</code> configuration property can be used to provide a default value for the <code>groups</code> claim if the JWT token has no groups information at all.</p>
+</li>
+<li>
+<p>The <code>thorntail.microprofile.jwt.token.roles.map</code> configuration property can be used to inline the roles configuration in the YAML configuration.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There&#8217;s also one improvement in the <code>keycloak-microprofile-jwt</code> fraction:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Keycloak adapter configuration from the Thorntail YAML configuration is now recognized.
+You no longer have to include a <code>keycloak.json</code> file to be able to use this fraction.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And finally, some configuration properties that were only available in the old and deprecated <code>thorntail.microprofile.jwtauth</code> namespace are now also available in the <code>thorntail.microprofile.jwt</code> namespace.
+The old namespace is still available, but you are encouraged to migrate to the new one.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_new_code_ejb_mdb_code_fraction">New <code>ejb-mdb</code> fraction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>New fraction <code>ejb-mdb</code> was added that supports deploying Message-Driven Beans, but not all of messaging.
+With this fraction, you can&#8217;t create a messaging server, but you can connect to an existing external messaging server, if you provide the correct resource adapter.</p>
+</div>
+<div class="paragraph">
+<p>Due to how WildFly works internally, this fraction actually brings in the entire <code>messaging-activemq</code> subsystem.
+Therefore, this <code>ejb-mdb</code> fraction is mutually exclusive with the <code>messaging</code> fraction.
+You can only use one of them, not both.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other">Other</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>WARNING: Breaking changes!</strong></p>
+</div>
+<div class="paragraph">
+<p>If you used the <code>wildfly-swarm.useUberJar</code> system property to make sure the Thorntail Maven plugin runs in an uberjar mode, as opposed to classpath mode, you now have to migrate to the <code>thorntail.useUberJar</code> system property.
+The old <code>wildfly-swarm.useUberJar</code> system property is no longer recognized.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_changelog">Changelog</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Release notes for 2.5.0.Final are available <a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12317020&amp;version=12341370">here</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_enhancement">Enhancement</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-1616">THORN-1616</a>] Split the 'messaging' fragment into two parts: client and server (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2358">THORN-2358</a>] add microprofile.jwt aliases to configurables that only use microprofile.jwtauth (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2368">THORN-2368</a>] Introduce the roles.map property for microprofile-jwt (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2376">THORN-2376</a>] the fraction plugin should be able to force a version number of an &lt;artifact&gt; in module.xml (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2400">THORN-2400</a>] Make keycloak-microprofile-jwt fraction recognize the Keycloak adapter configuration in YAML (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2408">THORN-2408</a>] Introduce Thorntail properties for controlling default JWT groups and headers (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2427">THORN-2427</a>] Verify that Keycloak tokens can be handled directly with microprofile-jwt (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2433">THORN-2433</a>] Make setting MpJwt LoginConfig realmName optional if the realm is set in YAML (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2434">THORN-2434</a>] Inconsistent approach for pointing to the key locations between smallrye-jwt and microprofile-jwt   (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2436">THORN-2436</a>] Introduce the jwt.enabled property and make LoginConfig optional (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_component_upgrade">Component Upgrade</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2252">THORN-2252</a>] Metrics 2.0 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2359">THORN-2359</a>] update to latest micro versions of MicroProfile specifications (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2377">THORN-2377</a>] upgrade to fraction plugin 95 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2386">THORN-2386</a>] Update to smallrye-jwt 1.1.3 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2402">THORN-2402</a>] update to latest SmallRye Fault Tolerance with OpenTracing propagation (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2405">THORN-2405</a>] Upgrade to nosql config-api to 1.6.3 and wildfly-nosql 1.0.2.Final (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2407">THORN-2407</a>] bump all Config APIs to 1.7 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2409">THORN-2409</a>] bump SmallRye Fault Tolerance to 2.0.5 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2410">THORN-2410</a>] update Jaeger client to 0.34.0 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2411">THORN-2411</a>] RestClient 1.3 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2412">THORN-2412</a>] Health Check 2.0 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2424">THORN-2424</a>] Update to smallrye-jwt-1.1-2.0.0 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2426">THORN-2426</a>] update to latest SmallRye releases of other MP specs (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2439">THORN-2439</a>] update CRUD examples to PostgreSQL 10 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2440">THORN-2440</a>] update to MicroProfile Fault Tolerance 2.0.1 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2442">THORN-2442</a>] unify Asm version (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2443">THORN-2443</a>] update to RESTEasy 3.8.1 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2444">THORN-2444</a>] Update to smallrye-jwt-1.1-2.0.1 (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_epic">Epic</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2308">THORN-2308</a>] SmallRye MP 3.0 Impls (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bug">Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2310">THORN-2310</a>] Cannot build thorntail-examples/gradle-examples (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2343">THORN-2343</a>] thorntail-maven-plugin as of version 2.3.0.Final tries to resolve wrong dependencies and fails (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2360">THORN-2360</a>] Can&#8217;t add mysql autodetected driver (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2361">THORN-2361</a>] CircutiBreaker metrics ft.xx.yy.circuitbreaker.callsFailed.total counts even exceptions not included in failOn (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2364">THORN-2364</a>] wrong <code>thorntail.batch</code> prefix in the Batch fraction docs, should be <code>thorntail.batch-jberet</code> (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2366">THORN-2366</a>] documentation still tells users to define "xa-datasource-name" for datasources (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2367">THORN-2367</a>] some documentation parts still use the <code>swarm.<strong></code> prefix instead of <code>thorntail.</strong></code> (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2373">THORN-2373</a>] wrong <code>thorntail.web-services</code> prefix in the Web Services fraction docs, should be <code>thorntail.webservices</code> (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2375">THORN-2375</a>] IllegalArgumentException when javaVmArguments from arquilian.xml file contains \n or not all parameters are in the form of -par=value (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2385">THORN-2385</a>] MP OpenTracing: nested spans aren&#8217;t reported (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2388">THORN-2388</a>] MP Open-tracing doesn&#8217;t work with the MP rest client. (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2390">THORN-2390</a>] MP JWT JsonWebToken is injected only once in ApplicationScoped endpoints (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2391">THORN-2391</a>] Unable to build thorntail-examples with different value for version.thorntail (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2393">THORN-2393</a>] Thorntail-runner version 2.4.0.Final JAX-RS application class not found (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2398">THORN-2398</a>] wrong DB2 JDBC driver autoconfiguration (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2401">THORN-2401</a>] wrong fraction names in reference documentation of NoSQL fractions (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2413">THORN-2413</a>] thorntail.https.port default port is 8443 instead 8483 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2414">THORN-2414</a>] Thorntail Topology openshift fraction doesn&#8217;t work on OpenShift 4.1 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2417">THORN-2417</a>] the MP RestClient part of MP OpenTracing TCK isn&#8217;t executed with Thorntail (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2419">THORN-2419</a>] Thorntail-maven-plugin: using config useUberJar with value false doesn&#8217;t work (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2423">THORN-2423</a>] MP JWT module needs a module dependency on Weld for proxying (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2425">THORN-2425</a>] Null Pointer Exception is thrown with custom claims (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2432">THORN-2432</a>] the example "thorntail-examples / security / keycloak /" does not work (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2435">THORN-2435</a>]  OpenAPI: query parameter "format" value (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2437">THORN-2437</a>] thorntail-maven-plugin multistart ignores jvmArguments (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_task">Task</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2328">THORN-2328</a>] AMQ Booster (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2357">THORN-2357</a>] update Thorntail community boosters to 2.4.0.Final (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2372">THORN-2372</a>] move Runner to the unsupported profile (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2389">THORN-2389</a>] Move CDI producers from microprofile-jwt to smallrye-jwt (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2392">THORN-2392</a>] Add a test for the istio-tracing example (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2396">THORN-2396</a>] investigate why some fractions don&#8217;t have module.conf (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2399">THORN-2399</a>] move all version-related Maven properties to the root POM (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2403">THORN-2403</a>] Add MP JWT tests to check the default group and the Cookie header (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2416">THORN-2416</a>] Remove Undertow MpJwtPrincipalHandler (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_breaking_changes">Breaking changes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2252">THORN-2252</a>] Metrics 2.0</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2411">THORN-2411</a>] RestClient 1.3</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2412">THORN-2412</a>] Health Check 2.0</p>
+</li>
+<li>
+<p>[<a href="https://issues.jboss.org/browse/THORN-2419">THORN-2419</a>] Thorntail-maven-plugin: using config useUberJar with value false doesn&#8217;t work</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resources">Resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Per usual, we tend to hang out on <code>irc.freenode.net</code> in <code>#thorntail</code>.</p>
+</div>
+<div class="paragraph">
+<p>All bug and feature tracking is kept in <a href="https://issues.jboss.org/browse/THORN">JIRA</a>.</p>
+</div>
+<div class="paragraph">
+<p>Examples are available in <a href="https://github.com/thorntail/thorntail-examples/tree/2.5.0.Final" class="bare">https://github.com/thorntail/thorntail-examples/tree/2.5.0.Final</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.thorntail.io/2.5.0.Final/">Documentation</a> for this release is <a href="https://docs.thorntail.io/2.5.0.Final/">also available</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_thank_you_contributors">Thank you, Contributors!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We appreciate all of our contributors since the last release:</p>
+</div>
+<div class="sect2">
+<h3 id="_core">Core</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Sergey Beryozkin</p>
+</li>
+<li>
+<p>Doychin Bondzhev</p>
+</li>
+<li>
+<p>Filipe Castilho</p>
+</li>
+<li>
+<p>Ken Finnigan</p>
+</li>
+<li>
+<p>Dylan Koby</p>
+</li>
+<li>
+<p>Scott Marlow</p>
+</li>
+<li>
+<p>Stefan Sitani</p>
+</li>
+<li>
+<p>Michal Szynkiewicz</p>
+</li>
+<li>
+<p>Ladislav Thon</p>
+</li>
+<li>
+<p>Miroslav Zaťko</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_examples">Examples</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Sergey Beryozkin</p>
+</li>
+<li>
+<p>Steven Hawkins</p>
+</li>
+<li>
+<p>Tomas Hofman</p>
+</li>
+<li>
+<p>Sven Ruppert</p>
+</li>
+<li>
+<p>Ladislav Thon</p>
+</li>
+<li>
+<p>Christoph Tornau</p>
+</li>
+<li>
+<p>Dmitry Trifonov</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></article></div></div></div></div><div class="footer-v1"><div class="footer"><div class="container"><div class="row"><div class="col-sm-6 md-margin-bottom-40"><p class="text-center"><Copyright>2016 - 2018 <a href="http://redhat.com">Red Hat, Inc.</a> | Thorntail is Open Source Software</Copyright></p></div></div></div></div></div><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-83419890-2', 'auto');
+ga('send', 'pageview');
+
+ga('create', 'UA-6435340-8', 'auto');
+ga('send', 'pageview');
+</script><script type="text/javascript" src="/assets/js/highlight.pack.js"></script><script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script><script type="text/javascript" src="/assets/plugins/jquery/jquery-migrate.min.js"></script><script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="/assets/plugins/back-to-top.js"></script><script type="text/javascript" src="/assets/plugins/smoothScroll.js"></script><script type="text/javascript" src="/assets/plugins/parallax-slider/js/modernizr.js"></script><script type="text/javascript" src="/assets/plugins/parallax-slider/js/jquery.cslider.js"></script><script type="text/javascript" src="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script><script type="text/javascript" src="/assets/js/custom.js"></script><script type="text/javascript" src="/assets/js/app.js"></script><script type="text/javascript" src="/assets/js/plugins/owl-carousel.js"></script><script type="text/javascript" src="/assets/js/plugins/style-switcher.js"></script><script type="text/javascript" src="/assets/js/plugins/parallax-slider.js"></script><script>(function() {
+
+  jQuery(document).ready(function() {
+    App.init();
+    OwlCarousel.initOwlCarousel();
+    StyleSwitcher.initStyleSwitcher();
+    ParallaxSlider.initParallaxSlider();
+
+    hljs.initHighlightingOnLoad();
+  });
+
+})();
+</script></body></html>
