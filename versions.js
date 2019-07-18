@@ -5,6 +5,7 @@
 //
 
 var VERSIONS = [
+  '2.5.0.Final',
   '2.4.0.Final',
   '2.3.0.Final',
   '2.2.1.Final',
