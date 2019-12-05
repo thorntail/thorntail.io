@@ -1,0 +1,170 @@
+---
+title: Announcing Thorntail 2.6.0.Final
+publishDate: 2019-12-05
+modifyDate: 2019-12-05
+author: The Thorntail Team
+layout: post.jade
+---
+
+== Thorntail 2.6.0.Final
+
+A little early for the end-of-year festivities, but we still present you the best present we can: a new Thorntail release!
+
+=== What's New?
+
+* MicroProfile 3.2 support
+* WildFly 18 rebase
+* Keycloak 8 rebase
+
+++++
+<!-- more -->
+++++
+
+== MicroProfile 3.2 support
+
+Thorntail now implements MicroProfile 3.2 by including the latest https://www.smallrye.io/[SmallRye] artifacts.
+These specifications have been updated to a new version:
+
+* Health Check 2.1
+* Metrics 2.2.1
+
+Smaller updates have also been done to implementations of other MicroProfile specifications.
+
+== WildFly 18 rebase
+
+Thorntail has been based on WildFly 15.0.1.Final since version 2.3.0.Final.
+With 2.6.0.Final, Thorntail is now based on WildFly 18.0.1.Final, bringing along a lot of improvements and bugfixes.
+
+This means that we switched from the Java EE 8 spec artifacts to Jakarta EE 8 spec artifacts.
+For most of the Jakarta EE specifications, we still use the JBoss spec artifacts, just like WildFly.
+These JBoss spec artifacts have been aligned with Jakarta EE as well.
+Jakarta EE 8 spec artifacts are binary compatible with Java EE 8 spec artifacts, so no change to applications should be necessary.
+
+The Red Hat Maven repository (https://maven.repository.redhat.com/) has been added to the set of default Maven repositories Thorntail uses to download artifacts.
+This is because WildFly now uses some artifact from that repository; see https://lists.jboss.org/pipermail/wildfly-dev/2019-August/006949.html for more.
+
+== Keycloak 8 rebase
+
+Thorntail has been using Keycloak 4.8.3.Final since version 2.4.0.Final.
+With 2.6.0.Final, Thorntail now uses Keycloak 8.0.1, which is also based on WildFly 18.0.1.Final.
+
+== Other notable changes
+
+One new fraction is present in this release: `hibernate`.
+This fraction is basically an equivalent of the `jpa` fraction, but it also transitively brings in the correct versions of Hibernate artifacts.
+If you need to use Hibernate-specific APIs, using this fraction is preferrable to managing Hibernate versions manually.
+
+We have contributed to the http://dekorate.io/[Dekorate] and http://halkyon.io/[Halkyon] projects so that they support Thorntail better.
+If you use Kubernetes or OpenShift, be sure to check them out!
+
+The `swagger` fraction now also generates `swagger.yaml`, in addition to `swagger.json`.
+Note that the `swagger` fraction is quite out of date; MicroProfile OpenAPI is most likely a better choice.
+
+The `scanner` fraction can now be configured in `project-defaults.yml`.
+Previously, you had to resort to `standalone.xml` if you wanted to use the `scanner` fraction.
+Note that we specifically _don't_ recommend using `scanner`, because it only exposes the underlying WildFly subsystem and isn't aware of anything that Thorntail does to the deployment.
+
+== Changelog
+Release notes for 2.6.0.Final are available https://issues.redhat.com/secure/ReleaseNote.jspa?projectId=12317020&version=12342530[here].
+
+=== Enhancement
+* [https://issues.redhat.com/browse/THORN-1975[THORN-1975]] remove generator inclusion/exclusion from Fabric8 Maven plugin config in boosters (Done)
+* [https://issues.redhat.com/browse/THORN-2447[THORN-2447]] generate config API for the scanner fraction (Done)
+* [https://issues.redhat.com/browse/THORN-2473[THORN-2473]] Equal signs (=) are not supported in system property values (Done)
+* [https://issues.redhat.com/browse/THORN-2488[THORN-2488]] MicroProfile 3.2 tests (Done)
+
+=== Feature Request
+* [https://issues.redhat.com/browse/THORN-2026[THORN-2026]] Swagger fraction should create swagger.yaml file (Done)
+* [https://issues.redhat.com/browse/THORN-2346[THORN-2346]] Possibility to skip token signature verification in MP-JWT (Won't Fix)
+* [https://issues.redhat.com/browse/THORN-2493[THORN-2493]] create "hibernate" fraction (Done)
+
+=== Task
+* [https://issues.redhat.com/browse/THORN-2224[THORN-2224]] [Runner] reaching out to repository.jboss.org fails behind proxy (Done)
+* [https://issues.redhat.com/browse/THORN-2415[THORN-2415]] investigate the Halkyon operator (Done)
+* [https://issues.redhat.com/browse/THORN-2452[THORN-2452]] remove outdated parts of default logging.properties (Done)
+* [https://issues.redhat.com/browse/THORN-2453[THORN-2453]] version properties in pom.xml related to MicroProfile and SmallRye should be lexicographically ordered (Done)
+* [https://issues.redhat.com/browse/THORN-2455[THORN-2455]] investigate the Dekorate integration (Done)
+* [https://issues.redhat.com/browse/THORN-2457[THORN-2457]] update Guava and remove Netflix Guava module (Done)
+* [https://issues.redhat.com/browse/THORN-2458[THORN-2458]] align Apache HTTP Client versions with WildFly (Done)
+* [https://issues.redhat.com/browse/THORN-2470[THORN-2470]] update the AMQ booster to use the ejb-mdb fraction (Done)
+* [https://issues.redhat.com/browse/THORN-2472[THORN-2472]] Update Examples to support OpenShift 4 (Done)
+* [https://issues.redhat.com/browse/THORN-2475[THORN-2475]] update WildFly Config API to WildFly 18 (Done)
+* [https://issues.redhat.com/browse/THORN-2477[THORN-2477]] update default configuration of fractions to match WildFly 18 (Done)
+* [https://issues.redhat.com/browse/THORN-2478[THORN-2478]] bump all other Config APIs to use the new WildFly Config API based on WildFly 18 (Done)
+* [https://issues.redhat.com/browse/THORN-2480[THORN-2480]] investigate whether there are new subsystems in WildFly 18 for which we'd need new fractions (Done)
+* [https://issues.redhat.com/browse/THORN-2481[THORN-2481]] remove usages of deprecated APIs after migration to WildFly 18 (Done)
+* [https://issues.redhat.com/browse/THORN-2482[THORN-2482]] make sure the standalone test suite passes and there are no unexpected errors and warnings (Done)
+* [https://issues.redhat.com/browse/THORN-2483[THORN-2483]] investigate whether microprofile-config-wildfly needs any updates (Done)
+* [https://issues.redhat.com/browse/THORN-2496[THORN-2496]] modernize the Thorntail generator (Done)
+* [https://issues.redhat.com/browse/THORN-2500[THORN-2500]] improve wording around custom main deprecation (Done)
+* [https://issues.redhat.com/browse/THORN-2503[THORN-2503]] update the test for the Thorntail Maven plugin (Done)
+* [https://issues.redhat.com/browse/THORN-2504[THORN-2504]]  Clean up MP JWT CDI code  (Done)
+* [https://issues.redhat.com/browse/THORN-2505[THORN-2505]] Update to smallrye-jwt 2.0.10 (Done)
+* [https://issues.redhat.com/browse/THORN-2511[THORN-2511]] make sure the in-project test suite passes (Done)
+* [https://issues.redhat.com/browse/THORN-2515[THORN-2515]] review "TODO WF18" comments (Done)
+* [https://issues.redhat.com/browse/THORN-2516[THORN-2516]] add Red Hat Maven repository to the set of default repositories (Done)
+
+=== Bug
+* [https://issues.redhat.com/browse/THORN-2303[THORN-2303]] Request with JWT Token without groups claim throws ResteasyViolationException (Cannot Reproduce)
+* [https://issues.redhat.com/browse/THORN-2323[THORN-2323]] After upgrade from 2018.5.0 Security Context is not working anymore (Cannot Reproduce)
+* [https://issues.redhat.com/browse/THORN-2354[THORN-2354]] wrong license headers in some files in the main codebase (Done)
+* [https://issues.redhat.com/browse/THORN-2445[THORN-2445]] old groupId org.wildfly.swarm.cli (Done)
+* [https://issues.redhat.com/browse/THORN-2448[THORN-2448]] the circuit breaker example uses MP RestClient wrongly (Done)
+* [https://issues.redhat.com/browse/THORN-2459[THORN-2459]] multiple SmallRye Config versions in uberjar, old one used at runtime (Done)
+* [https://issues.redhat.com/browse/THORN-2466[THORN-2466]] Resteasy does not use Jackson ObjectMapper from JacksonJsonProvider  (Done)
+* [https://issues.redhat.com/browse/THORN-2492[THORN-2492]] Maven plugin ignores exclusions when creating wildfly-swarm-manifest.yaml (Done)
+* [https://issues.redhat.com/browse/THORN-2495[THORN-2495]] tests in cache booster fail if the JDG image needs to be downloaded first (Done)
+* [https://issues.redhat.com/browse/THORN-2498[THORN-2498]] Cannot import jboss-annotations-api_1.3_spec (Done)
+* [https://issues.redhat.com/browse/THORN-2507[THORN-2507]] Runner doesn't work with Keycloak (Done)
+* [https://issues.redhat.com/browse/THORN-2508[THORN-2508]] jaxrs-jsonb fraction doesn't bring in jaxrs-jsonp (Done)
+* [https://issues.redhat.com/browse/THORN-2512[THORN-2512]] the "web" fraction (and standalone server) doesn't include JSON-B (Done)
+* [https://issues.redhat.com/browse/THORN-2513[THORN-2513]] testsuite-ejb-remote fails after update to WildFly 18 (Done)
+
+=== Component Upgrade
+* [https://issues.redhat.com/browse/THORN-2446[THORN-2446]] bump all Config APIs to 1.8 (Done)
+* [https://issues.redhat.com/browse/THORN-2449[THORN-2449]] some OpenTracing libraries need to be updated (Done)
+* [https://issues.redhat.com/browse/THORN-2450[THORN-2450]] update jose4j to 0.6.5 (Done)
+* [https://issues.redhat.com/browse/THORN-2464[THORN-2464]] update to latest SmallRye releases (except Config, which should be downgraded to 1.3.6) (Done)
+* [https://issues.redhat.com/browse/THORN-2467[THORN-2467]] Update to smallrye-jwt 2.0.3 (Done)
+* [https://issues.redhat.com/browse/THORN-2468[THORN-2468]] update to SmallRye Fault Tolerance 2.0.12 (Done)
+* [https://issues.redhat.com/browse/THORN-2469[THORN-2469]] update to RESTEasy 3.9.0.Final (Done)
+* [https://issues.redhat.com/browse/THORN-2476[THORN-2476]] bump WildFly and related dependencies from 15.0.1.Final to 18.0.1.Final (Done)
+* [https://issues.redhat.com/browse/THORN-2479[THORN-2479]] update JBoss Modules and also our overrides (Done)
+* [https://issues.redhat.com/browse/THORN-2489[THORN-2489]] Health Check 2.1 (Done)
+* [https://issues.redhat.com/browse/THORN-2490[THORN-2490]] Metrics 2.2.1 (Done)
+* [https://issues.redhat.com/browse/THORN-2491[THORN-2491]] update to MicroProfile Fault Tolerance 2.0.2 and corresponding SmallRye Fault Tolerance (Done)
+* [https://issues.redhat.com/browse/THORN-2497[THORN-2497]] Update jsf-impl in JSF fraction (Done)
+* [https://issues.redhat.com/browse/THORN-2506[THORN-2506]] move from Java EE spec artifacts to Jakarta artifacts (Done)
+* [https://issues.redhat.com/browse/THORN-2510[THORN-2510]] update Jandex and Jackson in the fraction plugin (Done)
+* [https://issues.redhat.com/browse/THORN-2514[THORN-2514]] update to Keycloak 8 (Done)
+* [https://issues.redhat.com/browse/THORN-2518[THORN-2518]] update to MicroProfile RestClient 1.3.4 (Done)
+* [https://issues.redhat.com/browse/THORN-2519[THORN-2519]] update to SmallRye OpenAPI 1.1.20 (Done)
+* [https://issues.redhat.com/browse/THORN-2520[THORN-2520]] update to Keycloak 8.0.1 (Done)
+
+=== Documentation
+* [https://issues.redhat.com/browse/THORN-2460[THORN-2460]] thorntail.classpath system property can be used also for uberjars (Done)
+* [https://issues.redhat.com/browse/THORN-2494[THORN-2494]] Provide minimal documentation for io.thorntail:cli fraction (Done)
+
+=== Epic
+* [https://issues.redhat.com/browse/THORN-2474[THORN-2474]] Update to WildFly 18 (Done)
+* [https://issues.redhat.com/browse/THORN-2487[THORN-2487]] SmallRye MP 3.2 Impls (Done)
+
+== Thank you, Contributors!
+
+We appreciate all of our contributors since the last release:
+
+=== Core
+* Sergey Beryozkin
+* George Gastaldi
+* Markus Heberling
+* Marián Macik
+* Scott Marlow
+* Sam Olsen
+* Thomas Petit
+* Harsha Ramesh
+* Michal Szynkiewicz
+* Ladislav Thon
+
+=== Examples
+* Harsha Ramesh
+* Ladislav Thon
