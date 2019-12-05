@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thorntail]]></title><description><![CDATA[Thorntail]]></description><link>https://thorntail.io</link><generator>metalsmith-feed</generator><lastBuildDate>Thu, 18 Jul 2019 09:51:36 GMT</lastBuildDate><atom:link href="https://thorntail.io/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 18 Jul 2019 09:51:28 GMT</pubDate><item><title><![CDATA[Announcing Thorntail 2.5.0.Final]]></title><description><![CDATA[<div class="sect1">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thorntail]]></title><description><![CDATA[Thorntail]]></description><link>https://thorntail.io</link><generator>metalsmith-feed</generator><lastBuildDate>Thu, 05 Dec 2019 14:42:41 GMT</lastBuildDate><atom:link href="https://thorntail.io/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 05 Dec 2019 14:42:36 GMT</pubDate><item><title><![CDATA[Announcing Thorntail 2.6.0.Final]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_thorntail_2_6_0_final">Thorntail 2.6.0.Final</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A little early for the end-of-year festivities, but we still present you the best present we can: a new Thorntail release!</p>
+</div>
+<div class="sect2">
+<h3 id="_what_s_new">What’s New?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>MicroProfile 3.2 support</p>
+</li>
+<li>
+<p>WildFly 18 rebase</p>
+</li>
+<li>
+<p>Keycloak 8 rebase</p>
+</li>
+</ul>
+</div>]]></description><link>https://thorntail.io/posts/announcing-thorntail-2-6-0-final</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-thorntail-2-6-0-final</guid><dc:creator><![CDATA[The Thorntail Team]]></dc:creator><pubDate>Thu, 05 Dec 2019 05:00:00 GMT</pubDate></item><item><title><![CDATA[Announcing Thorntail 2.5.0.Final]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_thorntail_2_5_0_final">Thorntail 2.5.0.Final</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -404,31 +424,4 @@ Swarm.</p>
 <p>Bug fixes</p>
 </li>
 </ul>
-</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-8-1</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-8-1</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Thu, 03 Aug 2017 05:00:00 GMT</pubDate></item><item><title><![CDATA[Announcing WildFly Swarm 2017.7.0]]></title><description><![CDATA[<div class="sect1">
-<h2 id="_wildfly_swarm_2017_7_0">WildFly Swarm 2017.7.0</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In 1405 Chinese fleet commander Zheng He set sail to explore the world for the first time!</p>
-</div>
-<div class="paragraph">
-<p>2017.7.0 is your chance to explore WildFly Swarm for the first time,
-or explore it anew with fresh eyes!</p>
-</div>
-<div class="sect2">
-<h3 id="_what_s_new">What’s New?</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>YAML, YAML, and more YAML!</p>
-</li>
-<li>
-<p>Temp File location</p>
-</li>
-<li>
-<p>Component upgrades</p>
-</li>
-<li>
-<p>Gradle updates</p>
-</li>
-</ul>
-</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-7-0</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-7-0</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Mon, 10 Jul 2017 05:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-8-1</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-8-1</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Thu, 03 Aug 2017 05:00:00 GMT</pubDate></item></channel></rss>
