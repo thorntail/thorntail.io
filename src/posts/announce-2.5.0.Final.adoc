@@ -82,8 +82,8 @@ See https://github.com/eclipse/microprofile-rest-client/releases/tag/1.3.3[the s
 Quite a lot of improvements were made in the `microprofile-jwt` fraction.
 All changes should be backwards compatible, but if you spot a bug, please let us know.
 
-- The `@LoginConfig` annotation is no longer required, if the `thorntail.microprofile.jwt.token.realm` configuration property is set.
-  If you use the annotation anyway, then make sure its `realmName` property is set to the same value as the `thorntail.microprofile.jwt.token.realm` configuration property.
+- The `@LoginConfig` annotation is no longer required, if the `thorntail.microprofile.jwt.realm` configuration property is set.
+  If you use the annotation anyway, then make sure its `realmName` property is set to the same value as the `thorntail.microprofile.jwt.realm` configuration property.
 - The `thorntail.microprofile.jwt.enable` configuration property can be set to `false` to disable the MicroProfile JWT authentication mechanism.
   Default value of this configuration property is `true`.
 - The `thorntail.microprofile.jwt.token.signer-pub-key-location` should be used for specifying the external key assets.
