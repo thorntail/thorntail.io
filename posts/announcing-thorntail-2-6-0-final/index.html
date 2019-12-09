@@ -13,6 +13,13 @@
 </li>
 <li>
 <p>WildFly 18 rebase</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat Maven repository requirement</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Keycloak 8 rebase</p>
@@ -58,9 +65,18 @@ For most of the Jakarta EE specifications, we still use the JBoss spec artifacts
 These JBoss spec artifacts have been aligned with Jakarta EE as well.
 Jakarta EE 8 spec artifacts are binary compatible with Java EE 8 spec artifacts, so no change to applications should be necessary.</p>
 </div>
+<div class="sect2">
+<h3 id="_red_hat_maven_repository_requirement">Red Hat Maven repository requirement</h3>
 <div class="paragraph">
-<p>The Red Hat Maven repository (<a href="https://maven.repository.redhat.com/" class="bare">https://maven.repository.redhat.com/</a>) has been added to the set of default Maven repositories Thorntail uses to download artifacts.
-This is because WildFly now uses some artifact from that repository; see <a href="https://lists.jboss.org/pipermail/wildfly-dev/2019-August/006949.html" class="bare">https://lists.jboss.org/pipermail/wildfly-dev/2019-August/006949.html</a> for more.</p>
+<p><strong>WARNING: Breaking changes!</strong></p>
+</div>
+<div class="paragraph">
+<p>The <a href="https://maven.repository.redhat.com/">Red Hat Maven repository</a> has been added to the set of default Maven repositories Thorntail uses to download artifacts.
+This is because WildFly now uses some artifacts from that repository; see <a href="https://lists.jboss.org/pipermail/wildfly-dev/2019-August/006949.html" class="bare">https://lists.jboss.org/pipermail/wildfly-dev/2019-August/006949.html</a> for more details.</p>
+</div>
+<div class="paragraph">
+<p>If you use a Maven repository proxy, such as Nexus, don&#8217;t forget to add <a href="https://maven.repository.redhat.com/ga/" class="bare">https://maven.repository.redhat.com/ga/</a> to the list of proxied repositories.</p>
+</div>
 </div>
 </div>
 </div>
@@ -354,6 +370,18 @@ Note that we specifically <em>don&#8217;t</em> recommend using <code>scanner</co
 </li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_breaking_changes">Breaking changes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2516">THORN-2516</a>] add Red Hat Maven repository to the set of default repositories</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
