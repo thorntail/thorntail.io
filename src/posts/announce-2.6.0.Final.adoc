@@ -14,6 +14,7 @@ A little early for the end-of-year festivities, but we still present you the bes
 
 * MicroProfile 3.2 support
 * WildFly 18 rebase
+** Red Hat Maven repository requirement
 * Keycloak 8 rebase
 
 ++++
@@ -40,8 +41,14 @@ For most of the Jakarta EE specifications, we still use the JBoss spec artifacts
 These JBoss spec artifacts have been aligned with Jakarta EE as well.
 Jakarta EE 8 spec artifacts are binary compatible with Java EE 8 spec artifacts, so no change to applications should be necessary.
 
-The Red Hat Maven repository (https://maven.repository.redhat.com/) has been added to the set of default Maven repositories Thorntail uses to download artifacts.
-This is because WildFly now uses some artifact from that repository; see https://lists.jboss.org/pipermail/wildfly-dev/2019-August/006949.html for more.
+=== Red Hat Maven repository requirement
+
+*WARNING: Breaking changes!*
+
+The https://maven.repository.redhat.com/[Red Hat Maven repository] has been added to the set of default Maven repositories Thorntail uses to download artifacts.
+This is because WildFly now uses some artifacts from that repository; see https://lists.jboss.org/pipermail/wildfly-dev/2019-August/006949.html for more details.
+
+If you use a Maven repository proxy, such as Nexus, don't forget to add https://maven.repository.redhat.com/ga/ to the list of proxied repositories. 
 
 == Keycloak 8 rebase
 
@@ -148,6 +155,9 @@ Release notes for 2.6.0.Final are available https://issues.redhat.com/secure/Rel
 === Epic
 * [https://issues.redhat.com/browse/THORN-2474[THORN-2474]] Update to WildFly 18 (Done)
 * [https://issues.redhat.com/browse/THORN-2487[THORN-2487]] SmallRye MP 3.2 Impls (Done)
+
+== Breaking changes
+* [https://issues.redhat.com/browse/THORN-2516[THORN-2516]] add Red Hat Maven repository to the set of default repositories
 
 == Thank you, Contributors!
 
