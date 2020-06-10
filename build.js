@@ -152,8 +152,9 @@ function build() {
       '/docs/2-4-0-Final': 'http://docs.thorntail.io/2.4.0.Final',
       '/docs/2-5-0-Final': 'http://docs.thorntail.io/2.5.0.Final',
       '/docs/2-6-0-Final': 'http://docs.thorntail.io/2.6.0.Final',
+      '/docs/2-7-0-Final': 'http://docs.thorntail.io/2.7.0.Final',
       '/docs/4-x': 'http://docs.thorntail.io/4.0.0-SNAPSHOT',
-      '/docs/HEAD': 'http://docs.thorntail.io/2.6.1.Final-SNAPSHOT',
+      '/docs/HEAD': 'http://docs.thorntail.io/2.7.1.Final-SNAPSHOT',
 }))
 
 

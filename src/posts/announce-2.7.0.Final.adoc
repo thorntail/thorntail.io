@@ -1,0 +1,179 @@
+---
+title: Announcing Thorntail 2.7.0.Final
+publishDate: 2020-06-10
+modifyDate: 2020-06-10
+author: The Thorntail Team
+layout: post.jade
+---
+
+== Thorntail 2.7.0.Final
+
+On this day in 2003, the Spirit rover launched from Cape Canaveral, heading over to Mars.
+To celebrate that memorable event, we bring you ... wait for it ... a new Thorntail release!
+
+=== What's New?
+
+* MicroProfile 3.3 support
+** Completely new Fault Tolerance implementation
+** Different treatment of empty values in Config
+* Keycloak 9 rebase
+* Component updates
+
+++++
+<!-- more -->
+++++
+
+== MicroProfile 3.3 support
+
+Thorntail now implements MicroProfile 3.3 by including the latest https://www.smallrye.io/[SmallRye] artifacts.
+These specifications have been updated to a new version:
+
+* Config 1.4
+* Fault Tolerance 2.1
+* Health 2.2
+* Metrics 2.3
+* RestClient 1.4
+
+Smaller updates have also been done to implementations of other MicroProfile specifications.
+
+=== Completely new Fault Tolerance implementation
+
+*WARNING: Breaking changes!*
+
+We updated from SmallRye Fault Tolerance 2.x to latest version 4.3.0.
+This is a complete reimplementation of the MicroProfile Fault Tolerance specification, which is no longer based on Hystrix.
+An important consequence is that the Hystrix configuration is no longer necessary, and it is ignored.
+
+You can learn more about SmallRye Fault Tolerance 4.x on the SmallRye blog:
+
+* https://smallrye.io/blog/fault-tolerance-4-0/[4.0 announcement]
+* https://smallrye.io/blog/fault-tolerance-4-1/[4.1 announcement]
+* https://smallrye.io/blog/fault-tolerance-4-2-and-4-3/[4.2 and 4.3 announcement]
+
+It brings one interesting experimental feature on top of the MicroProfile Fault Tolerance specification: the ability to observe circuit breaker state changes.
+You can learn more about this feature in the 4.3 announcement, linked above.
+
+=== Different treatment of empty values in Config
+
+*WARNING: Breaking changes!*
+
+SmallRye Config treats empty values differently than before.
+The empty values treatment is now more consistent, and the change should become specified in MicroProfile Config in an upcoming version.
+
+== Keycloak 9 rebase
+
+Thorntail 2.6.0.Final used Keycloak 8.0.1.
+In 2.7.0.Final, we updated to Keycloak 9.0.3.
+Note that this Keycloak version no longer supports Drools-based policies.
+
+== Component updates
+
+Thorntail 2.7.0.Final is still based on WildFly 18.0.1, but we updated a few components to newer versions.
+Specifically:
+
+* RESTEasy 3.11.2
+* Undertow 2.1.3
+* Jackson 2.10.3
+
+We have also updated a bunch of other components that do not come from WildFly.
+Most notably:
+
+* Jaeger client 0.34.1, together with Apache Thrift 0.13.0
+* OpenShift Java RestClient library 9.0.0.Final, to better support latest OpenShift versions
+* SnakeYAML 1.26
+* ShrinkWrap Resolver 2.2.7, to always use HTTPS when talking to Maven Central
+
+== Other notable changes
+
+*WARNING: Breaking changes!*
+
+The JAX-RS fraction no longer provides the JAXB API transitively.
+This was a mistake, and for using JAXB with JAX-RS, you had to use the `jaxrs-jaxb` fraction anyway.
+Hence, the impact should be very small, even though this is technically a breaking change.
+
+When an environment variable or system property that corresponds to a Thorntail configuration property is set to `+<<null>>+`, the corresponding configuration value is now set to `null`.
+This wasn't possible before; setting an environment variable or system property to an empty string always leads to setting the corresponding configuration value to an empty string as well.
+In some cases, this makes a big difference.
+
+We have added the ability to filter `WEB-INF/lib` only in the uberjar with `<filterWebInfLib>uberjar-only</filterWebInfLib>`.
+With this option, the WAR file inside the uberjar is repackaged, but the WAR artifact itself is left unchanged.
+This is useful when the WAR artifact is used on its own, e.g. deployed to WildFly.
+
+The MVC fraction now uses the latest stable API and implementation of the MVC specification.
+The fraction is also marked as stable now.
+
+We have also done some improvements to better support running on IBM JDKs or OpenJ9.
+
+== Changelog
+Release notes for 2.7.0.Final are available https://issues.redhat.com/secure/ReleaseNote.jspa?projectId=12317020&version=12343455[here].
+
+=== Task
+* [https://issues.redhat.com/browse/THORN-2422[THORN-2422]] test that all module.xmls that define the same module are identical (Done)
+* [https://issues.redhat.com/browse/THORN-2551[THORN-2551]] use PostgreSQL image from SCL instead of CentOS in the CRUD example (Done)
+* [https://issues.redhat.com/browse/THORN-2562[THORN-2562]] reversion all Config APIs to align with the target Thorntail release (Done)
+* [https://issues.redhat.com/browse/THORN-2563[THORN-2563]] enforce dependency convergence (Done)
+* [https://issues.redhat.com/browse/THORN-2565[THORN-2565]] test that all module.xmls that bring same artifact bring the same version (Done)
+
+=== Bug
+* [https://issues.redhat.com/browse/THORN-2451[THORN-2451]] jacoco reports 0% coverage (Done)
+* [https://issues.redhat.com/browse/THORN-2517[THORN-2517]] Non scoped dependencies are not included in final war but in war.original (Done)
+* [https://issues.redhat.com/browse/THORN-2525[THORN-2525]] After bundleDependencies used in thorntail maven plugin::package with uber jar the required the Bootstap man reuqires the default maven repository location (Done)
+* [https://issues.redhat.com/browse/THORN-2530[THORN-2530]] Swarmtool does not use https for maven (Done)
+* [https://issues.redhat.com/browse/THORN-2531[THORN-2531]] Null value for thorntail.public.url.base (Done)
+* [https://issues.redhat.com/browse/THORN-2535[THORN-2535]] Default health check response readiness should not be 200 (Done)
+* [https://issues.redhat.com/browse/THORN-2538[THORN-2538]] Use of thorntail.runner.webapp-location generates a invalid WAR (Done)
+* [https://issues.redhat.com/browse/THORN-2542[THORN-2542]] MP Metrics output not spec compliant (Done)
+* [https://issues.redhat.com/browse/THORN-2543[THORN-2543]] fraction plugin can use random module.xml files for duplicate modules (Done)
+* [https://issues.redhat.com/browse/THORN-2545[THORN-2545]] the "microprofile" fraction doesn't bring in "jaxrs-jsonb" (Done)
+* [https://issues.redhat.com/browse/THORN-2548[THORN-2548]] HTTP/2 support is not autodetected on IBM JDK (Done)
+* [https://issues.redhat.com/browse/THORN-2549[THORN-2549]] some configuration elements don't work correctly on IBM JDK (Done)
+* [https://issues.redhat.com/browse/THORN-2550[THORN-2550]] some fractions are missing MicroProfile Config WildFly feature pack ZIP dependencies (Done)
+* [https://issues.redhat.com/browse/THORN-2566[THORN-2566]] NPE when deployment archive contains directory named *.jar (Done)
+
+=== Component Upgrade
+* [https://issues.redhat.com/browse/THORN-2523[THORN-2523]] update to SmallRye Fault Tolerance 2.1.4 (Done)
+* [https://issues.redhat.com/browse/THORN-2552[THORN-2552]] update to SmallRye OpenAPI 1.1.22 (Done)
+* [https://issues.redhat.com/browse/THORN-2554[THORN-2554]] Health 2.2 (Done)
+* [https://issues.redhat.com/browse/THORN-2555[THORN-2555]] Metrics 2.3 (Done)
+* [https://issues.redhat.com/browse/THORN-2556[THORN-2556]] Config 1.4 (Done)
+* [https://issues.redhat.com/browse/THORN-2557[THORN-2557]] Fault Tolerance 2.1 (Done)
+* [https://issues.redhat.com/browse/THORN-2558[THORN-2558]] RestClient 1.4 (Done)
+* [https://issues.redhat.com/browse/THORN-2560[THORN-2560]] update to Keycloak 9.0.3 (Done)
+* [https://issues.redhat.com/browse/THORN-2564[THORN-2564]] update to SmallRye JWT 2.1.2 (Done)
+* [https://issues.redhat.com/browse/THORN-2567[THORN-2567]] update Vert.x (Done)
+* [https://issues.redhat.com/browse/THORN-2569[THORN-2569]] update to Undertow 2.1.3 (Done)
+
+=== Feature Request
+* [https://issues.redhat.com/browse/THORN-2526[THORN-2526]] add option to only repackage WAR inside the uberjar and leave the WAR file untouched (Done)
+* [https://issues.redhat.com/browse/THORN-2529[THORN-2529]] can't express "null" value in environment variables (and probably also system properties) (Done)
+
+=== Documentation
+* [https://issues.redhat.com/browse/THORN-2532[THORN-2532]] MicroProfile Rest Client Configuration via Thorntail YAML (Done)
+* [https://issues.redhat.com/browse/THORN-2534[THORN-2534]] Temp folder location and configuration (Done)
+
+=== Library Upgrade
+* [https://issues.redhat.com/browse/THORN-2537[THORN-2537]] Upgrade dependencies of experimental MVC fraction (Done)
+
+=== Epic
+* [https://issues.redhat.com/browse/THORN-2553[THORN-2553]] SmallRye MP 3.3 Impls (Done)
+
+== Breaking changes
+* [https://issues.redhat.com/browse/THORN-2556[THORN-2556]] Config 1.4
+* [https://issues.redhat.com/browse/THORN-2557[THORN-2557]] Fault Tolerance 2.1
+* [https://issues.redhat.com/browse/THORN-2563[THORN-2563]] enforce dependency convergence
+
+== Thank you, Contributors!
+
+We appreciate all of our contributors since the last release:
+
+=== Core
+* Tobias Erdle
+* Radoslav Husar
+* Harsha Ramesh
+* Stefan Sitani
+* Martin Stefanko
+* Ladislav Thon
+
+=== Examples
+* Jonathan Leitschuh
+* Ladislav Thon
