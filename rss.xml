@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thorntail]]></title><description><![CDATA[Thorntail]]></description><link>https://thorntail.io</link><generator>metalsmith-feed</generator><lastBuildDate>Mon, 09 Dec 2019 12:47:53 GMT</lastBuildDate><atom:link href="https://thorntail.io/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 09 Dec 2019 12:47:47 GMT</pubDate><item><title><![CDATA[Announcing Thorntail 2.6.0.Final]]></title><description><![CDATA[<div class="sect1">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thorntail]]></title><description><![CDATA[Thorntail]]></description><link>https://thorntail.io</link><generator>metalsmith-feed</generator><lastBuildDate>Wed, 10 Jun 2020 22:06:35 GMT</lastBuildDate><atom:link href="https://thorntail.io/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 10 Jun 2020 22:06:26 GMT</pubDate><item><title><![CDATA[Announcing Thorntail 2.7.0.Final]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_thorntail_2_7_0_final">Thorntail 2.7.0.Final</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On this day in 2003, the Spirit rover launched from Cape Canaveral, heading over to Mars.
+To celebrate that memorable event, we bring you …​ wait for it …​ a new Thorntail release!</p>
+</div>
+<div class="sect2">
+<h3 id="_what_s_new">What’s New?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>MicroProfile 3.3 support</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Completely new Fault Tolerance implementation</p>
+</li>
+<li>
+<p>Different treatment of empty values in Config</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Keycloak 9 rebase</p>
+</li>
+<li>
+<p>Component updates</p>
+</li>
+</ul>
+</div>]]></description><link>https://thorntail.io/posts/announcing-thorntail-2-7-0-final</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-thorntail-2-7-0-final</guid><dc:creator><![CDATA[The Thorntail Team]]></dc:creator><pubDate>Wed, 10 Jun 2020 05:00:00 GMT</pubDate></item><item><title><![CDATA[Announcing Thorntail 2.6.0.Final]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_thorntail_2_6_0_final">Thorntail 2.6.0.Final</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -406,29 +437,4 @@ If you care about the details, here’s a description of the issue we ran into: 
 <p>Assorted minor bugfixes</p>
 </li>
 </ul>
-</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-9-4</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-9-4</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Wed, 06 Sep 2017 05:00:00 GMT</pubDate></item><item><title><![CDATA[Announcing WildFly Swarm 2017.8.1]]></title><description><![CDATA[<div class="sect1">
-<h2 id="_wildfly_swarm_2017_8_1">WildFly Swarm 2017.8.1</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>On this day in 1914, the first steamer passed through the Panama Canal.
-Cool, eh?</p>
-</div>
-<div class="paragraph">
-<p>On this day in 2017, we’re pleased to announce the 2017.8.1 release of WildFly
-Swarm.</p>
-</div>
-<div class="sect2">
-<h3 id="_what_s_new">What’s New?</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>AsciiDoctorJ</p>
-</li>
-<li>
-<p>Jaeger & OpenTracing</p>
-</li>
-<li>
-<p>Bug fixes</p>
-</li>
-</ul>
-</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-8-1</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-8-1</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Thu, 03 Aug 2017 05:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-9-4</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-9-4</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Wed, 06 Sep 2017 05:00:00 GMT</pubDate></item></channel></rss>

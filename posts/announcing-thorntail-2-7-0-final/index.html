@@ -1,0 +1,441 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Thorntail Official Website"><link rel="icon" href="/favicon.ico"><link rel="alternate" type="application/rss+xml" title="RSS Feed for thorntail.io" href="/rss.xml"><title>Announcing Thorntail 2.7.0.Final | Thorntail</title><link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/headers/header-default.css"><link rel="stylesheet" href="/assets/css/footers/footer-v1.css"><link rel="stylesheet" href="/assets/plugins/animate.css"><link rel="stylesheet" href="/assets/plugins/line-icons/line-icons.css"><link rel="stylesheet" href="/assets/plugins/parallax-slider/css/parallax-slider.css"><link rel="stylesheet" href="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css"><link rel="stylesheet" href="/assets/css/theme-colors/default.css" id="style_color"><link rel="stylesheet" href="/assets/css/theme-skins/dark.css"><link rel="stylesheet" href="/assets/css/custom.css"><link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800"><link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css"><link rel="stylesheet" href="/css/site.css"></head><body><div class="header"><div class="container"><a href="/" class="logo"><img src="/images/thorntail_icon_rgb_64px.png" class="icon"><span style="font-size:20px;vertical-align:middle;color:#555;margin-left:10px">Thorntail</span></a><div class="topbar"><ul class="loginbar pull-right"><li class="hoverSelector"><a href="http://jboss.org">JBoss.org</a></li><li class="topbar-devider"></li><li class="hoverSelector"><a href="http://redhat.com">Red Hat</a></li><li class="hoverSelector"><img style="margin-left:10px" src="https://img.shields.io/maven-central/v/io.thorntail/bom.svg?maxAge=86400"></li></ul></div><button type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" class="navbar-toggle"><span class="sr-only">Toggle Navigation</span><span class="fa fa-bars"></span></button></div><div id="navbar" aria-expanded="false" class="navbar-collapse mega-menu navbar-responsive-collapse collapse"><div class="container"><ul class="nav navbar-nav"><li><a href="/generator" class="dropdown-toggle">Generator</a></li><li><a href="/archive">Blog</a></li><li><a href="/documentation">Documentation</a></li><li><a href="/community">Community</a></li><li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Resources</a><ul class="dropdown-menu"><li><a href="/downloads">Downloads</a></li><li><a href="/resources">Presentations</a></li></ul></li></ul></div></div></div><div class="wrapper"><div class="breadcrumbs"><div class="container"><div class="pull-left"><h1>Blog</h1></div><div class="ul pull-right breadcrumb"><li class="active"><a href="/archive">Archive</a></li><li><span>Post</span></li></div></div></div><div class="container"><div class="row margin-top-20"><div class="col-md-10"><article id="article"><h1>Announcing Thorntail 2.7.0.Final</h1><div class="post-meta">By The Thorntail Team | Published Today,  Jun 10th</div><div><div class="sect1">
+<h2 id="_thorntail_2_7_0_final">Thorntail 2.7.0.Final</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On this day in 2003, the Spirit rover launched from Cape Canaveral, heading over to Mars.
+To celebrate that memorable event, we bring you &#8230;&#8203; wait for it &#8230;&#8203; a new Thorntail release!</p>
+</div>
+<div class="sect2">
+<h3 id="_what_s_new">What&#8217;s New?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>MicroProfile 3.3 support</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Completely new Fault Tolerance implementation</p>
+</li>
+<li>
+<p>Different treatment of empty values in Config</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Keycloak 9 rebase</p>
+</li>
+<li>
+<p>Component updates</p>
+</li>
+</ul>
+</div>
+<!-- more -->
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_microprofile_3_3_support">MicroProfile 3.3 support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thorntail now implements MicroProfile 3.3 by including the latest <a href="https://www.smallrye.io/">SmallRye</a> artifacts.
+These specifications have been updated to a new version:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Config 1.4</p>
+</li>
+<li>
+<p>Fault Tolerance 2.1</p>
+</li>
+<li>
+<p>Health 2.2</p>
+</li>
+<li>
+<p>Metrics 2.3</p>
+</li>
+<li>
+<p>RestClient 1.4</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Smaller updates have also been done to implementations of other MicroProfile specifications.</p>
+</div>
+<div class="sect2">
+<h3 id="_completely_new_fault_tolerance_implementation">Completely new Fault Tolerance implementation</h3>
+<div class="paragraph">
+<p><strong>WARNING: Breaking changes!</strong></p>
+</div>
+<div class="paragraph">
+<p>We updated from SmallRye Fault Tolerance 2.x to latest version 4.3.0.
+This is a complete reimplementation of the MicroProfile Fault Tolerance specification, which is no longer based on Hystrix.
+An important consequence is that the Hystrix configuration is no longer necessary, and it is ignored.</p>
+</div>
+<div class="paragraph">
+<p>You can learn more about SmallRye Fault Tolerance 4.x on the SmallRye blog:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://smallrye.io/blog/fault-tolerance-4-0/">4.0 announcement</a></p>
+</li>
+<li>
+<p><a href="https://smallrye.io/blog/fault-tolerance-4-1/">4.1 announcement</a></p>
+</li>
+<li>
+<p><a href="https://smallrye.io/blog/fault-tolerance-4-2-and-4-3/">4.2 and 4.3 announcement</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It brings one interesting experimental feature on top of the MicroProfile Fault Tolerance specification: the ability to observe circuit breaker state changes.
+You can learn more about this feature in the 4.3 announcement, linked above.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_different_treatment_of_empty_values_in_config">Different treatment of empty values in Config</h3>
+<div class="paragraph">
+<p><strong>WARNING: Breaking changes!</strong></p>
+</div>
+<div class="paragraph">
+<p>SmallRye Config treats empty values differently than before.
+The empty values treatment is now more consistent, and the change should become specified in MicroProfile Config in an upcoming version.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_keycloak_9_rebase">Keycloak 9 rebase</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thorntail 2.6.0.Final used Keycloak 8.0.1.
+In 2.7.0.Final, we updated to Keycloak 9.0.3.
+Note that this Keycloak version no longer supports Drools-based policies.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_component_updates">Component updates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thorntail 2.7.0.Final is still based on WildFly 18.0.1, but we updated a few components to newer versions.
+Specifically:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>RESTEasy 3.11.2</p>
+</li>
+<li>
+<p>Undertow 2.1.3</p>
+</li>
+<li>
+<p>Jackson 2.10.3</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We have also updated a bunch of other components that do not come from WildFly.
+Most notably:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Jaeger client 0.34.1, together with Apache Thrift 0.13.0</p>
+</li>
+<li>
+<p>OpenShift Java RestClient library 9.0.0.Final, to better support latest OpenShift versions</p>
+</li>
+<li>
+<p>SnakeYAML 1.26</p>
+</li>
+<li>
+<p>ShrinkWrap Resolver 2.2.7, to always use HTTPS when talking to Maven Central</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_notable_changes">Other notable changes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>WARNING: Breaking changes!</strong></p>
+</div>
+<div class="paragraph">
+<p>The JAX-RS fraction no longer provides the JAXB API transitively.
+This was a mistake, and for using JAXB with JAX-RS, you had to use the <code>jaxrs-jaxb</code> fraction anyway.
+Hence, the impact should be very small, even though this is technically a breaking change.</p>
+</div>
+<div class="paragraph">
+<p>When an environment variable or system property that corresponds to a Thorntail configuration property is set to <code>&lt;&lt;null&gt;&gt;</code>, the corresponding configuration value is now set to <code>null</code>.
+This wasn&#8217;t possible before; setting an environment variable or system property to an empty string always leads to setting the corresponding configuration value to an empty string as well.
+In some cases, this makes a big difference.</p>
+</div>
+<div class="paragraph">
+<p>We have added the ability to filter <code>WEB-INF/lib</code> only in the uberjar with <code>&lt;filterWebInfLib&gt;uberjar-only&lt;/filterWebInfLib&gt;</code>.
+With this option, the WAR file inside the uberjar is repackaged, but the WAR artifact itself is left unchanged.
+This is useful when the WAR artifact is used on its own, e.g. deployed to WildFly.</p>
+</div>
+<div class="paragraph">
+<p>The MVC fraction now uses the latest stable API and implementation of the MVC specification.
+The fraction is also marked as stable now.</p>
+</div>
+<div class="paragraph">
+<p>We have also done some improvements to better support running on IBM JDKs or OpenJ9.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_changelog">Changelog</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Release notes for 2.7.0.Final are available <a href="https://issues.redhat.com/secure/ReleaseNote.jspa?projectId=12317020&amp;version=12343455">here</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_task">Task</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2422">THORN-2422</a>] test that all module.xmls that define the same module are identical (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2551">THORN-2551</a>] use PostgreSQL image from SCL instead of CentOS in the CRUD example (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2562">THORN-2562</a>] reversion all Config APIs to align with the target Thorntail release (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2563">THORN-2563</a>] enforce dependency convergence (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2565">THORN-2565</a>] test that all module.xmls that bring same artifact bring the same version (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bug">Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2451">THORN-2451</a>] jacoco reports 0% coverage (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2517">THORN-2517</a>] Non scoped dependencies are not included in final war but in war.original (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2525">THORN-2525</a>] After bundleDependencies used in thorntail maven plugin::package with uber jar the required the Bootstap man reuqires the default maven repository location (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2530">THORN-2530</a>] Swarmtool does not use https for maven (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2531">THORN-2531</a>] Null value for thorntail.public.url.base (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2535">THORN-2535</a>] Default health check response readiness should not be 200 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2538">THORN-2538</a>] Use of thorntail.runner.webapp-location generates a invalid WAR (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2542">THORN-2542</a>] MP Metrics output not spec compliant (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2543">THORN-2543</a>] fraction plugin can use random module.xml files for duplicate modules (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2545">THORN-2545</a>] the "microprofile" fraction doesn&#8217;t bring in "jaxrs-jsonb" (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2548">THORN-2548</a>] HTTP/2 support is not autodetected on IBM JDK (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2549">THORN-2549</a>] some configuration elements don&#8217;t work correctly on IBM JDK (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2550">THORN-2550</a>] some fractions are missing MicroProfile Config WildFly feature pack ZIP dependencies (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2566">THORN-2566</a>] NPE when deployment archive contains directory named *.jar (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_component_upgrade">Component Upgrade</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2523">THORN-2523</a>] update to SmallRye Fault Tolerance 2.1.4 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2552">THORN-2552</a>] update to SmallRye OpenAPI 1.1.22 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2554">THORN-2554</a>] Health 2.2 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2555">THORN-2555</a>] Metrics 2.3 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2556">THORN-2556</a>] Config 1.4 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2557">THORN-2557</a>] Fault Tolerance 2.1 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2558">THORN-2558</a>] RestClient 1.4 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2560">THORN-2560</a>] update to Keycloak 9.0.3 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2564">THORN-2564</a>] update to SmallRye JWT 2.1.2 (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2567">THORN-2567</a>] update Vert.x (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2569">THORN-2569</a>] update to Undertow 2.1.3 (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_feature_request">Feature Request</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2526">THORN-2526</a>] add option to only repackage WAR inside the uberjar and leave the WAR file untouched (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2529">THORN-2529</a>] can&#8217;t express "null" value in environment variables (and probably also system properties) (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_documentation">Documentation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2532">THORN-2532</a>] MicroProfile Rest Client Configuration via Thorntail YAML (Done)</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2534">THORN-2534</a>] Temp folder location and configuration (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_library_upgrade">Library Upgrade</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2537">THORN-2537</a>] Upgrade dependencies of experimental MVC fraction (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_epic">Epic</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2553">THORN-2553</a>] SmallRye MP 3.3 Impls (Done)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_breaking_changes">Breaking changes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2556">THORN-2556</a>] Config 1.4</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2557">THORN-2557</a>] Fault Tolerance 2.1</p>
+</li>
+<li>
+<p>[<a href="https://issues.redhat.com/browse/THORN-2563">THORN-2563</a>] enforce dependency convergence</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_thank_you_contributors">Thank you, Contributors!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We appreciate all of our contributors since the last release:</p>
+</div>
+<div class="sect2">
+<h3 id="_core">Core</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Tobias Erdle</p>
+</li>
+<li>
+<p>Radoslav Husar</p>
+</li>
+<li>
+<p>Harsha Ramesh</p>
+</li>
+<li>
+<p>Stefan Sitani</p>
+</li>
+<li>
+<p>Martin Stefanko</p>
+</li>
+<li>
+<p>Ladislav Thon</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_examples">Examples</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Jonathan Leitschuh</p>
+</li>
+<li>
+<p>Ladislav Thon</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></article></div></div></div></div><div class="footer-v1"><div class="footer"><div class="container"><div class="row"><div class="col-sm-6 md-margin-bottom-40"><p class="text-center"><Copyright>2016 - 2019 <a href="http://redhat.com">Red Hat, Inc.</a> | Thorntail is Open Source Software</Copyright></p></div></div></div></div></div><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-83419890-2', 'auto');
+ga('send', 'pageview');
+
+ga('create', 'UA-6435340-8', 'auto');
+ga('send', 'pageview');
+</script><script type="text/javascript" src="/assets/js/highlight.pack.js"></script><script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script><script type="text/javascript" src="/assets/plugins/jquery/jquery-migrate.min.js"></script><script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="/assets/plugins/back-to-top.js"></script><script type="text/javascript" src="/assets/plugins/smoothScroll.js"></script><script type="text/javascript" src="/assets/plugins/parallax-slider/js/modernizr.js"></script><script type="text/javascript" src="/assets/plugins/parallax-slider/js/jquery.cslider.js"></script><script type="text/javascript" src="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script><script type="text/javascript" src="/assets/js/custom.js"></script><script type="text/javascript" src="/assets/js/app.js"></script><script type="text/javascript" src="/assets/js/plugins/owl-carousel.js"></script><script type="text/javascript" src="/assets/js/plugins/style-switcher.js"></script><script type="text/javascript" src="/assets/js/plugins/parallax-slider.js"></script><script>(function() {
+
+  jQuery(document).ready(function() {
+    App.init();
+    OwlCarousel.initOwlCarousel();
+    StyleSwitcher.initStyleSwitcher();
+    ParallaxSlider.initParallaxSlider();
+
+    hljs.initHighlightingOnLoad();
+  });
+
+})();
+</script></body></html>
