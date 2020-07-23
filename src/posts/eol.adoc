@@ -1,0 +1,56 @@
+---
+title: The End of an Era
+publishDate: 2020-07-23
+modifyDate: 2020-07-23
+author: Ladislav Thon
+layout: post.jade
+---
+
+More than 5 years ago, in early 2015, Bob McWhirter and Ken Finnigan started a research project to answer one question: what would it take to disassemble WildFly into small pieces and package only the necessary ones, together with an application, into one uberjar.
+That project was called WildFly Swarm and it quickly became popular.
+
+++++
+<!-- more -->
+++++
+
+Over the years, WildFly Swarm became _the_ https://thorntail.io/posts/announcing-wildfly-swarm-1-0-0-final/[Just Enough App Server], invented https://thorntail.io/posts/announcing-wildfly-swarm-2016-9/[hollow JARs], helped bootstrap https://thorntail.io/posts/microprofile-with-wildfly-swarm/[MicroProfile], became a Red Hat supported product, morphed into https://thorntail.io/posts/announcing-thorntail-2-0-0-final/[Thorntail], started the https://thorntail.io/docs/4-x[4.x prototype], and eventually became surpassed by https://thorntail.io/posts/thorntail-community-announcement-on-quarkus/[Quarkus].
+
+The WildFly folks didn’t rest on their laurels either: WildFly 19 brought full https://wildfly.org/news/2020/03/18/WildFly19-Final-Released/[MicroProfile 3.3 support], based on the same https://smallrye.io/[SmallRye] components that Thorntail uses, they built a standalone feature pack for https://wildfly.org/news/2020/06/18/Introducing-the-WildFly-MicroProfile-Reactive-specifications-feature-pack/[MicroProfile reactive specifications], again using SmallRye components, and there’s also a Maven plugin in the works to create https://wildfly.org/news/2020/06/18/Bootable-jar-Wildfly-20/[WildFly uberjars].
+It is based on the https://docs.wildfly.org/19/Admin_Guide.html#Galleon_Provisioning[Galleon] provisioning framework, so it allows you to select which parts of WildFly you want, just like with Thorntail.
+
+With Quarkus reaching 1.0.0.Final last year and WildFly growing to accommodate Thorntail use cases, there’s no need for Thorntail anymore.
+There will be no more Thorntail releases after 2.7.0.Final – unless a critical bug is found in the coming few months, in which case we might produce a small bugfix release.
+
+We recommend users to migrate to either https://quarkus.io/[Quarkus], or https://wildfly.org/[WildFly].
+Quarkus should be a perfect fit for most Thorntail applications.
+It includes many of the same libraries and APIs, such as JAX-RS with RESTEasy, JPA with Hibernate, JTA with Narayana, MicroProfile with SmallRye and many more.
+Quarkus also offers an awesome development mode and ahead of time compilation to native binaries using GraalVM.
+See https://quarkus.io[quarkus.io] to learn more.
+
+However, if your Thorntail application relies on technologies such as EJB, JSF, JCA, SOAP web services, or CORBA, WildFly is a better choice.
+
+Since this is the end, it’s appropriate to look back.
+And there’s noone better than the founders themselves:
+
+[quote, Bob McWhirter]
+____
+Thorntail (née WildFly Swarm) was a way to leverage a relatively non-microservices-centric codebase (WildFly) to support microservices.
+Figuring out how to misuse and abuse the very … robust … WildFly project was a lot of fun.
+Seeing the community embrace WildFly Swarm/Thorntail and continue it was amazing.
+The various people within and outside of Red Hat who contributed and brought it to where it is today have been awesome.
+I’m glad to see quite a few of the lessons learned from Thorntail make their way into Quarkus, and I have no reason to think Quarkus won’t continue to fill Thorntail’s shoes.
+____
+
+
+[quote, Ken Finnigan]
+____
+With a hint of sadness, it’s now time to say farewell to Thorntail.
+It was a wonderful experience to create it with Bob, and see the team and project grow over the ensuing years.
+Thorntail (née WildFly Swarm) was our first foray into the world of microservice frameworks, and a lot of the ideas we had in Thorntail have been incorporated into Quarkus.
+Lastly, I’d like to thank the Thorntail community for their ideas, support, and encouragement over the years.
+____
+
+=== Red Hat build of Thorntail
+
+Note that this announcement only concerns the Thorntail community project and does not apply directly to the Red Hat build of Thorntail.
+Red Hat will continue providing support for the entire lifecycle of the product.

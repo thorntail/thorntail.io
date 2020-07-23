@@ -23,9 +23,10 @@ var versions = require('./versions.js')
 
 moment.updateLocale('en', {
   calendar : {
-    lastDay : '[Yesterday, ] MMM Do',
-    sameDay : '[Today, ] MMM Do',
-    lastWeek : '[last] dddd[, ] MMM Do',
+    // always use the universal format, since we only render the pages during build
+    lastDay: 'll', // '[Yesterday, ] MMM Do',
+    sameDay: 'll', // '[Today, ] MMM Do',
+    lastWeek: 'll', // '[last] dddd[, ] MMM Do',
     sameElse : 'll'
   }
 });
