@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thorntail]]></title><description><![CDATA[Thorntail]]></description><link>https://thorntail.io</link><generator>metalsmith-feed</generator><lastBuildDate>Wed, 10 Jun 2020 22:06:35 GMT</lastBuildDate><atom:link href="https://thorntail.io/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 10 Jun 2020 22:06:26 GMT</pubDate><item><title><![CDATA[Announcing Thorntail 2.7.0.Final]]></title><description><![CDATA[<div class="sect1">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thorntail]]></title><description><![CDATA[Thorntail]]></description><link>https://thorntail.io</link><generator>metalsmith-feed</generator><lastBuildDate>Thu, 23 Jul 2020 08:42:55 GMT</lastBuildDate><atom:link href="https://thorntail.io/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 23 Jul 2020 08:42:50 GMT</pubDate><item><title><![CDATA[The End of an Era]]></title><description><![CDATA[<div class="paragraph">
+<p>More than 5 years ago, in early 2015, Bob McWhirter and Ken Finnigan started a research project to answer one question: what would it take to disassemble WildFly into small pieces and package only the necessary ones, together with an application, into one uberjar.
+That project was called WildFly Swarm and it quickly became popular.</p>
+</div>]]></description><link>https://thorntail.io/posts/the-end-of-an-era</link><guid isPermaLink="true">https://thorntail.io/posts/the-end-of-an-era</guid><dc:creator><![CDATA[Ladislav Thon]]></dc:creator><pubDate>Thu, 23 Jul 2020 05:00:00 GMT</pubDate></item><item><title><![CDATA[Announcing Thorntail 2.7.0.Final]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_thorntail_2_7_0_final">Thorntail 2.7.0.Final</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -410,31 +413,4 @@ a deer increase. It’s also the month where you can enjoy WildFly Swarm 2017.11
 <p>"air gap" Maven repositories</p>
 </li>
 </ul>
-</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-10-0</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-10-0</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Thu, 05 Oct 2017 05:00:00 GMT</pubDate></item><item><title><![CDATA[Announcing WildFly Swarm 2017.9.4]]></title><description><![CDATA[<div class="sect1">
-<h2 id="_wildfly_swarm_2017_9_4">WildFly Swarm 2017.9.4</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>What a strange release number. Indeed.</p>
-</div>
-<div class="paragraph">
-<p>We’ve been struck by some weird release problems, which forced us to burn a number of versions (x.9.0-x.9.3).
-If you care about the details, here’s a description of the issue we ran into: <a href="https://issues.sonatype.org/browse/NEXUS-9138" class="bare">https://issues.sonatype.org/browse/NEXUS-9138</a></p>
-</div>
-<div class="sect2">
-<h3 id="_what_s_new">What’s New?</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Topology.js Changes</p>
-</li>
-<li>
-<p>Gradle enhancements</p>
-</li>
-<li>
-<p>Consul Fixes and enhancements</p>
-</li>
-<li>
-<p>Assorted minor bugfixes</p>
-</li>
-</ul>
-</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-9-4</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-9-4</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Wed, 06 Sep 2017 05:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://thorntail.io/posts/announcing-wildfly-swarm-2017-10-0</link><guid isPermaLink="true">https://thorntail.io/posts/announcing-wildfly-swarm-2017-10-0</guid><dc:creator><![CDATA[The WildFly Swarm Team]]></dc:creator><pubDate>Thu, 05 Oct 2017 05:00:00 GMT</pubDate></item></channel></rss>

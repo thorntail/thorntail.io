@@ -267,6 +267,23 @@ table.tableblock {
   margin-bottom: 15px;
   width: 100%;
 }
+
+.quoteblock blockquote, .quoteblock blockquote p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.75;
+  word-spacing: 0.1em;
+  letter-spacing: 0;
+  font-style: italic;
+  text-align: justify;
+  margin: 0;
+}
+.quoteblock .attribution {
+  font-style: italic;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
 /*
 This is a "ugly" solution to position the "Generate Project" btn besides the "Artifact ID" input.
 When the times come to change this form this needs to be reviewed.
