@@ -8,6 +8,16 @@ layout: index.jade
   <div class="container overflow-h">
     <div class="row">
       <span>
+      Thorntail has <a href="/posts/the-end-of-an-era">announced end of life</a>.
+      Everything else on this site is now outdated.
+      We recommend using <a href="https://quarkus.io/">Quarkus</a> or <a href="https://wildfly.org/">WildFly</a>.
+      </span>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+      <span>
       Thorntail offers an innovative approach to packaging and running Java EE applications by packaging them with just enough of the
       server runtime to "java -jar" your application. It's MicroProfile compatible, too. And, it's all much, much cooler than that ...
       </span>
