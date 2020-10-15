@@ -1,4 +1,4 @@
-# thorntail.io
+# Thorntail.io
 
 This is the content for the Thorntail web site.
 
@@ -20,12 +20,12 @@ should use the `post.jade` layout.
 Here is an example post.
 
     ---
-    title: Thorntail Buzz
-    publishDate: 2015-11-07
-    modifyDate: 2015-11-09
-    author: Joseph Stinger
-    layout: post.jade
-    gist: lance/0cfd8539d5c395b43f16
+    Title: Thorntail Buzz
+    PublishDate: 2015-11-07
+    ModifyDate: 2015-11-09
+    Author: Joseph Stinger
+    Layout: post.jade
+    Gist: lance/0cfd8539d5c395b43f16
     ---
 
     One of the easiest ways to include source code in your Thorntail
