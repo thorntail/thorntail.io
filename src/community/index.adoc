@@ -30,7 +30,7 @@ issue marked `getting-started`].
 
 If you are getting started and have questions, would like to contribute
 to the development of the project, or just want to chat with other users and
-developers, join us on Freenode or our Google Group.
+developers, join us on our Google Group.
 
 ++++
   </div>
@@ -52,19 +52,9 @@ developers, join us on Freenode or our Google Group.
       <div class="col-md-4">
       <div class="well">
       <p>
-        <h3><i class="fa fa-comments-o" aria-hidden="true"></i> IRC - Chat</h3>
-        Most of the discussions happen on IRC. Jump in, ask questions, contribute:<br/>
-
-        <a href="http://webchat.freenode.net/?channels=thorntail">#thorntail on Freenode</a>
-        </p>
-      </div>
-      </div>
-      <div class="col-md-4">
-      <div class="well">
-      <p>
         <h3><i class="fa fa-envelope-o" aria-hidden="true"></i> Discussion Group</h3>
-        The <a href="https://groups.google.com/forum/#!forum/thorntail">Google Group</a> is good place for more elaborate questions,
-        ideas that don't fit IRC or those that require more context.
+        The <a href="https://groups.google.com/forum/#!forum/thorntail">Google Group</a> is good place for questions
+        or ideas, including those that require more context.
         </p>
       </div>
       </div>
